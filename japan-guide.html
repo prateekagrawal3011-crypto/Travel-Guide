@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Neon & Nirvana — Japan: Tokyo, Takayama & Kyoto · 17–26 July 2026</title>
+<title>Neon & Nirvana — Japan: Tokyo, Kyoto & Fuji Rock · 17–28 July 2026</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,500&family=Outfit:wght@300;400;500;600;700;800&family=Shippori+Mincho:wght@500;700&display=swap');
 :root{
@@ -12,6 +12,7 @@
   --vermilion:#c8341f;--vermilion-2:#9e2615;--verm-glow:#e35a44;
   --sakura:#e6a3b8;--sakura-soft:#f0cdd8;--gold:#c9a227;--gold-soft:#dcc06a;
   --sumi:#23252e;--sumi-2:#16171d;--matcha:#7a8c3f;--matcha-glow:#a8bd5e;
+  --neon:#d6196b;--neon-glow:#ff4d94;
   --cream:#faf7f1;--shadow:rgba(20,15,25,.15);--shadow-deep:rgba(20,15,25,.34);
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -22,7 +23,7 @@ body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opa
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cg fill='none' stroke='%231f3a6e' stroke-width='0.5' opacity='0.04'%3E%3Cpath d='M0,40 Q20,20 40,40 T80,40'/%3E%3Cpath d='M0,55 Q20,35 40,55 T80,55'/%3E%3Cpath d='M0,25 Q20,5 40,25 T80,25'/%3E%3C/g%3E%3C/svg%3E")}
 body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;opacity:.035;mix-blend-mode:multiply;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-#prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--indigo),var(--vermilion),var(--sakura),var(--matcha-glow));z-index:10000;width:0;transition:width .12s}
+#prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--indigo),var(--vermilion),var(--neon),var(--matcha-glow));z-index:10000;width:0;transition:width .12s}
 a{color:var(--vermilion-2);text-decoration:none}
 .reveal{opacity:0;transform:translateY(42px);transition:opacity 1.05s cubic-bezier(.16,1,.3,1),transform 1.05s cubic-bezier(.16,1,.3,1)}
 .reveal.in{opacity:1;transform:none}
@@ -48,8 +49,8 @@ header{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-
 h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(48px,8.6vw,120px);line-height:.9;letter-spacing:-.02em;color:#fcf8f2;text-shadow:0 4px 40px rgba(0,0,0,.5)}
 h1 em{font-style:italic;font-weight:500;color:var(--verm-glow)}
 .jp-line{font-family:'Shippori Mincho',serif;font-size:clamp(18px,2.8vw,32px);font-weight:500;color:#f0d9b0;margin-top:22px;letter-spacing:.08em;text-shadow:0 2px 20px rgba(0,0,0,.6)}
-.hero-sub{font-size:clamp(16px,2vw,21px);color:#e9e2d6;max-width:620px;margin:24px 0 34px;font-weight:300;text-shadow:0 1px 14px rgba(0,0,0,.5)}
-.hero-meta{display:flex;gap:36px;flex-wrap:wrap}
+.hero-sub{font-size:clamp(16px,2vw,21px);color:#e9e2d6;max-width:640px;margin:24px 0 34px;font-weight:300;text-shadow:0 1px 14px rgba(0,0,0,.5)}
+.hero-meta{display:flex;gap:34px;flex-wrap:wrap}
 .hm{display:flex;flex-direction:column;gap:2px}
 .hm .v{font-family:'Fraunces',serif;font-size:32px;font-weight:600;color:var(--gold-soft)}
 .hm .l{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#cfc4b3}
@@ -69,6 +70,8 @@ h2 .accent{color:var(--vermilion);font-style:italic;font-weight:500}
 .dark::before{content:"";position:absolute;inset:0;opacity:.5;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cg fill='none' stroke='%23e35a44' stroke-width='0.5' opacity='0.05'%3E%3Cpath d='M0,40 Q20,20 40,40 T80,40'/%3E%3Cpath d='M0,25 Q20,5 40,25 T80,25'/%3E%3C/g%3E%3C/svg%3E")}
 .dark h2{color:var(--cream)}.dark .lead{color:#cbc6d0}.dark .sec-label{color:var(--verm-glow)}
 .dark .wrap{z-index:2}
+.neon-sec{background:linear-gradient(150deg,#1a0e2e,#2a1248);color:var(--cream)}
+.neon-sec h2{color:var(--cream)}.neon-sec .lead{color:#d8c8e8}.neon-sec .sec-label{color:var(--neon-glow)}
 
 .feature{display:grid;grid-template-columns:1.1fr 1fr;gap:0;margin-top:48px;border-radius:22px;overflow:hidden;box-shadow:0 22px 60px var(--shadow-deep);background:var(--cream)}
 .feature.flip{grid-template-columns:1fr 1.1fr}
@@ -86,33 +89,36 @@ h2 .accent{color:var(--vermilion);font-style:italic;font-weight:500}
 .snap{background:var(--cream);padding:28px 20px;text-align:center;transition:background .3s}
 .snap:hover{background:#fff}
 .snap .ic{font-size:24px;margin-bottom:8px}
-.snap .v{font-family:'Fraunces',serif;font-size:25px;font-weight:600;color:var(--vermilion);line-height:1.1}
+.snap .v{font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--vermilion);line-height:1.1}
 .snap .l{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin-top:6px}
 
 .mapwrap{margin-top:48px;border-radius:22px;overflow:hidden;box-shadow:0 22px 60px var(--shadow-deep);background:linear-gradient(160deg,#e4dccd,#d6cbb8)}
 .mapwrap svg{width:100%;height:auto;display:block}
 
 .tl{position:relative;margin-top:50px}
-.tl::before{content:"";position:absolute;left:27px;top:14px;bottom:14px;width:3px;background:linear-gradient(var(--indigo),var(--vermilion),var(--matcha));border-radius:2px}
+.tl::before{content:"";position:absolute;left:27px;top:14px;bottom:14px;width:3px;background:linear-gradient(var(--indigo),var(--vermilion),var(--neon),var(--matcha));border-radius:2px}
 .day{position:relative;padding:0 0 14px 82px;margin-bottom:12px}
 .day-dot{position:absolute;left:14px;top:3px;width:29px;height:29px;border-radius:50%;background:var(--cream);border:3px solid var(--vermilion);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:var(--vermilion);z-index:2;box-shadow:0 4px 12px var(--shadow)}
 .day.solo .day-dot{border-color:var(--indigo);color:var(--indigo)}
 .day.kyoto .day-dot{border-color:var(--matcha);color:var(--matcha)}
+.day.fuji .day-dot{border-color:var(--neon);color:var(--neon)}
 .day-card{background:var(--cream);border-radius:16px;box-shadow:0 8px 26px var(--shadow);cursor:pointer;transition:transform .3s,box-shadow .3s;border-left:4px solid var(--vermilion);overflow:hidden}
 .day.solo .day-card{border-left-color:var(--indigo)}
 .day.kyoto .day-card{border-left-color:var(--matcha)}
+.day.fuji .day-card{border-left-color:var(--neon)}
 .day-card:hover{transform:translateX(6px);box-shadow:0 16px 40px var(--shadow-deep)}
 .day-banner{height:7px;background:linear-gradient(90deg,var(--vermilion),var(--verm-glow))}
 .day.solo .day-banner{background:linear-gradient(90deg,var(--indigo),var(--indigo-glow))}
 .day.kyoto .day-banner{background:linear-gradient(90deg,var(--matcha),var(--matcha-glow))}
+.day.fuji .day-banner{background:linear-gradient(90deg,var(--neon),var(--neon-glow))}
 .day-inner{padding:21px 25px}
 .day-head{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap}
 .day-date{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--vermilion)}
-.day.solo .day-date{color:var(--indigo)}.day.kyoto .day-date{color:var(--matcha)}
+.day.solo .day-date{color:var(--indigo)}.day.kyoto .day-date{color:var(--matcha)}.day.fuji .day-date{color:var(--neon)}
 .day-title{font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--ink);margin:2px 0 6px}
 .day-loc{font-size:12px;font-weight:600;color:var(--vermilion-2);text-transform:uppercase;letter-spacing:.05em}
 .day-body{max-height:0;overflow:hidden;transition:max-height .55s cubic-bezier(.16,1,.3,1)}
-.day-body.open{max-height:900px}
+.day-body.open{max-height:1000px}
 .day-body p{font-size:14.5px;color:var(--ink-soft);margin:14px 0 0;font-weight:300}
 .day-body .picks{margin-top:14px;padding-top:12px;border-top:1px solid rgba(20,15,25,.08)}
 .day-body .picks .ph{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--matcha);margin-bottom:8px}
@@ -121,8 +127,9 @@ h2 .accent{color:var(--vermilion);font-style:italic;font-weight:500}
 .tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:20px;margin:10px 6px 0 0;background:rgba(200,52,31,.1);color:var(--vermilion-2)}
 .tag.inc{background:rgba(122,140,63,.16);color:var(--matcha)}
 .tag.night{background:rgba(31,58,110,.13);color:var(--indigo)}
+.tag.fest{background:rgba(214,25,107,.14);color:var(--neon)}
 .expand-hint{font-size:11px;color:var(--vermilion);font-weight:700;margin-top:12px;letter-spacing:.04em}
-.legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:32px;font-size:12px;font-weight:600;color:var(--ink-soft)}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:32px;font-size:12px;font-weight:600;color:var(--ink-soft)}
 .legend span{display:flex;align-items:center;gap:7px}
 .dotk{width:13px;height:13px;border-radius:50%;border:3px solid}
 
@@ -145,13 +152,14 @@ h2 .accent{color:var(--vermilion);font-style:italic;font-weight:500}
 .note.warn{border-left-color:var(--vermilion)}
 .note.good{border-left-color:var(--matcha)}
 .note.info{border-left-color:var(--indigo)}
-.dark .note{background:rgba(250,247,241,.06)}.dark .note p{color:#cbc6d0}.dark .note strong{color:var(--cream)}
+.note.fest{border-left-color:var(--neon)}
+.dark .note,.neon-sec .note{background:rgba(250,247,241,.06)}.dark .note p,.neon-sec .note p{color:#cbc6d0}.dark .note strong,.neon-sec .note strong{color:var(--cream)}
 
 .flights,.vgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:42px}
 @media(max-width:720px){.flights,.vgrid{grid-template-columns:1fr}}
 .fcard{background:var(--cream);border-radius:18px;padding:30px;box-shadow:0 10px 30px var(--shadow);position:relative;overflow:hidden}
 .fcard::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--indigo),var(--vermilion))}
-.froute{display:flex;align-items:center;gap:12px;font-family:'Fraunces',serif;font-size:26px;font-weight:600;color:var(--ink);margin-bottom:4px}
+.froute{display:flex;align-items:center;gap:12px;font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:var(--ink);margin-bottom:4px}
 .froute .arrow{color:var(--vermilion);font-size:18px}
 .fdate{font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--vermilion-2);margin-bottom:16px}
 .fline{display:flex;justify-content:space-between;font-size:13.5px;color:var(--ink-soft);padding:7px 0;border-bottom:1px solid rgba(20,15,25,.07);font-weight:300}
@@ -172,6 +180,7 @@ h2 .accent{color:var(--vermilion);font-style:italic;font-weight:500}
 .scard h4{font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:var(--cream);margin-bottom:8px}
 .scard p{font-size:13.5px;color:#cbc6d0;margin:0;font-weight:300}
 .scard .macro{color:var(--matcha-glow);font-weight:600}
+.neon-sec .scard .macro{color:var(--neon-glow)}
 
 .vid-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:46px}
 .vid{border-radius:18px;overflow:hidden;box-shadow:0 12px 36px var(--shadow);background:#000;position:relative;aspect-ratio:16/9;cursor:pointer;transition:transform .35s,box-shadow .35s}
@@ -220,6 +229,7 @@ h2 .accent{color:var(--vermilion);font-style:italic;font-weight:500}
 .cta-step .csn{font-family:'Fraunces',serif;font-size:25px;color:var(--gold-soft);font-weight:600}
 .cta-step .cst{font-size:12.5px;color:#f3e3d0;margin-top:4px;font-weight:300}
 .badge-done{display:inline-flex;align-items:center;gap:8px;background:rgba(122,140,63,.25);border:1px solid var(--matcha-glow);border-radius:30px;padding:8px 18px;font-size:12px;font-weight:700;letter-spacing:.03em;color:#dff0b8;margin-bottom:20px;position:relative}
+.badge-urgent{display:inline-flex;align-items:center;gap:8px;background:rgba(214,25,107,.2);border:1px solid var(--neon-glow);border-radius:30px;padding:8px 18px;font-size:12px;font-weight:700;letter-spacing:.03em;color:#ffb3d4;margin-bottom:20px;position:relative}
 
 footer{background:var(--sumi-2);color:#9a96a4;padding:60px 26px;text-align:center;font-size:13px;position:relative;overflow:hidden}
 footer .fbig{font-family:'Fraunces',serif;font-size:32px;font-weight:600;color:var(--cream);margin-bottom:10px}
@@ -237,29 +247,29 @@ footer .jp{font-family:'Shippori Mincho',serif;color:var(--verm-glow);font-size:
 <a href="#overview">Overview</a>
 <a href="#map">Route</a>
 <a href="#route">Days</a>
+<a href="#festivals">Festivals</a>
+<a href="#fuji">Fuji Rock</a>
 <a href="#watch">Watch</a>
 <a href="#tour">The Tour</a>
 <a href="#flights">Flights</a>
 <a href="#visa">Visa</a>
 <a href="#shred">Shred</a>
-<a href="#food">Food</a>
 <a href="#cost">Budget</a>
-<a href="#prep">Prep</a>
 </nav>
 
 <header id="top">
   <div class="hero-photo"></div>
   <div class="hero-veil"></div>
   <div class="hero-content">
-    <div class="eyebrow">Solo + G Adventures · July 2026</div>
+    <div class="eyebrow">Solo + G Adventures + Fuji Rock · July 2026</div>
     <h1>Neon &amp;<br><em>Nirvana</em></h1>
-    <div class="jp-line">東京 · 高山 · 京都</div>
-    <p class="hero-sub">Ten days from Mumbai through Japan's neon capital, the Alpine onsen town of Takayama, and the temple heart of Kyoto — bullet trains, first nights out, karaoke, and a solo Kyoto-Osaka tail to close it your way.</p>
+    <div class="jp-line">東京 · 高山 · 京都 · 苗場</div>
+    <p class="hero-sub">Twelve days from Mumbai — the neon capital, an Alpine onsen town, Kyoto's temples mid-festival, and a finale at Fuji Rock in the mountains. Bullet trains, karaoke nights, a 1,150-year-old parade, and Japan's greatest music festival.</p>
     <div class="hero-meta">
       <div class="hm"><span class="v">17 Jul</span><span class="l">Fly Mumbai</span></div>
-      <div class="hm"><span class="v">26 Jul</span><span class="l">Home from Osaka</span></div>
-      <div class="hm"><span class="v">10</span><span class="l">Days</span></div>
-      <div class="hm"><span class="v">3</span><span class="l">Cities</span></div>
+      <div class="hm"><span class="v">28 Jul</span><span class="l">Home from Tokyo</span></div>
+      <div class="hm"><span class="v">12</span><span class="l">Days</span></div>
+      <div class="hm"><span class="v">2</span><span class="l">Festivals</span></div>
     </div>
   </div>
   <div class="hero-credit">Kiyomizu-dera, Kyoto · Wikimedia Commons</div>
@@ -269,61 +279,58 @@ footer .jp{font-family:'Shippori Mincho',serif;color:var(--verm-glow);font-size:
 <section id="overview">
   <div class="wrap">
     <div class="sec-label">The shape of it</div>
-    <h2>Tour <span class="accent">core</span>, solo edges</h2>
-    <p class="lead">The 6-day G Adventures "Tokyo Nights &amp; Kyoto Temples" (18–23 Jul) is the spine — Tokyo, Takayama, Kyoto, with a built-in first night out and a Kyoto big night out. Around it: an arrival evening in Tokyo, and a 3-day solo Kyoto-and-Osaka tail to finish on your own terms.</p>
+    <h2>Tour, temples, <span class="accent">then the mountain</span></h2>
+    <p class="lead">The 6-day G Adventures "Tokyo Nights &amp; Kyoto Temples" (18–23 Jul) is the spine — Tokyo, Takayama, Kyoto. Then it's yours: a Gion Matsuri parade in Kyoto, back to Tokyo, and a finale weekend at Fuji Rock in the Niigata mountains before flying home.</p>
     <div class="feature reveal">
       <div class="fimg ph-tokyo"></div>
       <div class="ftext">
-        <div class="fk">Days 1–3 · Tokyo</div>
+        <div class="fk">Days 1–3 + 9–12 · Tokyo</div>
         <h3>The neon metropolis</h3>
-        <p>Shibuya Crossing, Senso-ji's lantern, the youth-culture rush of Harajuku, izakaya alleys and a first night out with the group. Flat, train-and-walk city travel — easy on the knees, heavy on the energy.</p>
+        <p>Shibuya Crossing, Senso-ji's lantern, Harajuku's rush, izakaya alleys and a first night out. You open the trip here and return for the Fuji Rock run-up — flat, train-and-walk city travel, easy on the knees.</p>
       </div>
     </div>
     <div class="feature flip reveal">
       <div class="fimg ph-fushimi"></div>
       <div class="ftext">
-        <div class="fk">Days 5–10 · Kyoto &amp; Osaka</div>
-        <h3>Ten thousand torii</h3>
-        <p>Fushimi Inari's vermilion gates, Kiyomizu-dera, Gion's lantern-lit lanes, a karaoke big night out — then your solo tail through Kyoto's temples and Osaka's Dotonbori food streets.</p>
+        <div class="fk">Days 4–7 · Kyoto, mid-festival</div>
+        <h3>Ten thousand torii — during Gion Matsuri</h3>
+        <p>Fushimi Inari's vermilion gates, Kiyomizu-dera, Gion's lanes — and you're there for the climax of Gion Matsuri, one of Japan's Three Great Festivals, with float parades and lantern-lit yukata nights.</p>
       </div>
     </div>
     <div class="snapshot reveal">
-      <div class="snap"><div class="ic">📅</div><div class="v">17–26 Jul</div><div class="l">Full window</div></div>
+      <div class="snap"><div class="ic">📅</div><div class="v">17–28 Jul</div><div class="l">Full window</div></div>
       <div class="snap"><div class="ic">🚄</div><div class="v">G Adv.</div><div class="l">18–23 Jul core</div></div>
-      <div class="snap"><div class="ic">👥</div><div class="v">~14</div><div class="l">Max 16, age 18+</div></div>
-      <div class="snap"><div class="ic">🦵</div><div class="v">Low-impact</div><div class="l">Flat, trains</div></div>
-      <div class="snap"><div class="ic">💰</div><div class="v">~₹1.9L</div><div class="l">All-in est.</div></div>
+      <div class="snap"><div class="ic">🏮</div><div class="v">Gion</div><div class="l">Matsuri · 24 Jul</div></div>
+      <div class="snap"><div class="ic">🎸</div><div class="v">Fuji Rock</div><div class="l">26 Jul · Naeba</div></div>
+      <div class="snap"><div class="ic">💰</div><div class="v">~₹2.6L</div><div class="l">All-in est.</div></div>
     </div>
   </div>
 </section>
 
 <section id="map" class="alt">
   <div class="wrap">
-    <div class="sec-label">Tokyo → Takayama → Kyoto → Osaka</div>
+    <div class="sec-label">Tokyo → Takayama → Kyoto → Naeba</div>
     <h2>The <span class="accent">bullet-train</span> line</h2>
-    <p class="lead">Drawn to real geography. East-coast Tokyo, up into the Japanese Alps at Takayama, down to Kyoto, then a short hop to Osaka for your final solo days. All by Shinkansen and local train — no driving, minimal walking with luggage.</p>
+    <p class="lead">Drawn to real geography. East-coast Tokyo, up into the Alps at Takayama, down to Kyoto, back to Tokyo, then north into the Niigata mountains for Fuji Rock. All by Shinkansen and local train — no driving.</p>
     <div class="mapwrap reveal">
       <svg viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Route map of Honshu Japan">
         <defs>
-          <linearGradient id="route" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1f3a6e"/><stop offset="0.5" stop-color="#c8341f"/><stop offset="1" stop-color="#7a8c3f"/></linearGradient>
+          <linearGradient id="route" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1f3a6e"/><stop offset="0.5" stop-color="#c8341f"/><stop offset="1" stop-color="#d6196b"/></linearGradient>
           <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d3ddd0"/><stop offset="1" stop-color="#c6d2c0"/></linearGradient>
           <filter id="ds" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#14121a" flood-opacity="0.32"/></filter>
         </defs>
         <rect width="1000" height="600" fill="url(#sea)"/>
-        <!-- stylised Honshu landmass -->
         <path d="M120,360 Q200,300 300,310 Q380,250 480,250 Q560,210 660,250 Q760,230 860,300 Q900,340 850,380 Q780,420 700,400 Q640,460 560,440 Q480,480 400,440 Q320,470 240,430 Q160,420 120,360 Z" fill="#e4dccd" stroke="#cdbf9e" stroke-width="1.5"/>
-        <!-- Japanese Alps (around Takayama) -->
         <g fill="#b9ac8c" opacity="0.6"><path d="M430,300 l24,-38 l24,38 Z"/><path d="M470,310 l20,-32 l20,32 Z"/></g>
         <g fill="#f1ece2" opacity="0.7"><path d="M454,272 l10,16 l-20,0 Z"/></g>
-        <text x="250" y="380" font-family="Shippori Mincho, serif" font-size="26" fill="#1f3a6e" opacity="0.3" letter-spacing="0.1em">日本 · Honshū</text>
-        <!-- route: Tokyo(E) -> Takayama(NW-central) -> Kyoto(W) -> Osaka(W) -->
-        <path d="M720,330 L470,295 L320,360 L270,385" fill="none" stroke="url(#route)" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="1 12" opacity="0.55"/>
-        <path d="M720,330 L470,295 M470,295 L320,360 M320,360 L270,385" fill="none" stroke="url(#route)" stroke-width="4.5" stroke-linecap="round" opacity="0.95"/>
+        <text x="250" y="395" font-family="Shippori Mincho, serif" font-size="26" fill="#1f3a6e" opacity="0.3" letter-spacing="0.1em">日本 · Honshū</text>
+        <!-- route: Tokyo(E) -> Takayama -> Kyoto -> back Tokyo -> Naeba(N of Tokyo) -->
+        <path d="M720,330 L470,295 M470,295 L320,360 M320,360 L720,330 M720,330 L650,200" fill="none" stroke="url(#route)" stroke-width="4.5" stroke-linecap="round" opacity="0.92"/>
         <g font-family="Outfit, sans-serif" font-weight="700" filter="url(#ds)">
           <g><circle cx="720" cy="330" r="14" fill="#c8341f"/><text x="720" y="335" font-size="13" fill="#fff" text-anchor="middle">1</text><text x="720" y="362" font-size="14" fill="#16141a" text-anchor="middle" font-weight="800">Tokyo</text></g>
           <g><circle cx="470" cy="295" r="13" fill="#1f3a6e"/><text x="470" y="300" font-size="13" fill="#fff" text-anchor="middle">3</text><text x="470" y="276" font-size="13" fill="#16141a" text-anchor="middle">Takayama</text></g>
           <g><circle cx="320" cy="360" r="13" fill="#7a8c3f"/><text x="320" y="365" font-size="13" fill="#fff" text-anchor="middle">4</text><text x="320" y="341" font-size="13" fill="#16141a" text-anchor="middle">Kyoto</text></g>
-          <g><circle cx="270" cy="385" r="12" fill="#1f3a6e"/><text x="270" y="389" font-size="12" fill="#fff" text-anchor="middle">★</text><text x="246" y="406" font-size="13" fill="#16141a" text-anchor="middle">Osaka</text></g>
+          <g><circle cx="650" cy="200" r="13" fill="#d6196b"/><text x="650" y="205" font-size="13" fill="#fff" text-anchor="middle">10</text><text x="650" y="181" font-size="13" fill="#16141a" text-anchor="middle">Naeba · Fuji Rock</text></g>
         </g>
         <g transform="translate(915,75)" opacity="0.55"><circle r="26" fill="none" stroke="#1f3a6e" stroke-width="1.5"/><path d="M0,-22 L6,0 L0,22 L-6,0 Z" fill="#1f3a6e"/><text x="0" y="-31" font-size="11" fill="#1f3a6e" text-anchor="middle" font-family="Outfit" font-weight="700">N</text></g>
       </svg>
@@ -333,23 +340,66 @@ footer .jp{font-family:'Shippori Mincho',serif;color:var(--verm-glow);font-size:
 
 <section id="route">
   <div class="wrap">
-    <div class="sec-label">17 July – 26 July</div>
-    <h2>The <span class="accent">ten</span> days</h2>
-    <p class="lead">An arrival evening, the six-day tour, and a three-day solo tail — with free-time picks chosen for you: food-forward, nightlife, low-impact, and easy to fold into your routine. Tap any day.</p>
+    <div class="sec-label">17 July – 28 July</div>
+    <h2>The <span class="accent">twelve</span> days</h2>
+    <p class="lead">The six-day tour, a Gion Matsuri parade, the run north, Fuji Rock, and a Tokyo finale. Each day's free time offers 3–4 options — teamLab, samurai &amp; kendo, temples, nightlife — so you pick by mood. Tap any day.</p>
     <div class="legend">
-      <span><span class="dotk" style="border-color:var(--indigo)"></span>Solo days</span>
+      <span><span class="dotk" style="border-color:var(--indigo)"></span>Solo / transit</span>
       <span><span class="dotk" style="border-color:var(--vermilion)"></span>Tokyo/Takayama (tour)</span>
-      <span><span class="dotk" style="border-color:var(--matcha)"></span>Kyoto/Osaka</span>
+      <span><span class="dotk" style="border-color:var(--matcha)"></span>Kyoto</span>
+      <span><span class="dotk" style="border-color:var(--neon)"></span>Fuji Rock</span>
     </div>
     <div class="tl" id="tl"></div>
   </div>
 </section>
 
-<section id="watch" class="alt">
+<section id="festivals" class="alt">
+  <div class="wrap">
+    <div class="sec-label">Lucky timing</div>
+    <h2>The <span class="accent">festivals</span> you landed on</h2>
+    <p class="lead">Your dates line up with one of Japan's Three Great Festivals — and your finale is the country's biggest music event. Two cultural jackpots, baked into the trip.</p>
+    <div class="cols">
+      <div class="panel reveal" style="border-top:4px solid var(--vermilion)">
+        <h3>🏮 Gion Matsuri · Kyoto</h3>
+        <div class="ph-sub">1,150 years old · all July · you catch the climax</div>
+        <div class="li"><span class="ck" style="color:var(--vermilion)">›</span><span><b>21–23 Jul — Ato Yoiyama evenings:</b> downtown Kyoto closes to traffic, lantern-lit floats glow, food stalls line the streets, locals stroll in yukata (6–11pm). You're in Kyoto on the tour for this.</span></div>
+        <div class="li"><span class="ck" style="color:var(--vermilion)">›</span><span><b>24 Jul — Ato Matsuri float parade:</b> the giant yamaboko floats roll through downtown (~9:30–11:50am). Lands on your solo Kyoto day — and it's the quieter, better-for-photos second parade.</span></div>
+        <div class="li"><span class="ck" style="color:var(--vermilion)">›</span><span><b>Eat:</b> yakitori, takoyaki, taiyaki, kakigori (shaved ice) from the stalls. Wear something light; it's hot.</span></div>
+      </div>
+      <div class="panel reveal" style="border-top:4px solid var(--neon)">
+        <h3>🎸 Fuji Rock · Naeba</h3>
+        <div class="ph-sub">Japan's biggest music festival · 24–26 Jul</div>
+        <div class="li"><span class="ck" style="color:var(--neon)">›</span><span><b>Your day: Sunday 26 Jul</b> — a 1-day pass (Saturday's sold out; Sunday still available as of June). 200+ artists across forest stages in a mountain valley.</span></div>
+        <div class="li"><span class="ck" style="color:var(--neon)">›</span><span><b>2026 names include</b> The xx, Khruangbin, Fujii Kaze, Basement Jaxx, Mitski, Massive Attack, Mogwai and many more across rock, electronic, indie &amp; jazz.</span></div>
+        <div class="li"><span class="ck" style="color:var(--neon)">›</span><span><b>The vibe:</b> stages strung along a crystal river through the forest — famous for its setting and communal spirit as much as the music.</span></div>
+      </div>
+    </div>
+    <div class="note fest reveal"><div class="ni">🎆</div><p><strong>Also on (if you'd reshaped differently):</strong> Osaka's Tenjin Matsuri (24–25 Jul, boat procession + fireworks) and Tokyo's Sumida River Fireworks (last Sat of July) — both spectacular, but they clash with the Fuji Rock plan. You chose the mountain; it's the right call for a music trip.</p></div>
+  </div>
+</section>
+
+<section id="fuji" class="neon-sec">
+  <div class="wrap">
+    <div class="sec-label">The finale</div>
+    <h2 style="color:var(--cream)">Fuji Rock, <span style="color:var(--neon-glow);font-style:italic">in detail</span></h2>
+    <p class="lead">Despite the name it's nowhere near Mt Fuji — it's at Naeba Ski Resort in the Niigata mountains, ~2 hrs north of Tokyo, and it's a genuinely special way to end the trip. Here's how to do your Sunday cleanly.</p>
+    <div class="grid3">
+      <div class="scard reveal"><div class="si">🎟️</div><h4>Ticket — book NOW</h4><p>Get the <span class="macro">1-Day Sunday pass (¥27,500)</span> before it sells out — Saturday already has. Buy via the official site / Ticket Pia / Eplus. You exchange it for a wristband at the gate.</p></div>
+      <div class="scard reveal"><div class="si">🚄</div><h4>Getting there</h4><p>Jōetsu Shinkansen <span class="macro">Tokyo → Echigo-Yuzawa (~90 min, ¥6,790)</span>, then the festival shuttle bus to Naeba (~40 min, ¥500 in / free back, runs 5am–2am). Enter the station as "Echigo-Yuzawa."</p></div>
+      <div class="scard reveal"><div class="si">🛏️</div><h4>Where to sleep — book NOW</h4><p>Naeba/Echigo-Yuzawa lodges sell out fast. Base in <span class="macro">Echigo-Yuzawa</span> (on the Shinkansen, shuttle-linked) for Sat &amp; Sun nights, or day-trip from Tokyo if lodging's gone (long but doable).</p></div>
+      <div class="scard reveal"><div class="si">🦵</div><h4>Knee-smart festival</h4><p>The site is <span class="macro">hilly forest paths</span> between stages. Pace it: pick a couple of stages, bring a lightweight fold-stool, comfy broken-in shoes, and don't try to see everything. One day, your rhythm.</p></div>
+      <div class="scard reveal"><div class="si">🌦️</div><h4>Weather-proof</h4><p>Mountain weather is famously unpredictable — <span class="macro">sun and heavy rain both likely</span>. Pack a poncho (not umbrella), quick-dry layers, and a dry bag for your phone. It can get muddy.</p></div>
+      <div class="scard reveal"><div class="si">🍢</div><h4>The food is great</h4><p>Fuji Rock's food stalls are legendary — far beyond festival junk. Curry, ramen, craft beer, world street food along the river. Your Shred can survive one day; enjoy it.</p></div>
+    </div>
+    <div class="note fest reveal"><div class="ni">⚡</div><p><strong>Two things to lock this week:</strong> the <strong>1-Day Sunday ticket</strong> and <strong>Echigo-Yuzawa accommodation for 25 &amp; 26 July</strong>. Both sell out for Fuji Rock, and they're the only time-critical pieces of the whole trip. Everything else can wait.</p></div>
+  </div>
+</section>
+
+<section id="watch">
   <div class="wrap">
     <div class="sec-label">See it move</div>
-    <h2>Watch the <span class="accent">cities</span></h2>
-    <p class="lead">A feel for the three places before you go — Tokyo's rush, Takayama's old streets, Kyoto's temples, Osaka's neon food alleys. Tap any to play.</p>
+    <h2>Watch the <span class="accent">trip</span></h2>
+    <p class="lead">A feel for what's ahead — Tokyo's rush, Kyoto's temples, the Gion Matsuri parade, and Fuji Rock in the mountains. Tap any to play.</p>
     <div class="vid-grid" id="vidgrid"></div>
     <div class="note info reveal"><div class="ni">▶️</div><p><strong>Traveller &amp; documentary clips</strong> from YouTube to set the scene — not the G Adventures tour itself. They play right here in the page.</p></div>
   </div>
@@ -359,97 +409,94 @@ footer .jp{font-family:'Shippori Mincho',serif;color:var(--verm-glow);font-size:
   <div class="wrap">
     <div class="sec-label">A clear-eyed audit</div>
     <h2 style="color:var(--cream)">What G Adventures <span style="color:var(--verm-glow);font-style:italic">actually</span> gives you</h2>
-    <p class="lead">"Tokyo Nights &amp; Kyoto Temples" (AJTK) is a lean, social, transport-and-experiences tour — light on inclusions by design, so you get freedom and a crew. Here's the honest split.</p>
+    <p class="lead">"Tokyo Nights &amp; Kyoto Temples" (AJTK) is a lean, social, transport-and-experiences tour — light on inclusions by design, so you get freedom and a crew for the first 6 days. Then you're independent.</p>
     <div class="cols">
       <div class="panel inc-p reveal">
-        <h3>Included</h3>
+        <h3>Included (tour)</h3>
         <div class="ph-sub">In the tour price</div>
-        <div class="li"><span class="ck">✓</span><span><b>All inter-city transport</b> — Shinkansen bullet trains Tokyo→Takayama→Kyoto + local transport to included activities</span></div>
-        <div class="li"><span class="ck">✓</span><span><b>5 nights' accommodation</b> — 4 nights hostels (multi-share, shared facilities) + 1 night traditional ryokan/onsen in Takayama</span></div>
-        <div class="li"><span class="ck">✓</span><span><b>CEO (tour leader)</b> throughout + orientation walks in Tokyo &amp; Takayama</span></div>
-        <div class="li"><span class="ck">✓</span><span><b>Welcome Moment</b> + <b>First Night Out</b> (Tokyo) + <b>Big Night Out</b> (Kyoto karaoke) + a Kyoto Discover Moment</span></div>
-        <div class="li"><span class="ck">✓</span><span>Free time built into Tokyo, Takayama &amp; Kyoto</span></div>
+        <div class="li"><span class="ck">✓</span><span><b>All inter-city transport</b> — Shinkansen Tokyo→Takayama→Kyoto + local transport to included activities</span></div>
+        <div class="li"><span class="ck">✓</span><span><b>5 nights</b> — 4 hostels (multi-share, shared facilities) + 1 ryokan/onsen in Takayama</span></div>
+        <div class="li"><span class="ck">✓</span><span><b>CEO</b> throughout + orientation walks (Tokyo, Takayama)</span></div>
+        <div class="li"><span class="ck">✓</span><span><b>Welcome + First Night Out</b> (Tokyo) + <b>Big Night Out</b> karaoke (Kyoto) + Kyoto Discover Moment</span></div>
       </div>
       <div class="panel exc-p reveal">
-        <h3>Not included</h3>
+        <h3>On you (whole trip)</h3>
         <div class="ph-sub">Budget on top</div>
-        <div class="li"><span class="ck">+</span><span><b>All flights</b> (~₹62k) — Mumbai→Tokyo + Osaka→Mumbai</span></div>
-        <div class="li"><span class="ck">+</span><span><b>All meals</b> — none included (Japan food is mid-priced; ~₹2,000–3,000/day eating well)</span></div>
-        <div class="li"><span class="ck">+</span><span><b>No JR Pass</b> on this tour — your solo Kyoto↔Osaka trains are pay-as-you-go (cheap, ~₹400–900)</span></div>
-        <div class="li"><span class="ck">+</span><span>Optional activities — temple entries (¥400–600), Nara day trip, Golden Pavilion, etc.</span></div>
-        <div class="li"><span class="ck">+</span><span><b>Pre/post nights</b> — your 17 Jul arrival night &amp; 3 solo Kyoto/Osaka nights</span></div>
-        <div class="li"><span class="ck">+</span><span>Travel insurance (compulsory), tips (~$5–7/day for CEO)</span></div>
+        <div class="li"><span class="ck">+</span><span><b>Flights</b> — Air India BOM⇄Tokyo (~₹80.6k, booked)</span></div>
+        <div class="li"><span class="ck">+</span><span><b>All meals</b> — none included (~₹2,500/day eating well)</span></div>
+        <div class="li"><span class="ck">+</span><span><b>Fuji Rock</b> — ticket (¥27,500) + Echigo-Yuzawa lodging + trains</span></div>
+        <div class="li"><span class="ck">+</span><span><b>Post-tour nights</b> — Kyoto (24th), Tokyo (25th, 27th), Echigo-Yuzawa (26th)</span></div>
+        <div class="li"><span class="ck">+</span><span>Travel insurance (compulsory for the tour), tips (~$5–7/day)</span></div>
       </div>
     </div>
     <div class="grid3" style="margin-top:30px">
-      <div class="scard reveal"><div class="si">🛏️</div><h4>Multi-share is the trade</h4><p>4 nights are <span class="macro">hostel multi-share</span> (4–6 to a room, shared bathrooms) — the known compromise for these dates + price + crowd. Japan's hostels are famously clean and orderly; bring earplugs &amp; an eye mask and it's very manageable.</p></div>
-      <div class="scard reveal"><div class="si">🎒</div><h4>Pack carry-on only</h4><p>Shinkansen luggage must be <span class="macro">under 160cm total</span> (carry-on size) + a day pack. Travel light — you carry your own bag through stations and up stairs. A soft carry-on is ideal.</p></div>
-      <div class="scard reveal"><div class="si">🎌</div><h4>Combo-tour crew</h4><p>This tour combines with longer G trips, so some travellers join/leave around you and a few will hold JR Passes you won't. Normal for the format — just means a sociable, shifting group of <span class="macro">max 16</span>.</p></div>
+      <div class="scard reveal"><div class="si">🛏️</div><h4>Multi-share is the trade</h4><p>4 tour nights are <span class="macro">hostel multi-share</span> (4–6/room, shared baths) — the known compromise for these dates + crowd. Japan's hostels are spotless; earplugs + eye mask sort it.</p></div>
+      <div class="scard reveal"><div class="si">🎒</div><h4>Pack carry-on only</h4><p>Shinkansen luggage must be <span class="macro">under 160cm total</span> + a day pack. You carry your own bag through stations &amp; up stairs — and to Fuji Rock. Travel light; a soft carry-on is ideal.</p></div>
+      <div class="scard reveal"><div class="si">🧳</div><h4>Luggage hack</h4><p>Use Japan's <span class="macro">takuhaibin</span> service to forward your main bag (e.g. Kyoto → Tokyo hotel) so you do Fuji Rock with just a day pack. Cheap, reliable, overnight — most hotels arrange it.</p></div>
     </div>
   </div>
 </section>
 
-<section id="flights">
+<section id="flights" class="alt">
   <div class="wrap">
-    <div class="sec-label">Mumbai ↔ Japan</div>
-    <h2>Getting <span class="accent">there</span> &amp; back</h2>
-    <p class="lead">Open-jaw: fly into Tokyo for the tour start, home from Osaka after your solo tail. The outbound is the gift — <b>direct flights</b> Mumbai→Tokyo.</p>
+    <div class="sec-label">Mumbai ⇄ Tokyo</div>
+    <h2>The <span class="accent">flights</span></h2>
+    <p class="lead">Booked: Air India, nonstop both ways, refundable. Both legs from/to Tokyo — perfect now the trip ends in Tokyo after Fuji Rock (no open-jaw needed).</p>
     <div class="flights">
       <div class="fcard reveal">
-        <div class="froute">BOM <span class="arrow">→</span> NRT/HND</div>
-        <div class="fdate">Out · 17 July</div>
-        <div class="fline"><span>Best pick</span><b>Air India / ANA — DIRECT</b></div>
-        <div class="fline"><span>Flight time</span><b>~8h 30m nonstop</b></div>
-        <div class="fline"><span>One-way</span><b>₹30–45k (peak Jul)</b></div>
-        <div class="fline"><span>Lands</span><b>17th eve / 18th — pre-night booked</b></div>
-        <span class="fbadge">Direct · No e-visa transit fuss</span>
+        <div class="froute">BOM <span class="arrow">→</span> NRT</div>
+        <div class="fdate">Out · Fri 17 Jul</div>
+        <div class="fline"><span>Airline</span><b>Air India — nonstop</b></div>
+        <div class="fline"><span>Depart</span><b>Mumbai 19:30</b></div>
+        <div class="fline"><span>Arrive</span><b>Tokyo Narita 08:15 (+1)</b></div>
+        <div class="fline"><span>Duration</span><b>9h 15m</b></div>
+        <span class="fbadge">Lands morning of tour Day 1</span>
       </div>
       <div class="fcard reveal">
-        <div class="froute">KIX <span class="arrow">→</span> BOM</div>
-        <div class="fdate">Back · 26 July</div>
-        <div class="fline"><span>From</span><b>Osaka Kansai (KIX)</b></div>
-        <div class="fline"><span>Via</span><b>1 stop (Gulf / SE-Asia hub)</b></div>
-        <div class="fline"><span>One-way</span><b>₹28–38k</b></div>
-        <div class="fline"><span>Note</span><b>KIX is ~75 min from Kyoto/Osaka</b></div>
-        <span class="fbadge">Open-jaw — no backtracking to Tokyo</span>
+        <div class="froute">HND <span class="arrow">→</span> BOM</div>
+        <div class="fdate">Back · Tue 28 Jul</div>
+        <div class="fline"><span>Airline</span><b>Air India — nonstop</b></div>
+        <div class="fline"><span>Depart</span><b>Tokyo Haneda 08:50</b></div>
+        <div class="fline"><span>Arrive</span><b>Mumbai 14:20</b></div>
+        <div class="fline"><span>Fare</span><b>₹80,605 · refundable</b></div>
+        <span class="fbadge">Both legs Tokyo — no backtrack</span>
       </div>
     </div>
-    <div class="note good reveal"><div class="ni">✈️</div><p><strong>Why open-jaw:</strong> your tour ends in Kyoto and your solo tail is in Kyoto/Osaka, so flying home from <strong>Osaka (KIX)</strong> saves a needless trip back to Tokyo. Book BOM→Tokyo and Osaka→BOM as one multi-city ticket, or two one-ways if cheaper. All-in: <strong>~₹58–80k</strong>. July is actually one of the cheaper months on this route.</p></div>
+    <div class="note good reveal"><div class="ni">✈️</div><p><strong>Note on Day 1:</strong> you land Narita 08:15 on the 18th — that's tour Day 1, welcome meeting ~6pm. Comfortable, but it means no pre-tour night on this flight: go straight to the joining hotel, drop bags, explore, meet the group at 6. <strong>Tip:</strong> the MMTDEALS / ICICI-card offer in your booking could shave ₹1,800+.</p></div>
   </div>
 </section>
 
-<section id="visa" class="alt">
+<section id="visa">
   <div class="wrap">
     <div class="sec-label">The easy part</div>
     <h2>Japan <span class="accent">e-visa</span></h2>
-    <p class="lead">Straightforward for an Indian passport — Japan offers an online e-visa, no embassy queue, fast turnaround. None of the timeline gamble of Schengen or the UK.</p>
+    <p class="lead">Straightforward for an Indian passport — online e-visa, no embassy queue, fast turnaround. The visa win that made Japan work for your fixed dates.</p>
     <div class="vgrid">
       <div class="vcard reveal">
-        <h3>🇯🇵 Japan Tourist e-Visa</h3>
+        <h3>🇯🇵 Tourist e-Visa</h3>
         <div class="vmeta">
-          <div class="vm"><div class="vv">~₹500</div><div class="vl">Fee (single)</div></div>
+          <div class="vm"><div class="vv">~₹500</div><div class="vl">Fee</div></div>
           <div class="vm"><div class="vv">~5–7 days</div><div class="vl">Processing</div></div>
-          <div class="vm"><div class="vv">mofa.go.jp</div><div class="vl">Official e-visa</div></div>
+          <div class="vm"><div class="vv">mofa.go.jp</div><div class="vl">Official</div></div>
         </div>
-        <div class="vstep"><span class="vn">1</span><span>Apply via the official Japan e-Visa portal (or a VFS-authorised centre)</span></div>
+        <div class="vstep"><span class="vn">1</span><span>Apply via the official Japan e-Visa portal (or VFS-authorised centre)</span></div>
         <div class="vstep"><span class="vn">2</span><span>Passport, photo, flight + hotel bookings, itinerary, bank proof</span></div>
-        <div class="vstep"><span class="vn">3</span><span>G Adventures voucher covers your tour accommodation portion</span></div>
-        <div class="vstep"><span class="vn">4</span><span>Receive e-visa by email → carry a printout (border may ask)</span></div>
+        <div class="vstep"><span class="vn">3</span><span>G Adventures voucher covers the tour accommodation portion</span></div>
+        <div class="vstep"><span class="vn">4</span><span>Receive e-visa by email → carry a printout</span></div>
       </div>
       <div class="vcard reveal" style="border-top-color:var(--vermilion)">
         <h3>📋 Good to know</h3>
         <div class="vmeta">
           <div class="vm"><div class="vv">6 mo</div><div class="vl">Passport validity</div></div>
-          <div class="vm"><div class="vv">Cash</div><div class="vl">Still king in Japan</div></div>
-          <div class="vm"><div class="vv">IC card</div><div class="vl">Suica/Pasmo for transit</div></div>
+          <div class="vm"><div class="vv">Cash</div><div class="vl">Still king</div></div>
+          <div class="vm"><div class="vv">IC card</div><div class="vl">Suica/Pasmo</div></div>
         </div>
-        <div class="vstep"><span class="vn">i</span><span><b>Insurance is compulsory</b> for the G tour (min USD 200k medical) — buy before you go</span></div>
-        <div class="vstep"><span class="vn">i</span><span>Get a <b>Suica/Pasmo IC card</b> (or eSIM + mobile Suica) for tap-and-go trains</span></div>
-        <div class="vstep"><span class="vn">i</span><span>Carry <b>cash</b> — 7-Eleven/Post Office ATMs take foreign cards; cards aren't universal</span></div>
-        <div class="vstep"><span class="vn">i</span><span><b>Tattoos:</b> cover them at onsens (Takayama ryokan) — some don't permit them</span></div>
+        <div class="vstep"><span class="vn">i</span><span><b>Insurance compulsory</b> for the G tour (min USD 200k medical)</span></div>
+        <div class="vstep"><span class="vn">i</span><span>Get a <b>Suica/Pasmo IC card</b> or Mobile Suica for tap-and-go trains</span></div>
+        <div class="vstep"><span class="vn">i</span><span>Carry <b>cash</b> — 7-Eleven / Post Office ATMs take foreign cards</span></div>
+        <div class="vstep"><span class="vn">i</span><span><b>Tattoos:</b> cover at the Takayama onsen &amp; any sento</span></div>
       </div>
     </div>
-    <div class="note good reveal"><div class="ni">✅</div><p><strong>This is the visa win that made Japan work for your fixed dates</strong> — online, cheap, fast. Apply in <strong>late June / early July</strong> with your flights and the G voucher in hand and you're clear with margin.</p></div>
   </div>
 </section>
 
@@ -457,47 +504,31 @@ footer .jp{font-family:'Shippori Mincho',serif;color:var(--verm-glow);font-size:
   <div class="wrap">
     <div class="sec-label">Staying on protocol</div>
     <h2 style="color:var(--cream)">The Shred, <span style="color:var(--verm-glow);font-style:italic">in Japan</span></h2>
-    <p class="lead">Japan might be the single best food culture for a cut — lean protein everywhere, controlled portions, low-oil cooking. Here's how to stay locked in while still eating the good stuff.</p>
+    <p class="lead">Japan might be the best food culture for a cut — lean protein everywhere, controlled portions, low-oil cooking. Hold the line while still eating the good stuff (and surviving two festival days).</p>
     <div class="grid3">
-      <div class="scard reveal"><div class="si">🐟</div><h4>Sashimi &amp; grilled fish</h4><p><span class="macro">Sashimi, grilled salmon/mackerel, yakitori</span> — high protein, low carb, minimal oil. The default win at any conveyor-sushi or izakaya.</p></div>
-      <div class="scard reveal"><div class="si">🍢</div><h4>Yakitori &amp; izakaya</h4><p>Skewered grilled chicken (go for <span class="macro">momo, sasami, negima</span>) is lean protein by the stick. Order grilled over fried, skip the rice-heavy sides.</p></div>
-      <div class="scard reveal"><div class="si">🥚</div><h4>Konbini is your friend</h4><p>7-Eleven/Lawson have <span class="macro">boiled eggs, salad chicken (sarada chikin), edamame, Greek yogurt</span> — perfect macro-friendly grabs between sights. A Shred traveller's secret weapon.</p></div>
-      <div class="scard reveal"><div class="si">🍜</div><h4>The carb traps</h4><p>Ramen, gyudon, katsu, mochi — delicious, carb/oil heavy. Enjoy them <span class="macro">intentionally on the big nights</span> (First Night Out, Kyoto), pre-logged, not by default.</p></div>
-      <div class="scard reveal"><div class="si">🚶</div><h4>Steps handle cardio</h4><p>Tokyo &amp; Kyoto are huge walking cities — you'll easily clock <span class="macro">15–20k steps/day</span>. That's your NEAT cardio sorted without a gym. Knee-friendly: it's flat, paved walking.</p></div>
-      <div class="scard reveal"><div class="si">🍺</div><h4>The night-out plan</h4><p>Two built-in nights out (Tokyo, Kyoto karaoke). <span class="macro">Highballs &amp; shochu-soda</span> are lower-cal than beer/sake. Hydrate, enjoy them as your treat windows, tighten around them.</p></div>
+      <div class="scard reveal"><div class="si">🐟</div><h4>Sashimi &amp; grilled fish</h4><p><span class="macro">Sashimi, grilled salmon/mackerel, yakitori</span> — high protein, low carb, minimal oil. The default at any sushi spot or izakaya.</p></div>
+      <div class="scard reveal"><div class="si">🥚</div><h4>Konbini is your friend</h4><p>7-Eleven/Lawson: <span class="macro">boiled eggs, salad chicken, edamame, Greek yogurt</span> — macro-perfect grabs between sights and on travel days.</p></div>
+      <div class="scard reveal"><div class="si">🚶</div><h4>Steps = cardio</h4><p>Tokyo &amp; Kyoto are huge walking cities — <span class="macro">15–20k steps/day</span>, flat and paved. Knee-friendly NEAT cardio without a gym.</p></div>
+      <div class="scard reveal"><div class="si">🍜</div><h4>The carb traps</h4><p>Ramen, katsu, mochi, festival stalls — enjoy <span class="macro">intentionally on the big days</span> (nights out, Gion, Fuji Rock), pre-logged, not by default.</p></div>
+      <div class="scard reveal"><div class="si">🍺</div><h4>Night-out plan</h4><p>Karaoke + Fuji Rock = drinks. <span class="macro">Highballs &amp; shochu-soda</span> beat beer/sake on calories. Hydrate, treat-window them, tighten around.</p></div>
+      <div class="scard reveal"><div class="si">🎪</div><h4>Festival-day macros</h4><p>Two festival days (Gion food stalls, Fuji Rock). Anchor each with a <span class="macro">protein konbini breakfast</span>, then enjoy the stalls. Two flexible days in twelve won't derail a thing.</p></div>
     </div>
   </div>
 </section>
 
-<section id="food">
+<section id="food" class="alt">
   <div class="wrap">
     <div class="sec-label">What you'll eat</div>
     <h2>The <span class="accent">table</span></h2>
-    <p class="lead">From conveyor sushi to Osaka's street food — and plenty for vegetarians too (handy for the veg eaters back home). The shortlist worth chasing.</p>
+    <p class="lead">Conveyor sushi to festival stalls — and plenty for vegetarians (handy for the veg eaters back home). The shortlist worth chasing.</p>
     <div class="food-grid">
-      <div class="fc reveal"><h4>Sushi &amp; Sashimi</h4><p>Conveyor-belt (kaiten) sushi in Tokyo is cheap, fresh, and endlessly fun. Tsukiji Outer Market for the real deal.</p></div>
-      <div class="fc reveal"><h4>Ramen</h4><p>Each region its own style — Tokyo shoyu, rich tonkotsu. A once-or-twice treat on the trip. Ticket-machine shops are the move.</p></div>
-      <div class="fc reveal"><h4>Okonomiyaki &amp; Takoyaki</h4><p>Osaka's soul food — savoury pancakes and octopus balls in Dotonbori. Your solo-tail must-eat.</p></div>
-      <div class="fc reveal"><h4>Hida Beef</h4><p>Takayama's famous wagyu — try it grilled or as sushi on Sake Street. A regional splurge on your ryokan day.</p></div>
-      <div class="fc veg reveal"><div class="vt">Vegetarian</div><h4>Shojin Ryori</h4><p>Buddhist temple cuisine in Kyoto — elegant, entirely plant-based, deeply satisfying. A Kyoto highlight for veg eaters.</p></div>
-      <div class="fc veg reveal"><div class="vt">Vegetarian</div><h4>Veg ramen &amp; tofu</h4><p>Vegetable/miso ramen, agedashi tofu, vegetable tempura, inari sushi — Japan has rich meat-free options if you ask (look for "yasai").</p></div>
+      <div class="fc reveal"><h4>Sushi &amp; Sashimi</h4><p>Conveyor (kaiten) sushi in Tokyo — cheap, fresh, fun. Tsukiji Outer Market for the real deal.</p></div>
+      <div class="fc reveal"><h4>Ramen</h4><p>Tokyo shoyu, rich tonkotsu — a once-or-twice treat. Ticket-machine shops are the move.</p></div>
+      <div class="fc reveal"><h4>Hida Beef</h4><p>Takayama's famous wagyu — grilled or as sushi on Sake Street. A regional splurge on your ryokan day.</p></div>
+      <div class="fc reveal"><h4>Festival stalls</h4><p>Gion &amp; Fuji Rock: yakitori, takoyaki, taiyaki, kakigori, curry, craft beer. Street food at its best.</p></div>
+      <div class="fc veg reveal"><div class="vt">Vegetarian</div><h4>Shojin Ryori</h4><p>Kyoto Buddhist temple cuisine — elegant, fully plant-based. A veg highlight.</p></div>
+      <div class="fc veg reveal"><div class="vt">Vegetarian</div><h4>Veg ramen &amp; tofu</h4><p>Vegetable/miso ramen, agedashi tofu, tempura, inari sushi — look for "yasai." Plenty meat-free.</p></div>
     </div>
-    <div class="note reveal"><div class="ni">🍵</div><p><strong>A Kyoto ritual worth booking:</strong> a traditional tea ceremony (matcha + wagashi) — one of the tour's suggested free-time activities, and a genuinely lovely, low-key contrast to the neon and karaoke. Calm, cultural, and very Kyoto.</p></div>
-  </div>
-</section>
-
-<section id="weather" class="alt">
-  <div class="wrap">
-    <div class="sec-label">Mid-to-late July</div>
-    <h2>The <span class="accent">weather</span></h2>
-    <p class="lead">Honest heads-up: this is Japanese summer — hot and humid, with the rainy-season tail possible early on. Pack for heat, not cold, and plan around the midday sun.</p>
-    <div class="snapshot reveal">
-      <div class="snap"><div class="ic">🌆</div><div class="v">31–35°C</div><div class="l">Tokyo · humid</div></div>
-      <div class="snap"><div class="ic">⛰️</div><div class="v">26–31°C</div><div class="l">Takayama · cooler</div></div>
-      <div class="snap"><div class="ic">🏯</div><div class="v">32–36°C</div><div class="l">Kyoto/Osaka · hot</div></div>
-      <div class="snap"><div class="ic">💧</div><div class="v">70–85%</div><div class="l">Humidity</div></div>
-    </div>
-    <div class="note reveal"><div class="ni">🌂</div><p><strong>For a Mumbai resident this is familiar territory</strong> — like the monsoon's mugginess but milder than peak Indian summer. Light breathable clothes, a compact umbrella, sunscreen, and a refillable water bottle. Takayama (in the Alps) is a pleasant few degrees cooler — the ryokan night is a lovely break from the city heat. Convenience stores everywhere mean cold drinks are never far.</p></div>
   </div>
 </section>
 
@@ -505,76 +536,66 @@ footer .jp{font-family:'Shippori Mincho',serif;color:var(--verm-glow);font-size:
   <div class="wrap">
     <div class="sec-label">The full number</div>
     <h2 style="color:var(--cream)">What it all <span style="color:var(--verm-glow);font-style:italic">costs</span></h2>
-    <p class="lead">Honest, all-in, for the full 10 days including your arrival night and 3-day solo Kyoto/Osaka tail.</p>
+    <p class="lead">Honest, all-in, for the full 12 days including the tour, Fuji Rock, and all your independent nights.</p>
     <div class="cost reveal">
       <div class="crow"><div><div class="cl">G Adventures tour</div><div class="cs">6 days · AJTK · transport, 5 nights, CEO, 2 nights out</div></div><div class="cv">₹1,00,000</div></div>
-      <div class="crow"><div><div class="cl">Flights (open-jaw)</div><div class="cs">BOM→Tokyo direct + Osaka→BOM</div></div><div class="cv">₹62,000</div></div>
-      <div class="crow"><div><div class="cl">Japan e-visa</div><div class="cs">Online tourist visa</div></div><div class="cv">₹500</div></div>
-      <div class="crow"><div><div class="cl">4 extra nights</div><div class="cs">1 Tokyo arrival + 3 Kyoto/Osaka, mid-range hotel</div></div><div class="cv">₹24,000</div></div>
-      <div class="crow"><div><div class="cl">Meals (10 days)</div><div class="cs">~₹2,500/day eating well, konbini + izakaya + treats</div></div><div class="cv">₹25,000</div></div>
-      <div class="crow"><div><div class="cl">Local transit + entries</div><div class="cs">IC card, Kyoto/Osaka trains, temple fees, Nara</div></div><div class="cv">₹9,000</div></div>
-      <div class="crow"><div><div class="cl">Nights out + buffer</div><div class="cs">karaoke, drinks, tips, SIM, souvenirs</div></div><div class="cv">₹12,000</div></div>
-      <div class="crow tot"><div class="cl">All-in estimate</div><div class="cv">~₹2,32,000</div></div>
+      <div class="crow"><div><div class="cl">Flights (booked)</div><div class="cs">Air India BOM⇄Tokyo nonstop, refundable</div></div><div class="cv">₹80,605</div></div>
+      <div class="crow"><div><div class="cl">Fuji Rock</div><div class="cs">1-day Sunday ticket (¥27,500) + shuttle + trains north</div></div><div class="cv">₹22,000</div></div>
+      <div class="crow"><div><div class="cl">Post-tour nights (4)</div><div class="cs">Kyoto 24 + Echigo-Yuzawa 25–26 + Tokyo 27</div></div><div class="cv">₹26,000</div></div>
+      <div class="crow"><div><div class="cl">Meals (12 days)</div><div class="cs">~₹2,500/day, konbini + izakaya + treats</div></div><div class="cv">₹30,000</div></div>
+      <div class="crow"><div><div class="cl">Local transit + entries</div><div class="cs">IC card, temples, Gion, Tokyo trains</div></div><div class="cv">₹10,000</div></div>
+      <div class="crow"><div><div class="cl">Visa, insurance, buffer</div><div class="cs">e-visa, compulsory insurance, SIM, tips, souvenirs</div></div><div class="cv">₹14,000</div></div>
+      <div class="crow tot"><div class="cl">All-in estimate</div><div class="cv">~₹2,82,000</div></div>
     </div>
-    <div class="note good reveal" style="background:rgba(250,247,241,.06);border-left-color:var(--matcha-glow)"><div class="ni">💡</div><p style="color:#cbc6d0"><strong style="color:var(--cream)">You can trim this</strong> — konbini breakfasts/lunches and hostel nights (already in the tour) keep costs down; the big variables are flights (book early, Thu/Fri) and how hard you go on the nights out and Hida beef. ~₹2.3L all-in for 10 days in Japan is solid.</p></div>
-  </div>
-</section>
-
-<section id="prep">
-  <div class="wrap">
-    <div class="sec-label">Pack &amp; prep</div>
-    <h2>The <span class="accent">carry-on</span> rules</h2>
-    <p class="lead">The Shinkansen luggage cap means pack light — a soft carry-on (under 160cm total) plus a day pack. You carry your own bag through stations and up stairs, so travel lean.</p>
-    <div class="pack">
-      <div class="pcol reveal"><h4>👕 Summer kit</h4><ul><li>Light breathable tees, shorts/light trousers</li><li>One smart-casual set for nights out</li><li>Compact umbrella + light rain layer</li><li>Modest layer for temples (covers shoulders/knees)</li></ul></div>
-      <div class="pcol reveal"><h4>👟 Feet</h4><ul><li>Broken-in walking trainers (15–20k steps/day)</li><li>Easy slip-on shoes (temples &amp; ryokan require removal)</li><li>Sandals/flip-flops</li></ul></div>
-      <div class="pcol reveal"><h4>🎒 The bag</h4><ul><li>Soft carry-on, under 160cm total (Shinkansen rule)</li><li>Day pack for daily essentials</li><li>Packing cubes — small rooms, multi-share</li><li>Earplugs + eye mask (hostel nights)</li></ul></div>
-      <div class="pcol reveal"><h4>🔌 Tech &amp; docs</h4><ul><li>Type A adapter (100V), power bank</li><li>eSIM or pocket wifi; set up Mobile Suica</li><li>Cash + a backup card (7-Eleven ATMs)</li><li>Printed e-visa, insurance, G voucher</li></ul></div>
-    </div>
+    <div class="note good reveal" style="background:rgba(250,247,241,.06);border-left-color:var(--matcha-glow)"><div class="ni">💡</div><p style="color:#cbc6d0"><strong style="color:var(--cream)">The big-ticket items are flights + tour + Fuji Rock</strong> — all fairly fixed now. Trim the rest with konbini meals and an Echigo-Yuzawa guesthouse over a hotel. ~₹2.8L all-in for 12 days in Japan including a major festival is strong value.</p></div>
   </div>
 </section>
 
 <section id="book" class="alt">
   <div class="wrap">
     <div class="cta-box reveal">
-      <div class="badge-done">✅ Tour booked — 18 July departure locked in</div>
-      <h3>From here, four moves</h3>
-      <p>The G Adventures tour is confirmed. Here's the sequence to lock the rest of the trip around it cleanly.</p>
+      <div class="badge-done">✅ Tour + flights booked</div>
+      <div class="badge-urgent">🔥 Book this week: Fuji Rock ticket + Echigo-Yuzawa lodging</div>
+      <h3>What's left to lock</h3>
+      <p>The tour and flights are done. The only time-critical pieces are the festival ticket and its accommodation — both sell out. Everything else can follow.</p>
       <div class="cta-steps">
-        <div class="cta-step"><div class="csn">01</div><div class="cst">Book open-jaw flights — <b>BOM→Tokyo (17 Jul) + Osaka→BOM (26 Jul)</b>, direct out</div></div>
-        <div class="cta-step"><div class="csn">02</div><div class="cst">Book pre-night in Tokyo (17–18 Jul) + 3 Kyoto/Osaka nights (23–26 Jul)</div></div>
+        <div class="cta-step"><div class="csn">01</div><div class="cst">Buy the <b>Fuji Rock 1-Day Sunday ticket</b> (¥27,500) via the official site / Ticket Pia</div></div>
+        <div class="cta-step"><div class="csn">02</div><div class="cst">Book <b>Echigo-Yuzawa lodging</b> for 25 &amp; 26 July — before it's gone</div></div>
         <div class="cta-step"><div class="csn">03</div><div class="cst">Apply Japan e-visa (late June) + buy compulsory travel insurance</div></div>
-        <div class="cta-step"><div class="csn">04</div><div class="cst">Sort eSIM + IC card, pack carry-on only, download the G Adventures app</div></div>
+        <div class="cta-step"><div class="csn">04</div><div class="cst">Book post-tour hotels (Kyoto 24, Tokyo 27), eSIM + IC card, pack carry-on</div></div>
       </div>
     </div>
-    <div class="note info reveal"><div class="ni">📱</div><p><strong>One pre-trip tip:</strong> the G Adventures app shows your exact joining hotel and confirmed accommodation (which can vary per departure), plus the welcome-meeting time. Check it a few days out, and pre-book a pre-tour Tokyo night at or near the joining hotel so Day 1 is seamless.</p></div>
+    <div class="note info reveal"><div class="ni">📱</div><p><strong>One pre-trip tip:</strong> the G Adventures app shows your exact joining hotel and confirmed accommodation (varies per departure) and the welcome-meeting time — check it a few days out. Since you land the morning of Day 1, head straight there.</p></div>
   </div>
 </section>
 
 <footer>
   <div class="fbig">Neon &amp; Nirvana</div>
-  <div>Japan: Tokyo, Takayama &amp; Kyoto · 17–26 July 2026</div>
+  <div>Japan: Tokyo, Takayama, Kyoto &amp; Fuji Rock · 17–28 July 2026</div>
   <div class="jp">いってきます！</div>
-  <p class="disc">Tour details from the G Adventures AJTK trip dossier (updated June 14, 2026). Flights, visa rules and prices verified June 2026 and subject to change — reconfirm on the airline sites, the official Japan e-visa portal, and the G Adventures app before travel. Accommodation varies per departure. Photographs via Wikimedia Commons under Creative Commons licenses. A personal planning guide, not a booking service.</p>
+  <p class="disc">Tour details from the G Adventures AJTK dossier (updated June 14, 2026). Flights booked (Air India). Festival dates, ticket status and prices verified June 2026 and subject to change — reconfirm on en.fujirockfestival.com, the official Japan e-visa portal, and the G Adventures app before travel. Fuji Rock Sunday tickets and Naeba-area lodging sell out. Photographs via Wikimedia Commons under Creative Commons licenses. A personal planning guide, not a booking service.</p>
 </footer>
 
 <script>
 var days=[
- {k:'solo',date:'Thu 17 Jul',title:'Fly Mumbai → Tokyo',loc:'In transit · solo',body:'Catch the direct Air India/ANA flight to Tokyo (~8.5h). Depending on timing you land late on the 17th or the morning of the 18th. Check into your pre-booked Tokyo hotel (ideally at/near the G joining hotel), grab a first konbini meal, and rest up for the tour start.',tags:[['night','Direct flight']]},
- {k:'tokyo',date:'Fri 18 Jul · Day 1',title:'Tokyo — the crew assembles',loc:'Tokyo',body:'Tour Day 1. Free time until the 6:00pm welcome meeting (bring your passport for train-ticket info). Then your First Night Out — drinks and dancing with your new group. Pick a buzzing spot and toast the adventure.',picks:[['🗼','Day free pre-meeting: Shibuya Crossing + Shibuya Sky for the view'],['🍶','First Night Out: izakaya-hop in Shibuya/Shinjuku with the group'],['🥢','Macro-friendly: conveyor sushi for an easy high-protein dinner']],tags:[['inc','Welcome + First Night Out'],['night','Hostel'],['night','Nightlife']]},
- {k:'tokyo',date:'Sat 19 Jul · Day 2',title:'Tokyo — your city day',loc:'Tokyo',body:'A CEO orientation walk (supermarkets, ATMs, the lay of the land), then a full free day in Tokyo. The options are endless — pick what fits your pace. All flat, train-and-walk; easy on the knees.',picks:[['⛩️','Senso-ji + Asakusa old-town lanes (free)'],['🌳','Meiji Shrine + Harajuku/Takeshita street fashion'],['🎮','Akihabara for anime/games/electronics, or Shibuya shopping'],['🍵','Optional: tea + people-watching in a quiet Ueno Park corner']],tags:[['inc','Orientation walk'],['night','Hostel']]},
- {k:'tokyo',date:'Sun 20 Jul · Day 3',title:'Bullet train to Takayama',loc:'Tokyo → Takayama',body:'Board the Shinkansen (~4h) into the Japanese Alps to Takayama. A CEO orientation walk through Edo-era merchant streets, sake breweries, and craft shops. Evening: kick back in a traditional ryokan with tatami, futons, and an onsen soak — the trip\'s relaxation high point.',picks:[['🍶','Sake Street tastings (¥300–400) — Takayama is famous for it'],['🐄','Hida beef — try it grilled or as sushi (a regional splurge)'],['♨️','Onsen soak at the ryokan (cover tattoos if any)'],['🏘️','Optional: Hida Folk Village, Edo-era thatched farmhouses (¥700)']],tags:[['inc','Bullet train + ryokan/onsen'],['inc','Orientation walk']]},
- {k:'kyoto',date:'Mon 21 Jul · Day 4',title:'To Kyoto + Big Night Out',loc:'Takayama → Kyoto',body:'Train to the imperial capital, Kyoto (~3.5–4h), then the rest of the day to explore. Tonight is the Big Night Out — drinks, then karaoke or one of Kyoto\'s izakayas. Kanpai!',picks:[['⛩️','Fushimi Inari\'s torii gates — go late afternoon, fewer crowds, magic light'],['🏯','Kiyomizu-dera (¥400) + the Higashiyama lanes below it'],['🎤','Big Night Out: karaoke booth with the group'],['🏮','Gion at night — lantern-lit geisha district (free to wander)']],tags:[['inc','Bullet train + Big Night Out'],['night','Karaoke']]},
- {k:'kyoto',date:'Tue 22 Jul · Day 5',title:'Kyoto — temples & gardens',loc:'Kyoto',body:'Kyoto is yours today — the options are endless. Grab a buddy from the group and explore temples, a tea ceremony, or a calligraphy class. A calmer, cultural day to balance the nights out.',picks:[['🦌','Day trip to Nara (~45m) — giant Buddha + bowing deer; gentle, flat, lovely'],['✨','Kinkaku-ji Golden Pavilion (¥500) on its reflective pond'],['🍵','Traditional tea ceremony — matcha + wagashi, a serene Kyoto ritual'],['🎋','Arashiyama bamboo grove + riverside (early to beat crowds)']],tags:[['night','Hotel']]},
- {k:'kyoto',date:'Wed 23 Jul · Day 6',title:'Tour ends → solo begins',loc:'Kyoto · tour ends',body:'Tour departure day — exchange socials with the crew and say "until next time." But you\'re staying on: transfer to your own Kyoto/Osaka base and start your solo tail. Slow it down, eat well, revisit a favourite.',picks:[['🛍️','Nishiki Market — "Kyoto\'s kitchen," a food-stall street (lunch crawl)'],['🚆','Hop to Osaka (~15m by train) to base for your final nights'],['🏯','Osaka Castle + its park — flat, scenic, easy afternoon']],tags:[['night','Your own hotel']]},
- {k:'kyoto',date:'Thu 24 Jul',title:'Osaka — the kitchen of Japan',loc:'Osaka · solo',body:'A full solo day in Osaka, Japan\'s most fun-loving food city. Dotonbori\'s neon canal, street food, and a more raucous nightlife than Kyoto. Flat, walkable, endlessly snackable.',picks:[['🐙','Dotonbori: takoyaki, okonomiyaki under the Glico sign'],['🗼','Umeda Sky Building floating-garden observatory at sunset'],['🍜','Shinsekai district for retro vibes + kushikatsu'],['🌃','Namba nightlife — bars, music, late-night energy']],tags:[['night','Solo']]},
- {k:'kyoto',date:'Fri 25 Jul',title:'Your final free day',loc:'Kyoto / Osaka · solo',body:'Your last full day — shape it however you like. A relaxed temple morning, last shopping, a great final dinner. Whatever you didn\'t fit in, this is the day.',picks:[['🛒','Last-minute: Kuromon Ichiba Market (Osaka) or Kyoto craft shops'],['♨️','A sento/onsen soak to unwind before the flight'],['🍣','A standout farewell sushi or kaiseki dinner'],['🎒','Pre-pack; use takuhaibin to send bags to the airport if handy']],tags:[['night','Solo']]},
- {k:'solo',date:'Sat 26 Jul',title:'Home from Osaka',loc:'Osaka (KIX) → Mumbai',body:'Your flight home from Kansai (KIX) — the Haruka express runs direct from Kyoto/Osaka to the airport (~75m). Window seat, last konbini snack, and home to Mumbai with the trip behind you and the knees intact.'},
+ {k:'solo',date:'Thu 17 Jul',title:'Fly Mumbai \u2192 Tokyo',loc:'In transit \u00b7 solo',body:'Air India nonstop, depart Mumbai 19:30. Overnight flight \u2014 sleep on the plane; you land Narita 08:15 tomorrow, which is tour Day 1.',tags:[['night','Nonstop redeye']]},
+ {k:'tokyo',date:'Fri 18 Jul \u00b7 Day 1',title:'Land + the crew assembles',loc:'Tokyo',body:'Land Narita 08:15. Train into the city, head to the G joining hotel, drop bags, and explore \u2014 free until the 6:00pm welcome meeting (bring your passport for train-ticket info). Then your First Night Out: drinks and dancing with your new group.',picks:[['\ud83d\ude86','Arrival: Narita Express (~60m) into town; set up a Suica/IC card at the station'],['\ud83d\uddfc','Shibuya: the Crossing + Shibuya Sky deck to shake off the flight'],['\ud83c\udfa8','teamLab Borderless (Azabudai Hills) \u2014 immersive digital-art labyrinth, if jet lag allows (pre-book)'],['\ud83c\udf76','First Night Out: izakaya-hop in Shibuya/Shinjuku with the group']],tags:[['inc','Welcome + First Night Out'],['night','Hostel'],['night','Nightlife']]},
+ {k:'tokyo',date:'Sat 19 Jul \u00b7 Day 2',title:'Tokyo \u2014 your city day',loc:'Tokyo',body:'CEO orientation walk, then a full free day. Flat, train-and-walk \u2014 easy on the knees, endless options. Mix one big experience with street-level wandering.',picks:[['\ud83c\udf0a','teamLab Planets (Toyosu) \u2014 barefoot, wade-through-water digital art; book a morning slot (~2 hrs)'],['\u2694\ufe0f','Samurai &amp; Ninja Museum or a samurai sword/armour experience \u2014 hands-on, fun (~1.5 hrs)'],['\u26e9\ufe0f','Senso-ji + Asakusa old-town lanes, then Akihabara for anime/games/electronics'],['\ud83d\udc1f','Tsukiji Outer Market sushi crawl + Harajuku/Takeshita street fashion']],tags:[['inc','Orientation walk'],['night','Hostel']]},
+ {k:'tokyo',date:'Sun 20 Jul \u00b7 Day 3',title:'Bullet train to Takayama',loc:'Tokyo \u2192 Takayama',body:'Shinkansen (~4h) into the Japanese Alps. CEO orientation walk through Edo-era streets, sake breweries, craft shops. Evening: a traditional ryokan with tatami, futons, and an onsen soak \u2014 the trip\u2019s relaxation high point.',picks:[['\ud83c\udf76','Sake Street: tasting-hop the breweries (\u00a5300\u2013400 each) \u2014 Takayama is famous for it'],['\ud83d\udc04','Hida beef \u2014 grilled, or as nigiri sushi on the street (a regional splurge)'],['\u2668\ufe0f','Onsen soak at the ryokan (cover tattoos); or a riverside morning walk'],['\ud83c\udfd8\ufe0f','Hida Folk Village \u2014 open-air Edo-era farmhouses (\u00a5700); or rent a bike to explore']],tags:[['inc','Bullet train + ryokan/onsen'],['inc','Orientation walk']]},
+ {k:'kyoto',date:'Mon 21 Jul \u00b7 Day 4',title:'To Kyoto + Big Night Out',loc:'Takayama \u2192 Kyoto',body:'Train to Kyoto (~3.5\u20134h), then explore. Tonight is the Big Night Out \u2014 drinks, then karaoke or an izakaya. And Gion Matsuri\u2019s Ato Yoiyama evenings are on (21\u201323 Jul): downtown closes to traffic, lantern-lit floats, food stalls, yukata crowds.',picks:[['\ud83c\udfee','Gion Matsuri Yoiyama: wander the float displays + food stalls (6\u201311pm)'],['\u26e9\ufe0f','Fushimi Inari\u2019s torii gates \u2014 late afternoon, fewer crowds, magic light'],['\ud83d\udc58','Rent a kimono/yukata for the evening \u2014 perfect for the festival streets'],['\ud83c\udfa4','Big Night Out: karaoke with the group, or a Pontocho-alley izakaya crawl']],tags:[['inc','Bullet train + Big Night Out'],['fest','Gion Yoiyama'],['night','Karaoke']]},
+ {k:'kyoto',date:'Tue 22 Jul \u00b7 Day 5',title:'Kyoto \u2014 temples & festival',loc:'Kyoto',body:'Kyoto is yours \u2014 with Gion Matsuri still filling the streets each evening. Pick a couple of experiences and leave time to wander; a calmer cultural day to balance the nights out.',picks:[['\ud83c\udf75','Tea ceremony (matcha + wagashi) \u2014 a serene, classic Kyoto ritual (~1 hr)'],['\ud83e\udd8c','Nara day trip (~45m) \u2014 giant Buddha + bowing deer; flat &amp; gentle'],['\ud83c\udfa8','teamLab Biovortex Kyoto (near Kyoto Station) \u2014 the newest venue, Kyoto-exclusive works'],['\u2728','Kinkaku-ji Golden Pavilion (\u00a5500), or a calligraphy class for a postcard home']],tags:[['fest','Gion Yoiyama'],['night','Hotel']]},
+ {k:'kyoto',date:'Wed 23 Jul \u00b7 Day 6',title:'Tour ends \u2192 you stay on',loc:'Kyoto \u00b7 tour ends',body:'Tour departure day \u2014 swap socials with the crew and say \u201cuntil next time.\u201d But you\u2019re staying: move to your own Kyoto base for the night, ready for tomorrow\u2019s big parade. Forward your main bag to Tokyo via takuhaibin so you travel light.',picks:[['\ud83d\udecd\ufe0f','Nishiki Market \u2014 \u201cKyoto\u2019s kitchen,\u201d a food-stall lunch crawl'],['\ud83c\udf8b','Arashiyama bamboo grove + the monkey park or a riverside boat (early, before crowds)'],['\ud83e\udde7','Send your big bag ahead to your Tokyo hotel (takuhaibin)'],['\ud83c\udfaf','Optional: Zen garden at Ryoan-ji, or Nijo Castle (\u00a5600)']],tags:[['night','Your own hotel']]},
+ {k:'kyoto',date:'Thu 24 Jul',title:'Gion Matsuri parade \u2192 Tokyo',loc:'Kyoto \u2192 Tokyo',body:'The big one: the Ato Matsuri float parade rolls through downtown Kyoto (~9:30\u201311:50am) \u2014 giant yamaboko floats, the quieter, better-for-photos second procession. Catch it, grab a final Kyoto lunch, then Shinkansen to Tokyo (~2h 15m) for the evening.',picks:[['\ud83c\udfee','Ato Matsuri parade: stand near Karasuma-Oike for the dramatic float turns'],['\ud83c\udf71','Last Kyoto lunch \u2014 kaiseki, or a Nishiki bento for the train'],['\ud83d\ude84','Afternoon Shinkansen Kyoto \u2192 Tokyo; check into your Tokyo hotel'],['\ud83c\udf06','Tokyo evening: a first taste of Shinjuku or a quiet izakaya near your hotel']],tags:[['fest','Gion parade'],['night','Tokyo hotel']]},
+ {k:'solo',date:'Fri 25 Jul',title:'Tokyo day \u2192 north to the mountains',loc:'Tokyo \u2192 Echigo-Yuzawa',body:'A free Tokyo morning/afternoon \u2014 fit in anything you missed \u2014 then Jo\u0304etsu Shinkansen north to Echigo-Yuzawa (~90m), your Fuji Rock base. Settle in, grab festival supplies, and rest up.',picks:[['\ud83e\udd3c','Kendo / martial-arts experience, or a sumo-stable morning practice (book ahead) \u2014 a uniquely Tokyo morning'],['\ud83c\udfa8','Whichever teamLab you skipped (Planets or Borderless), or the Ghibli Museum (Mitaka, pre-book hard)'],['\ud83d\uded2','Stock up: poncho, dry bag, sunscreen, cash for the festival'],['\u2668\ufe0f','Echigo-Yuzawa is an onsen town \u2014 an evening soak before the big day']],tags:[['night','Echigo-Yuzawa']]},
+ {k:'fuji',date:'Sat 26 Jul',title:'FUJI ROCK',loc:'Naeba \u00b7 festival day',body:'The finale. Shuttle from Echigo-Yuzawa to Naeba (~40m), wristband on, and into Japan\u2019s greatest music festival \u2014 200+ artists across forest stages strung along a mountain river. Pace it, pick your sets, eat well, soak it in. Shuttle back to Yuzawa when you\u2019re done (runs till 2am).',picks:[['\ud83c\udfb8','Plan 3\u20134 must-see sets; leave room to wander &amp; stumble on discoveries'],['\ud83c\udf5b','The food stalls are legendary \u2014 curry, ramen, craft beer by the river'],['\ud83e\ude91','Fold-stool + poncho + dry bag; pace the hilly paths for your knees'],['\ud83d\ude8c','Note the last shuttle/train back before the final act \u2014 plan your exit']],tags:[['fest','Fuji Rock'],['night','Echigo-Yuzawa']]},
+ {k:'solo',date:'Sun 27 Jul',title:'Back to Tokyo \u2014 last night',loc:'Echigo-Yuzawa \u2192 Tokyo',body:'Shinkansen back to Tokyo. Reunite with your forwarded luggage, and spend a final, easy evening \u2014 pick how to toast the trip.',picks:[['\ud83c\udf06','Nightlife: Shinjuku Omoide Yokocho or Golden Gai bar alleys; or a Shibuya rooftop bar'],['\ud83d\udecd\ufe0f','Last shopping: Ginza, Don Quijote, or a depachika food hall'],['\ud83c\udf63','A standout farewell sushi or yakitori dinner'],['\u264a\ufe0f','Quiet option: a sento/onsen + a stroll along the Meguro or Sumida river']],tags:[['night','Tokyo hotel']]},
+ {k:'solo',date:'Mon 28 Jul',title:'Home from Tokyo',loc:'Tokyo (HND) \u2192 Mumbai',body:'Air India nonstop from Haneda, depart 08:50 \u2192 Mumbai 14:20. Head out early, last konbini breakfast, and home \u2014 tour done, two festivals seen, knees intact.'},
 ];
+
 var tl=document.getElementById('tl');
 days.forEach(function(d){
  var el=document.createElement('div');
- el.className='day '+(d.k==='solo'?'solo':d.k==='kyoto'?'kyoto':'tokyo');
+ el.className='day '+(d.k==='solo'?'solo':d.k==='kyoto'?'kyoto':d.k==='fuji'?'fuji':'tokyo');
  var num=d.date.indexOf('Day')>-1?d.date.split('Day ')[1]:'\u2605';
  var tagsHtml='';
  if(d.tags){d.tags.forEach(function(t){tagsHtml+='<span class="tag '+t[0]+'">'+t[1]+'</span>';});}
@@ -601,15 +622,13 @@ days.forEach(function(d){
  });
  tl.appendChild(el);
 });
-
-// videos
 var vids=[
  ['67sqD7hCI9A','Tokyo','Neon & the rush'],
- ['Qb91U7Fr5dw','Takayama','Old-town Alps'],
  ['nE3ABYedR3A','Kyoto','Temples & torii'],
- ['XPGUg2bnfNk','Osaka','Dotonbori nights'],
+ ['0XH9TrQaVvU','Gion Matsuri','The float parade'],
+ ['864WSocTvYs','Kansai','Cities & food'],
 ];
-var play_svg='<svg viewBox="0 0 68 68" xmlns="http://www.w3.org/2000/svg"><circle cx="34" cy="34" r="34" fill="rgba(200,52,31,.92)"/><path d="M27 22 L48 34 L27 46 Z" fill="#fff"/></svg>';
+var play_svg='<svg viewBox="0 0 68 68" xmlns="http://www.w3.org/2000/svg"><circle cx="34" cy="34" r="34" fill="rgba(214,25,107,.92)"/><path d="M27 22 L48 34 L27 46 Z" fill="#fff"/></svg>';
 var vg=document.getElementById('vidgrid');
 vids.forEach(function(v){
  var d=document.createElement('div');
@@ -617,7 +636,6 @@ vids.forEach(function(v){
  d.innerHTML='<img src="https://i.ytimg.com/vi/'+v[0]+'/hqdefault.jpg" alt="'+v[1]+'" loading="lazy"><div class="play">'+play_svg+'</div><div class="vlabel"><div class="vt">'+v[1]+'</div><div class="vs">'+v[2]+'</div></div>';
  vg.appendChild(d);
 });
-
 var prog=document.getElementById('prog');
 window.addEventListener('scroll',function(){var h=document.documentElement;prog.style.width=((h.scrollTop)/(h.scrollHeight-h.clientHeight)*100)+'%';});
 var nav=document.getElementById('nav');var lastY=0;
