@@ -227,6 +227,24 @@ footer .geo{font-family:'Noto Serif Georgian',serif;color:var(--teal-glow);font-
 
 @media(max-width:600px){.day{padding-left:66px}.tl::before{left:21px}.day-dot{left:8px}section{padding:70px 0}.hero-content{padding:0 24px 8vh}.ftext{padding:32px 28px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal,.stagger>*{opacity:1;transform:none}}
+
+/* VIDEO GALLERY */
+.vid-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:46px}
+.vid{border-radius:18px;overflow:hidden;box-shadow:0 12px 36px var(--shadow);background:#000;position:relative;aspect-ratio:16/9;cursor:pointer;transition:transform .35s,box-shadow .35s}
+.vid:hover{transform:translateY(-6px);box-shadow:0 22px 50px var(--shadow-deep)}
+.vid img{width:100%;height:100%;object-fit:cover;display:block;opacity:.92;transition:opacity .3s}
+.vid:hover img{opacity:1}
+.vid .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:3}
+.vid .play svg{width:64px;height:64px;filter:drop-shadow(0 4px 12px rgba(0,0,0,.5));transition:transform .3s}
+.vid:hover .play svg{transform:scale(1.12)}
+.vid .vlabel{position:absolute;bottom:0;left:0;right:0;z-index:3;padding:18px 18px 14px;background:linear-gradient(transparent,rgba(8,6,4,.85));color:#fff}
+.vid .vlabel .vt{font-family:'Fraunces',serif;font-size:19px;font-weight:600;line-height:1.1}
+.vid .vlabel .vs{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-soft);margin-top:3px}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:5}
+.day-watch{display:inline-flex;align-items:center;gap:7px;margin-top:12px;font-size:12px;font-weight:700;letter-spacing:.03em;color:var(--wine-2);text-transform:uppercase}
+.day-watch:hover{color:var(--wine)}
+.day-watch svg{width:16px;height:16px}
+
 </style>
 </head>
 <body>
@@ -236,6 +254,7 @@ footer .geo{font-family:'Noto Serif Georgian',serif;color:var(--teal-glow);font-
 <a href="#overview">Overview</a>
 <a href="#map">Route</a>
 <a href="#route">Days</a>
+<a href="#watch">Watch</a>
 <a href="#included">Included</a>
 <a href="#flights">Flights</a>
 <a href="#visa">Visas</a>
@@ -337,6 +356,17 @@ footer .geo{font-family:'Noto Serif Georgian',serif;color:var(--teal-glow);font-
       <span><span class="dotk" style="border-color:var(--teal)"></span>Armenia (WeRoad)</span>
     </div>
     <div class="tl" id="tl"></div>
+  </div>
+</section>
+
+
+<section id="watch" class="alt">
+  <div class="wrap">
+    <div class="sec-label">See it move</div>
+    <h2>Watch the <span class="accent">journey</span></h2>
+    <p class="lead">Before you go, get a feel for the places the route runs through — the capital's lanes, the wine country, the church under Kazbek, and the high Svan villages. Tap any to play.</p>
+    <div class="vid-grid"><div class="vid reveal" data-vid="67sqD7hCI9A"><img src="https://i.ytimg.com/vi/67sqD7hCI9A/hqdefault.jpg" alt="Tbilisi" loading="lazy"><div class="play"><svg viewBox="0 0 68 68" xmlns="http://www.w3.org/2000/svg"><circle cx="34" cy="34" r="34" fill="rgba(107,20,33,.92)"/><path d="M27 22 L48 34 L27 46 Z" fill="#fff"/></svg></div><div class="vlabel"><div class="vt">Tbilisi</div><div class="vs">Walking the old capital</div></div></div><div class="vid reveal" data-vid="b9GGbum1UyM"><img src="https://i.ytimg.com/vi/b9GGbum1UyM/hqdefault.jpg" alt="Kakheti Wine" loading="lazy"><div class="play"><svg viewBox="0 0 68 68" xmlns="http://www.w3.org/2000/svg"><circle cx="34" cy="34" r="34" fill="rgba(107,20,33,.92)"/><path d="M27 22 L48 34 L27 46 Z" fill="#fff"/></svg></div><div class="vlabel"><div class="vt">Kakheti Wine</div><div class="vs">Qvevri & the City of Love</div></div></div><div class="vid reveal" data-vid="3Ow4--DjDDU"><img src="https://i.ytimg.com/vi/3Ow4--DjDDU/hqdefault.jpg" alt="Gergeti & Kazbek" loading="lazy"><div class="play"><svg viewBox="0 0 68 68" xmlns="http://www.w3.org/2000/svg"><circle cx="34" cy="34" r="34" fill="rgba(107,20,33,.92)"/><path d="M27 22 L48 34 L27 46 Z" fill="#fff"/></svg></div><div class="vlabel"><div class="vt">Gergeti & Kazbek</div><div class="vs">The iconic church</div></div></div><div class="vid reveal" data-vid="qwPrj9o05MI"><img src="https://i.ytimg.com/vi/qwPrj9o05MI/hqdefault.jpg" alt="Svaneti & Ushguli" loading="lazy"><div class="play"><svg viewBox="0 0 68 68" xmlns="http://www.w3.org/2000/svg"><circle cx="34" cy="34" r="34" fill="rgba(107,20,33,.92)"/><path d="M27 22 L48 34 L27 46 Z" fill="#fff"/></svg></div><div class="vlabel"><div class="vt">Svaneti & Ushguli</div><div class="vs">Europe’s highest village</div></div></div></div>
+    <div class="note reveal"><div class="ni">▶️</div><p><strong>These are traveller &amp; documentary clips</strong> from YouTube to set the scene — not the WeRoad tour itself. They open and play right here in the page.</p></div>
   </div>
 </section>
 
@@ -595,6 +625,20 @@ document.querySelectorAll('.reveal,.stagger').forEach(function(el){io.observe(el
 var navlinks=document.querySelectorAll('nav a');
 var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var id=e.target.id;navlinks.forEach(function(a){a.classList.toggle('act',a.getAttribute('href')==='#'+id);});}});},{threshold:.4});
 document.querySelectorAll('section[id], header[id]').forEach(function(s){io2.observe(s);});
+
+document.querySelectorAll('.vid').forEach(function(v){
+  v.addEventListener('click',function(){
+    if(v.querySelector('iframe'))return;
+    var id=v.getAttribute('data-vid');
+    var f=document.createElement('iframe');
+    f.setAttribute('src','https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0');
+    f.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+    f.setAttribute('allowfullscreen','');
+    f.setAttribute('title','Video');
+    v.appendChild(f);
+  });
+});
+
 </script>
 </body>
 </html>
