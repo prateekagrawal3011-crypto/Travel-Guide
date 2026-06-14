@@ -5,223 +5,238 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Echoes of the Caucasus — Georgia & Armenia · 23 Jul–3 Aug 2026</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,800;0,6..96,900;1,6..96,400;1,6..96,500&family=Inter:wght@300;400;500;600;700;800&family=Noto+Serif+Georgian:wght@400;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,800;0,6..96,900;1,6..96,400;1,6..96,600&family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Serif+Georgian:wght@400;600;700&display=swap');
 :root{
-  --ink:#1a1410;--ink-soft:#4a3f35;--paper:#f4ede0;--paper-2:#ebe0cd;
-  --wine:#6e1423;--wine-2:#8c1d31;--wine-glow:#a83249;
-  --amber:#c2731a;--amber-lite:#e0a44e;--gold:#bf9b30;
-  --basalt:#2d3a3a;--basalt-2:#1c2626;--teal:#2a7d72;--teal-glow:#3fae9f;
-  --stone:#cbbfa6;--cream:#faf5ea;--shadow:rgba(30,20,10,.18);--shadow-deep:rgba(30,20,10,.36);
+  --ink:#16100c;--ink-soft:#4a3f35;--paper:#f4ede0;--paper-2:#ece0ca;
+  --wine:#6e1423;--wine-2:#8c1d31;--wine-glow:#b13a52;
+  --amber:#c2731a;--amber-lite:#e6a850;--gold:#c9a227;
+  --basalt:#243030;--basalt-2:#161f1f;--teal:#2a7d72;--teal-glow:#46bdac;
+  --stone:#cbbfa6;--cream:#faf5ea;--shadow:rgba(30,20,10,.16);--shadow-deep:rgba(30,20,10,.34);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink);line-height:1.65;overflow-x:hidden}
-body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;opacity:.05;mix-blend-mode:multiply;
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;opacity:.045;mix-blend-mode:multiply;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-#prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--wine),var(--amber),var(--gold));z-index:10000;width:0;transition:width .1s}
+#prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--wine),var(--amber),var(--teal-glow));z-index:10000;width:0;transition:width .12s}
 a{color:var(--wine-2);text-decoration:none}
-.reveal{opacity:0;transform:translateY(38px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}
 .reveal.in{opacity:1;transform:none}
+.stagger>*{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.stagger.in>*{opacity:1;transform:none}
+.stagger.in>*:nth-child(2){transition-delay:.08s}
+.stagger.in>*:nth-child(3){transition-delay:.16s}
+.stagger.in>*:nth-child(4){transition-delay:.24s}
+.stagger.in>*:nth-child(5){transition-delay:.32s}
+.stagger.in>*:nth-child(6){transition-delay:.4s}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
 
+/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:center;gap:2px;flex-wrap:wrap;
-  padding:12px 16px;background:rgba(244,237,224,.8);backdrop-filter:blur(16px) saturate(1.2);border-bottom:1px solid rgba(30,20,10,.08);transition:transform .4s}
+  padding:11px 16px;background:rgba(244,237,224,.82);backdrop-filter:blur(18px) saturate(1.3);border-bottom:1px solid rgba(30,20,10,.08);transition:transform .4s}
 nav.hide{transform:translateY(-100%)}
-nav a{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);
-  padding:6px 12px;border-radius:30px;transition:all .25s;white-space:nowrap}
+nav a{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-soft);padding:6px 12px;border-radius:30px;transition:all .25s;white-space:nowrap}
 nav a:hover{color:var(--wine)}
 nav a.act{background:var(--ink);color:var(--cream)}
 
-header{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 8vw 80px;position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;z-index:0;
-  background:radial-gradient(ellipse at 78% 18%,rgba(224,164,78,.5) 0%,rgba(224,164,78,0) 42%),
-    radial-gradient(ellipse at 12% 86%,rgba(42,125,114,.45) 0%,rgba(42,125,114,0) 48%),
-    linear-gradient(165deg,#f6ecd6 0%,#ecdcbf 46%,#e3cba6 100%)}
-.peaks{position:absolute;bottom:0;left:0;right:0;z-index:1;opacity:.5}
-.hero-inner{position:relative;z-index:3;max-width:920px}
-.eyebrow{font-size:13px;font-weight:700;letter-spacing:.34em;text-transform:uppercase;color:var(--wine);margin-bottom:26px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+/* HERO */
+header{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0;position:relative;overflow:hidden}
+.hero-sky{position:absolute;inset:0;z-index:0;background:linear-gradient(170deg,#f1e4c9 0%,#ecd9b8 30%,#e7c79c 55%,#dca87a 78%,#c98c63 100%)}
+.hero-sun{position:absolute;top:14%;right:16%;width:130px;height:130px;border-radius:50%;z-index:1;
+  background:radial-gradient(circle,#fff3dc 0%,#f3cd86 45%,rgba(224,168,80,0) 72%);filter:blur(2px);animation:sunpulse 8s ease-in-out infinite}
+@keyframes sunpulse{0%,100%{transform:scale(1);opacity:.92}50%{transform:scale(1.08);opacity:1}}
+.hero-art{position:absolute;bottom:0;left:0;right:0;z-index:2;width:100%;height:auto;display:block}
+.hero-content{position:relative;z-index:5;padding:0 8vw 8vh;max-width:1000px}
+.eyebrow{font-size:13px;font-weight:800;letter-spacing:.32em;text-transform:uppercase;color:var(--wine);margin-bottom:22px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .eyebrow::before{content:"";width:46px;height:2px;background:var(--wine)}
-h1{font-family:'Bodoni Moda',serif;font-weight:800;font-size:clamp(46px,8.5vw,104px);line-height:.97;letter-spacing:-.01em;margin-bottom:8px;color:var(--ink)}
-h1 .geo{font-family:'Noto Serif Georgian',serif;display:block;font-size:clamp(22px,3.4vw,40px);font-weight:600;color:var(--wine-2);letter-spacing:0;margin-top:18px;opacity:.92}
-.hero-sub{font-size:clamp(17px,2.1vw,21px);color:var(--ink-soft);max-width:620px;margin:30px 0 38px;font-weight:400}
-.hero-meta{display:flex;gap:30px;flex-wrap:wrap;margin-top:8px}
-.hm{display:flex;flex-direction:column;gap:3px}
+h1{font-family:'Bodoni Moda',serif;font-weight:900;font-size:clamp(48px,9vw,118px);line-height:.92;letter-spacing:-.015em;color:var(--ink);text-shadow:0 2px 30px rgba(244,237,224,.5)}
+h1 em{font-style:italic;color:var(--wine)}
+.geo-line{font-family:'Noto Serif Georgian',serif;font-size:clamp(20px,3.2vw,38px);font-weight:600;color:var(--wine-2);margin-top:20px;letter-spacing:.01em}
+.hero-sub{font-size:clamp(16px,2vw,21px);color:var(--ink-soft);max-width:600px;margin:24px 0 32px;font-weight:400}
+.hero-meta{display:flex;gap:34px;flex-wrap:wrap}
+.hm{display:flex;flex-direction:column;gap:2px}
 .hm .v{font-family:'Bodoni Moda',serif;font-size:30px;font-weight:700;color:var(--wine)}
-.hm .l{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
-.scroll-cue{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:3;font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft);font-weight:700;display:flex;flex-direction:column;align-items:center;gap:8px}
-.scroll-cue span{width:1px;height:34px;background:linear-gradient(var(--wine),transparent);animation:cue 2s infinite}
+.hm .l{font-size:10.5px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft)}
+.scroll-cue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:6;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft);font-weight:800;display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-cue span{width:1px;height:32px;background:linear-gradient(var(--wine),transparent);animation:cue 2s infinite}
 @keyframes cue{0%,100%{opacity:.3;transform:scaleY(.5)}50%{opacity:1;transform:scaleY(1)}}
 
-section{padding:88px 0;position:relative}
-.sec-label{font-size:12px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--amber);margin-bottom:14px}
-h2{font-family:'Bodoni Moda',serif;font-weight:700;font-size:clamp(32px,5vw,54px);line-height:1.04;letter-spacing:-.01em;margin-bottom:22px;color:var(--ink)}
+section{padding:92px 0;position:relative}
+.sec-label{font-size:12px;font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:var(--amber);margin-bottom:14px}
+h2{font-family:'Bodoni Moda',serif;font-weight:700;font-size:clamp(32px,5.2vw,56px);line-height:1.02;letter-spacing:-.01em;margin-bottom:22px;color:var(--ink)}
 h2 .accent{color:var(--wine);font-style:italic}
-.lead{font-size:clamp(17px,2vw,20px);color:var(--ink-soft);max-width:680px;margin-bottom:14px}
-p.body{font-size:16px;color:var(--ink-soft);max-width:680px;margin-bottom:16px}
+.lead{font-size:clamp(17px,2vw,20px);color:var(--ink-soft);max-width:700px;margin-bottom:14px}
 
-.alt{background:linear-gradient(180deg,#efe5d2,#ece0ca);border-top:1px solid rgba(30,20,10,.07);border-bottom:1px solid rgba(30,20,10,.07)}
-.dark{background:linear-gradient(165deg,var(--basalt-2),var(--basalt));color:var(--cream);border:none}
-.dark h2,.dark .lead{color:var(--cream)}
-.dark .lead{color:#c8d3cf}
-.dark .sec-label{color:var(--teal-glow)}
+.alt{background:linear-gradient(180deg,#efe5d2,#e9dcc4);border-top:1px solid rgba(30,20,10,.07);border-bottom:1px solid rgba(30,20,10,.07)}
+.dark{background:linear-gradient(165deg,var(--basalt-2),var(--basalt));color:var(--cream)}
+.dark h2{color:var(--cream)}.dark .lead{color:#c3cfca}.dark .sec-label{color:var(--teal-glow)}
 
-.snapshot{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:rgba(30,20,10,.1);border-radius:18px;overflow:hidden;margin-top:40px;box-shadow:0 18px 50px var(--shadow)}
-.snap{background:var(--cream);padding:26px 22px;text-align:center}
-.snap .ic{font-size:22px;margin-bottom:8px}
-.snap .v{font-family:'Bodoni Moda',serif;font-size:25px;font-weight:700;color:var(--wine);line-height:1.1}
-.snap .l{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-top:6px}
+/* intro band with mini scenes */
+.intro-scenes{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:46px}
+@media(max-width:760px){.intro-scenes{grid-template-columns:repeat(2,1fr)}}
+.iscene{border-radius:16px;overflow:hidden;box-shadow:0 12px 34px var(--shadow);position:relative;aspect-ratio:3/4;transition:transform .4s,box-shadow .4s}
+.iscene:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 22px 50px var(--shadow-deep)}
+.iscene svg{position:absolute;inset:0;width:100%;height:100%}
+.iscene .cap{position:absolute;bottom:0;left:0;right:0;padding:18px 16px 14px;z-index:3;background:linear-gradient(transparent,rgba(15,12,8,.78));color:#fff}
+.iscene .cap .t{font-family:'Bodoni Moda',serif;font-size:18px;font-weight:700;line-height:1.1}
+.iscene .cap .s{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.85;margin-top:3px;color:var(--amber-lite)}
+
+/* snapshot */
+.snapshot{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:rgba(30,20,10,.1);border-radius:18px;overflow:hidden;margin-top:42px;box-shadow:0 18px 50px var(--shadow)}
+.snap{background:var(--cream);padding:26px 20px;text-align:center;transition:background .3s}
+.snap:hover{background:#fff}
+.snap .ic{font-size:24px;margin-bottom:8px}
+.snap .v{font-family:'Bodoni Moda',serif;font-size:26px;font-weight:700;color:var(--wine);line-height:1.1}
+.snap .l{font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin-top:6px}
+
+/* MAP */
+.mapwrap{margin-top:46px;border-radius:22px;overflow:hidden;box-shadow:0 20px 60px var(--shadow-deep);background:linear-gradient(160deg,#e8dcc2,#dccbac)}
+.mapwrap svg{width:100%;height:auto;display:block}
 
 /* timeline */
-.tl{position:relative;margin-top:46px}
-.tl::before{content:"";position:absolute;left:26px;top:14px;bottom:14px;width:2px;background:linear-gradient(var(--wine),var(--amber),var(--teal))}
-.day{position:relative;padding:0 0 14px 78px;margin-bottom:14px}
-.day-dot{position:absolute;left:14px;top:4px;width:26px;height:26px;border-radius:50%;background:var(--cream);border:3px solid var(--wine);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:var(--wine);z-index:2}
+.tl{position:relative;margin-top:48px}
+.tl::before{content:"";position:absolute;left:26px;top:14px;bottom:14px;width:3px;background:linear-gradient(var(--amber),var(--wine),var(--teal));border-radius:2px}
+.day{position:relative;padding:0 0 14px 80px;margin-bottom:12px}
+.day-dot{position:absolute;left:13px;top:3px;width:29px;height:29px;border-radius:50%;background:var(--cream);border:3px solid var(--wine);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:var(--wine);z-index:2;box-shadow:0 4px 12px var(--shadow)}
 .day.solo .day-dot{border-color:var(--amber);color:var(--amber)}
 .day.armenia .day-dot{border-color:var(--teal);color:var(--teal)}
-.day-card{background:var(--cream);border-radius:16px;padding:22px 24px;box-shadow:0 8px 26px var(--shadow);cursor:pointer;transition:transform .3s,box-shadow .3s;border-left:4px solid var(--wine)}
+.day-card{background:var(--cream);border-radius:16px;padding:0;box-shadow:0 8px 26px var(--shadow);cursor:pointer;transition:transform .3s,box-shadow .3s;border-left:4px solid var(--wine);overflow:hidden}
 .day.solo .day-card{border-left-color:var(--amber)}
 .day.armenia .day-card{border-left-color:var(--teal)}
-.day-card:hover{transform:translateX(6px);box-shadow:0 14px 36px var(--shadow-deep)}
+.day-card:hover{transform:translateX(6px);box-shadow:0 16px 40px var(--shadow-deep)}
+.day-banner{height:8px;background:linear-gradient(90deg,var(--wine),var(--amber))}
+.day.solo .day-banner{background:linear-gradient(90deg,var(--amber),var(--amber-lite))}
+.day.armenia .day-banner{background:linear-gradient(90deg,var(--teal),var(--teal-glow))}
+.day-inner{padding:20px 24px}
 .day-head{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap}
-.day-date{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--amber)}
+.day-date{font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--amber)}
 .day.armenia .day-date{color:var(--teal)}
-.day-title{font-family:'Bodoni Moda',serif;font-size:22px;font-weight:700;color:var(--ink);margin:2px 0 6px}
-.day-loc{font-size:12.5px;font-weight:600;color:var(--wine-2);text-transform:uppercase;letter-spacing:.05em}
-.day-body{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.16,1,.3,1);}
-.day-body.open{max-height:640px}
+.day-title{font-family:'Bodoni Moda',serif;font-size:23px;font-weight:700;color:var(--ink);margin:2px 0 6px}
+.day-loc{font-size:12px;font-weight:700;color:var(--wine-2);text-transform:uppercase;letter-spacing:.05em}
+.day-body{max-height:0;overflow:hidden;transition:max-height .55s cubic-bezier(.16,1,.3,1)}
+.day-body.open{max-height:680px}
 .day-body p{font-size:14.5px;color:var(--ink-soft);margin:14px 0 0}
-.tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:20px;margin:10px 6px 0 0;background:rgba(110,20,35,.1);color:var(--wine-2)}
-.tag.inc{background:rgba(42,125,114,.14);color:var(--teal)}
-.tag.opt{background:rgba(194,115,26,.14);color:var(--amber)}
-.expand-hint{font-size:11px;color:var(--amber);font-weight:700;margin-top:10px;letter-spacing:.05em}
-
-.legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:30px;font-size:12px;font-weight:600;color:var(--ink-soft)}
+.tag{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:20px;margin:10px 6px 0 0;background:rgba(110,20,35,.1);color:var(--wine-2)}
+.tag.inc{background:rgba(42,125,114,.15);color:var(--teal)}
+.tag.opt{background:rgba(194,115,26,.16);color:var(--amber)}
+.expand-hint{font-size:11px;color:var(--amber);font-weight:800;margin-top:12px;letter-spacing:.04em}
+.legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:30px;font-size:12px;font-weight:700;color:var(--ink-soft)}
 .legend span{display:flex;align-items:center;gap:7px}
 .dotk{width:13px;height:13px;border-radius:50%;border:3px solid}
 
-/* included grid */
-.cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:38px}
+/* included */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
 @media(max-width:720px){.cols{grid-template-columns:1fr}}
 .panel{background:var(--cream);border-radius:18px;padding:30px;box-shadow:0 10px 30px var(--shadow)}
 .panel.inc-p{border-top:4px solid var(--teal)}
 .panel.exc-p{border-top:4px solid var(--amber)}
-.panel h3{font-family:'Bodoni Moda',serif;font-size:23px;margin-bottom:6px;color:var(--ink)}
+.panel h3{font-family:'Bodoni Moda',serif;font-size:24px;margin-bottom:6px;color:var(--ink)}
 .panel .ph-sub{font-size:12px;color:var(--ink-soft);margin-bottom:18px;font-weight:600}
 .li{display:flex;gap:12px;padding:9px 0;font-size:14.5px;color:var(--ink-soft);border-bottom:1px solid rgba(30,20,10,.07)}
 .li:last-child{border-bottom:none}
-.li .ck{flex-shrink:0;font-weight:800;width:18px}
-.inc-p .ck{color:var(--teal)}
-.exc-p .ck{color:var(--amber)}
+.li .ck{flex-shrink:0;font-weight:900;width:18px}
+.inc-p .ck{color:var(--teal)}.exc-p .ck{color:var(--amber)}
 
-/* verdict callouts */
-.note{display:flex;gap:16px;background:var(--cream);border-radius:14px;padding:20px 24px;margin-top:18px;box-shadow:0 6px 20px var(--shadow);border-left:4px solid var(--amber)}
+.note{display:flex;gap:16px;background:var(--cream);border-radius:14px;padding:20px 24px;margin-top:20px;box-shadow:0 6px 20px var(--shadow);border-left:4px solid var(--amber)}
 .note .ni{font-size:22px;flex-shrink:0}
 .note p{font-size:14.5px;color:var(--ink-soft);margin:0}
 .note strong{color:var(--ink)}
 .note.warn{border-left-color:var(--wine)}
 .note.good{border-left-color:var(--teal)}
-
-/* compare table */
-.ctab{margin-top:36px;border-radius:16px;overflow:hidden;box-shadow:0 12px 36px var(--shadow);font-size:14px}
-.ctab table{width:100%;border-collapse:collapse;background:var(--cream)}
-.ctab th,.ctab td{padding:13px 16px;text-align:left;border-bottom:1px solid rgba(30,20,10,.08)}
-.ctab th{background:var(--basalt-2);color:var(--cream);font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
-.ctab td:first-child{font-weight:700;color:var(--ink)}
-.ctab .win{color:var(--teal);font-weight:700}
-.ctab tr:last-child td{border-bottom:none}
-.ctab .cau{background:rgba(42,125,114,.06)}
-
-/* cost */
-.cost{display:grid;grid-template-columns:1fr;gap:2px;margin-top:36px;border-radius:16px;overflow:hidden;box-shadow:0 12px 36px var(--shadow)}
-.crow{display:flex;justify-content:space-between;align-items:center;background:var(--cream);padding:17px 24px;gap:16px}
-.crow .cl{font-weight:600;color:var(--ink);font-size:15px}
-.crow .cs{font-size:12.5px;color:var(--ink-soft);font-weight:400}
-.crow .cv{font-family:'Bodoni Moda',serif;font-size:20px;font-weight:700;color:var(--wine);white-space:nowrap}
-.crow.tot{background:var(--basalt-2);color:var(--cream)}
-.crow.tot .cl{color:var(--cream)}
-.crow.tot .cv{color:var(--amber-lite);font-size:26px}
+.dark .note{background:rgba(250,245,234,.06)}.dark .note p{color:#c3cfca}.dark .note strong{color:var(--cream)}
 
 /* flights */
-.flights{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:36px}
+.flights{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:38px}
 @media(max-width:720px){.flights{grid-template-columns:1fr}}
 .fcard{background:var(--cream);border-radius:18px;padding:28px;box-shadow:0 10px 30px var(--shadow);position:relative;overflow:hidden}
 .fcard::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--wine),var(--amber))}
-.froute{display:flex;align-items:center;gap:12px;font-family:'Bodoni Moda',serif;font-size:24px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.froute{display:flex;align-items:center;gap:12px;font-family:'Bodoni Moda',serif;font-size:25px;font-weight:700;color:var(--ink);margin-bottom:4px}
 .froute .arrow{color:var(--amber);font-size:18px}
-.fdate{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--wine-2);margin-bottom:16px}
+.fdate{font-size:12px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--wine-2);margin-bottom:16px}
 .fline{display:flex;justify-content:space-between;font-size:13.5px;color:var(--ink-soft);padding:7px 0;border-bottom:1px solid rgba(30,20,10,.07)}
-.fline:last-child{border-bottom:none}
-.fline b{color:var(--ink)}
-.fbadge{display:inline-block;background:rgba(42,125,114,.14);color:var(--teal);font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:4px 10px;border-radius:20px;margin-top:12px}
+.fline:last-child{border-bottom:none}.fline b{color:var(--ink)}
+.fbadge{display:inline-block;background:rgba(42,125,114,.15);color:var(--teal);font-size:10.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:20px;margin-top:12px}
 
-/* visa steps */
-.vgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:36px}
+/* visa */
+.vgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:38px}
 @media(max-width:720px){.vgrid{grid-template-columns:1fr}}
 .vcard{background:var(--cream);border-radius:18px;padding:28px;box-shadow:0 10px 30px var(--shadow);border-top:4px solid var(--teal)}
 .vcard.arm{border-top-color:var(--wine)}
-.vcard h3{font-family:'Bodoni Moda',serif;font-size:24px;color:var(--ink);margin-bottom:4px}
+.vcard h3{font-family:'Bodoni Moda',serif;font-size:25px;color:var(--ink);margin-bottom:4px}
 .vcard .vmeta{display:flex;gap:18px;margin:14px 0 18px;flex-wrap:wrap}
 .vcard .vm .vv{font-family:'Bodoni Moda',serif;font-size:19px;font-weight:700;color:var(--wine)}
-.vcard .vm .vl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.vcard .vm .vl{font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft)}
 .vstep{display:flex;gap:12px;font-size:14px;color:var(--ink-soft);padding:8px 0}
-.vstep .vn{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--teal);color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.vstep .vn{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--teal);color:#fff;font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center}
 .vcard.arm .vn{background:var(--wine)}
 
-/* shred */
-.shred-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:36px}
-.scard{background:rgba(250,245,234,.06);border:1px solid rgba(250,245,234,.14);border-radius:16px;padding:24px}
-.scard .si{font-size:24px;margin-bottom:10px}
+/* shred + scene cards (dark) */
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:38px}
+.scard{background:rgba(250,245,234,.06);border:1px solid rgba(250,245,234,.13);border-radius:16px;padding:24px;transition:transform .35s,background .35s}
+.scard:hover{transform:translateY(-6px);background:rgba(250,245,234,.1)}
+.scard .si{font-size:26px;margin-bottom:10px}
 .scard h4{font-family:'Bodoni Moda',serif;font-size:19px;color:var(--cream);margin-bottom:8px}
-.scard p{font-size:13.5px;color:#c8d3cf;margin:0}
+.scard p{font-size:13.5px;color:#c3cfca;margin:0}
 .scard .macro{color:var(--teal-glow);font-weight:700}
 
 /* food */
-.food-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-top:36px}
-.fc{background:var(--cream);border-radius:14px;padding:22px;box-shadow:0 8px 24px var(--shadow);border-bottom:3px solid var(--amber)}
+.food-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-top:38px}
+.fc{background:var(--cream);border-radius:14px;padding:22px;box-shadow:0 8px 24px var(--shadow);border-bottom:3px solid var(--amber);transition:transform .3s}
+.fc:hover{transform:translateY(-5px)}
 .fc.veg{border-bottom-color:var(--teal)}
 .fc h4{font-family:'Bodoni Moda',serif;font-size:19px;color:var(--ink);margin-bottom:6px}
-.fc .vt{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
+.fc .vt{font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
 .fc p{font-size:13px;color:var(--ink-soft);margin:0}
 
 /* packing */
-.pack{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:36px}
+.pack{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:22px;margin-top:38px}
+.pcol{background:var(--cream);border-radius:14px;padding:24px;box-shadow:0 8px 24px var(--shadow)}
 .pcol h4{font-family:'Bodoni Moda',serif;font-size:18px;color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px}
 .pcol ul{list-style:none}
 .pcol li{font-size:13.5px;color:var(--ink-soft);padding:5px 0 5px 20px;position:relative}
 .pcol li::before{content:"▪";position:absolute;left:0;color:var(--amber)}
 
-/* booking cta */
-.cta-box{background:linear-gradient(135deg,var(--wine),var(--wine-2));border-radius:22px;padding:44px;margin-top:40px;color:var(--cream);box-shadow:0 18px 50px rgba(110,20,35,.4);position:relative;overflow:hidden}
-.cta-box::before{content:"";position:absolute;top:-40%;right:-10%;width:300px;height:300px;border-radius:50%;background:radial-gradient(rgba(224,164,78,.4),transparent 70%)}
-.cta-box h3{font-family:'Bodoni Moda',serif;font-size:30px;margin-bottom:10px;position:relative}
-.cta-box p{font-size:15px;color:#f0d9c0;margin-bottom:8px;max-width:560px;position:relative}
-.cta-steps{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px;position:relative}
-.cta-step{background:rgba(250,245,234,.12);border-radius:12px;padding:14px 18px;flex:1;min-width:160px}
-.cta-step .csn{font-family:'Bodoni Moda',serif;font-size:22px;color:var(--amber-lite);font-weight:700}
-.cta-step .cst{font-size:12.5px;color:#f0d9c0;margin-top:4px}
-.urgent{display:inline-flex;align-items:center;gap:8px;background:rgba(224,164,78,.2);border:1px solid var(--amber-lite);border-radius:30px;padding:7px 16px;font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--amber-lite);margin-bottom:20px;position:relative}
+/* cost */
+.cost{display:grid;grid-template-columns:1fr;gap:2px;margin-top:38px;border-radius:16px;overflow:hidden;box-shadow:0 12px 36px var(--shadow)}
+.crow{display:flex;justify-content:space-between;align-items:center;background:var(--cream);padding:17px 24px;gap:16px;transition:background .25s}
+.crow:hover{background:#fff}
+.crow .cl{font-weight:700;color:var(--ink);font-size:15px}
+.crow .cs{font-size:12.5px;color:var(--ink-soft);font-weight:400}
+.crow .cv{font-family:'Bodoni Moda',serif;font-size:20px;font-weight:700;color:var(--wine);white-space:nowrap}
+.crow.tot{background:var(--basalt-2);color:var(--cream)}
+.crow.tot .cl{color:var(--cream)}.crow.tot .cv{color:var(--amber-lite);font-size:26px}
 
-footer{background:var(--basalt-2);color:#9fb0ab;padding:50px 24px;text-align:center;font-size:13px}
-footer .fbig{font-family:'Bodoni Moda',serif;font-size:26px;color:var(--cream);margin-bottom:10px}
-footer .geo{font-family:'Noto Serif Georgian',serif;color:var(--teal-glow);font-size:15px;margin-top:6px}
-.disc{font-size:11px;color:#6b7d78;margin-top:20px;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.6}
+/* cta */
+.cta-box{background:linear-gradient(135deg,var(--wine),var(--wine-2));border-radius:22px;padding:46px;margin-top:10px;color:var(--cream);box-shadow:0 20px 56px rgba(110,20,35,.42);position:relative;overflow:hidden}
+.cta-box::before{content:"";position:absolute;top:-40%;right:-10%;width:340px;height:340px;border-radius:50%;background:radial-gradient(rgba(230,168,80,.4),transparent 70%)}
+.cta-box h3{font-family:'Bodoni Moda',serif;font-size:32px;margin-bottom:10px;position:relative}
+.cta-box p{font-size:15px;color:#f3ddc4;margin-bottom:8px;max-width:580px;position:relative}
+.cta-steps{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;position:relative}
+.cta-step{background:rgba(250,245,234,.12);border-radius:12px;padding:16px 18px;flex:1;min-width:160px;transition:background .3s}
+.cta-step:hover{background:rgba(250,245,234,.2)}
+.cta-step .csn{font-family:'Bodoni Moda',serif;font-size:24px;color:var(--amber-lite);font-weight:700}
+.cta-step .cst{font-size:12.5px;color:#f3ddc4;margin-top:4px}
+.urgent{display:inline-flex;align-items:center;gap:8px;background:rgba(230,168,80,.2);border:1px solid var(--amber-lite);border-radius:30px;padding:8px 17px;font-size:12px;font-weight:800;letter-spacing:.03em;color:var(--amber-lite);margin-bottom:20px;position:relative}
+
+footer{background:var(--basalt-2);color:#8fa39e;padding:56px 24px;text-align:center;font-size:13px;position:relative;overflow:hidden}
+footer .fbig{font-family:'Bodoni Moda',serif;font-size:30px;color:var(--cream);margin-bottom:10px}
+footer .geo{font-family:'Noto Serif Georgian',serif;color:var(--teal-glow);font-size:16px;margin-top:6px}
+.disc{font-size:11px;color:#5e716c;margin-top:22px;max-width:620px;margin-left:auto;margin-right:auto;line-height:1.6}
 
 @media(max-width:600px){
-  header{padding:104px 24px 70px}
-  .day{padding-left:62px}
-  .tl::before{left:20px}.day-dot{left:8px}
-  section{padding:64px 0}
+  .day{padding-left:64px}.tl::before{left:20px}.day-dot{left:7px}
+  section{padding:66px 0}.hero-content{padding:0 24px 7vh}
 }
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal,.stagger>*{opacity:1;transform:none}}
 </style>
 </head>
 <body>
 <div id="prog"></div>
 <nav id="nav">
 <a href="#top" class="act">Top</a>
-<a href="#why">The Trade</a>
-<a href="#route">Itinerary</a>
+<a href="#overview">Overview</a>
+<a href="#map">Route</a>
+<a href="#route">Days</a>
 <a href="#included">Included</a>
 <a href="#flights">Flights</a>
 <a href="#visa">Visas</a>
@@ -232,56 +247,148 @@ footer .geo{font-family:'Noto Serif Georgian',serif;color:var(--teal-glow);font-
 </nav>
 
 <header id="top">
-  <div class="hero-bg"></div>
-  <svg class="peaks" viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,320 L0,180 L120,120 L240,170 L360,90 L480,150 L600,70 L720,140 L840,60 L960,130 L1080,100 L1200,160 L1320,110 L1440,170 L1440,320 Z" fill="#2d3a3a" opacity="0.22"/>
-    <path d="M0,320 L0,230 L160,190 L320,225 L480,160 L640,210 L800,150 L960,200 L1120,170 L1280,215 L1440,185 L1440,320 Z" fill="#6e1423" opacity="0.16"/>
+  <div class="hero-sky"></div>
+  <div class="hero-sun"></div>
+  <svg class="hero-art" viewBox="0 0 1440 620" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="m1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7d6b8a"/><stop offset="1" stop-color="#5a4a66"/></linearGradient>
+      <linearGradient id="m2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#566b6b"/><stop offset="1" stop-color="#3a4d4d"/></linearGradient>
+      <linearGradient id="m3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8c1d31"/><stop offset="1" stop-color="#5a1320"/></linearGradient>
+      <linearGradient id="m4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c2731a"/><stop offset="1" stop-color="#8f4f12"/></linearGradient>
+    </defs>
+    <!-- far snow peaks -->
+    <path d="M0,300 L150,180 L240,250 L360,120 L470,230 L600,150 L740,250 L860,160 L1000,260 L1130,180 L1260,250 L1360,200 L1440,260 L1440,620 L0,620 Z" fill="url(#m1)" opacity="0.55"/>
+    <path d="M360,120 L400,170 L320,170 Z M600,150 L640,205 L560,205 Z M860,160 L905,220 L815,220 Z M1130,180 L1165,230 L1095,230 Z" fill="#f0ece6" opacity="0.7"/>
+    <!-- mid ridge -->
+    <path d="M0,380 L120,300 L260,370 L400,290 L560,380 L700,310 L840,390 L1000,320 L1160,400 L1300,330 L1440,390 L1440,620 L0,620 Z" fill="url(#m2)" opacity="0.85"/>
+    <!-- wine foreground hills -->
+    <path d="M0,470 L180,400 L360,460 L540,410 L760,470 L960,420 L1180,475 L1440,430 L1440,620 L0,620 Z" fill="url(#m3)"/>
+    <!-- amber nearest -->
+    <path d="M0,560 L240,510 L520,560 L820,520 L1120,565 L1440,525 L1440,620 L0,620 Z" fill="url(#m4)"/>
+    <!-- monastery silhouette -->
+    <g fill="#2a1a16" opacity="0.9">
+      <rect x="690" y="430" width="34" height="60"/>
+      <path d="M690,430 L707,398 L724,430 Z"/>
+      <rect x="701" y="378" width="12" height="26"/>
+      <path d="M701,378 L707,366 L713,378 Z"/>
+    </g>
   </svg>
-  <div class="hero-inner">
-    <div class="eyebrow">A Solo Caucasus Road-Trip · July 2026</div>
-    <h1>Echoes of<br>the Caucasus
-      <span class="geo">საქართველო · Հայաստան</span>
-    </h1>
-    <p class="hero-sub">Eleven days threading Georgia's wild peaks and Armenia's ancient highlands — qvevri wine, sunrise over Ushguli's stone towers, monasteries carved into cliffs, and Mt Ararat on the horizon. Two countries, one overland arc, a crew of twelve.</p>
+  <div class="hero-content">
+    <div class="eyebrow">A Solo Caucasus Road-Trip</div>
+    <h1>Echoes of<br>the <em>Caucasus</em></h1>
+    <div class="geo-line">საქართველო · Հայաստան</div>
+    <p class="hero-sub">Eleven days threading Georgia's wild peaks into Armenia's ancient highlands — qvevri wine, sunrise over Ushguli's stone towers, cliff-carved monasteries, and Mt Ararat on the skyline. Two countries, one overland arc, a crew of twelve.</p>
     <div class="hero-meta">
       <div class="hm"><span class="v">23 Jul</span><span class="l">Land Tbilisi</span></div>
       <div class="hm"><span class="v">3 Aug</span><span class="l">Home from Yerevan</span></div>
-      <div class="hm"><span class="v">11</span><span class="l">Days total</span></div>
-      <div class="hm"><span class="v">~₹2.1L</span><span class="l">All-in est.</span></div>
+      <div class="hm"><span class="v">11</span><span class="l">Days</span></div>
+      <div class="hm"><span class="v">2</span><span class="l">Countries</span></div>
     </div>
   </div>
   <div class="scroll-cue"><span></span>Scroll</div>
 </header>
 
-<section id="why" class="alt">
+<section id="overview">
   <div class="wrap">
-    <div class="sec-label">Why this, and not Japan</div>
-    <h2>The <span class="accent">trade</span> you actually made</h2>
-    <p class="lead">You chased Japan for weeks. The wall was always the same: no July trip gave you a 25–35 crowd, proper rooms, and your dates all at once. The Caucasus quietly delivers all three — and fixes every dealbreaker.</p>
-    <div class="ctab reveal">
-      <table>
-        <tr><th>What mattered</th><th>Japan (the wall)</th><th>Georgia &amp; Armenia</th></tr>
-        <tr><td>Your dates</td><td>Nothing fit your window</td><td class="cau win">25 Jul–2 Aug ✓</td></tr>
-        <tr><td>The crowd</td><td>Couldn't get 25–35 + hotels</td><td class="cau win">Real group is late-20s/30s ✓</td></tr>
-        <tr><td>Rooms</td><td>Dorms — the dealbreaker</td><td class="cau win">Twin, private bath ✓</td></tr>
-        <tr><td>Group size</td><td>~24 (Contiki)</td><td class="cau win">~12, see them first ✓</td></tr>
-        <tr><td>Visa risk</td><td>eVisa, fine</td><td class="cau win">Two easy e-visas, no Schengen ✓</td></tr>
-        <tr><td>Cost (land)</td><td>~₹1.55–1.8L</td><td class="cau win">~₹1.18L ✓</td></tr>
-        <tr><td>Vibe</td><td>Neon + nightlife</td><td class="cau">Mountains, monasteries, wine</td></tr>
-        <tr><td>Nightlife</td><td>High</td><td class="cau">Moderate (Tbilisi wine bars)</td></tr>
-      </table>
+    <div class="sec-label">The shape of it</div>
+    <h2>One arc, <span class="accent">four</span> worlds</h2>
+    <p class="lead">From cobbled capitals to wine valleys, from the high Svan towers to Armenia's monastery country — the trip moves through four distinct landscapes in a single overland line.</p>
+    <div class="intro-scenes stagger">
+      <div class="iscene">
+        <svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="400" fill="#e7c79c"/>
+          <circle cx="225" cy="80" r="42" fill="#f6d98e" opacity="0.85"/>
+          <g fill="#8c1d31"><rect x="40" y="200" width="46" height="160"/><rect x="100" y="170" width="50" height="190"/><rect x="164" y="210" width="44" height="150"/><rect x="222" y="185" width="48" height="175"/></g>
+          <g fill="#6e1423" opacity="0.7"><rect x="48" y="215" width="12" height="14"/><rect x="68" y="215" width="12" height="14"/><rect x="110" y="190" width="12" height="14"/><rect x="130" y="190" width="12" height="14"/><rect x="174" y="228" width="12" height="14"/><rect x="232" y="205" width="12" height="14"/></g>
+          <path d="M0,360 L300,360 L300,400 L0,400 Z" fill="#5a1320"/>
+        </svg>
+        <div class="cap"><div class="s">Days 1 & 6</div><div class="t">Tbilisi</div></div>
+      </div>
+      <div class="iscene">
+        <svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="400" fill="#d9b878"/>
+          <path d="M0,250 Q75,210 150,250 T300,250 L300,400 L0,400 Z" fill="#8a6d2f"/>
+          <path d="M0,300 Q75,265 150,300 T300,300 L300,400 L0,400 Z" fill="#6e1423" opacity="0.55"/>
+          <g fill="#5a1320"><circle cx="60" cy="245" r="6"/><circle cx="90" cy="255" r="6"/><circle cx="120" cy="248" r="6"/><circle cx="200" cy="252" r="6"/><circle cx="230" cy="258" r="6"/></g>
+          <rect x="135" y="140" width="30" height="40" fill="#7a5a28"/><path d="M135,140 L150,118 L165,140 Z" fill="#5e4420"/>
+        </svg>
+        <div class="cap"><div class="s">Day 2</div><div class="t">Kakheti Wine</div></div>
+      </div>
+      <div class="iscene">
+        <svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="400" fill="#bcd0d6"/>
+          <path d="M0,180 L80,60 L150,160 L210,40 L300,170 L300,400 L0,400 Z" fill="#566b6b"/>
+          <path d="M80,60 L110,110 L50,110 Z M210,40 L245,100 L175,100 Z" fill="#f0ece6"/>
+          <path d="M0,260 L300,260 L300,400 L0,400 Z" fill="#3a4d4d"/>
+          <g fill="#2a1a16"><rect x="70" y="210" width="16" height="55"/><rect x="120" y="200" width="16" height="65"/><rect x="180" y="215" width="16" height="50"/></g>
+        </svg>
+        <div class="cap"><div class="s">Days 3–5</div><div class="t">Svaneti Peaks</div></div>
+      </div>
+      <div class="iscene">
+        <svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <rect width="300" height="400" fill="#e9c79a"/>
+          <path d="M0,210 L120,90 L300,230 L300,400 L0,400 Z" fill="#9a8a7a" opacity="0.6"/>
+          <path d="M120,90 L160,150 L80,150 Z" fill="#f0ece6" opacity="0.8"/>
+          <path d="M0,300 L300,300 L300,400 L0,400 Z" fill="#2a7d72" opacity="0.45"/>
+          <g fill="#2a1a16"><rect x="130" y="240" width="40" height="60"/><path d="M130,240 L150,212 L170,240 Z"/><rect x="144" y="196" width="12" height="20"/></g>
+        </svg>
+        <div class="cap"><div class="s">Days 7–9</div><div class="t">Armenia</div></div>
+      </div>
     </div>
-    <div class="note good reveal"><div class="ni">⚖️</div><p><strong>The honest verdict:</strong> You gave up <strong>one</strong> preference — heavy nightlife — to satisfy <strong>five</strong> hard constraints. And that trade landed right where your own taste had already shifted: toward the road-trip, the scenery, the castles-and-mountains end of things.</p></div>
+    <div class="snapshot reveal">
+      <div class="snap"><div class="ic">📅</div><div class="v">23 Jul–3 Aug</div><div class="l">Full window</div></div>
+      <div class="snap"><div class="ic">🚐</div><div class="v">WeRoad</div><div class="l">25 Jul–2 Aug core</div></div>
+      <div class="snap"><div class="ic">👥</div><div class="v">~12</div><div class="l">Late-20s/30s</div></div>
+      <div class="snap"><div class="ic">🛏️</div><div class="v">Twin</div><div class="l">Private bath</div></div>
+      <div class="snap"><div class="ic">💰</div><div class="v">~₹2.3L</div><div class="l">All-in est.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="map" class="alt">
+  <div class="wrap">
+    <div class="sec-label">Tbilisi → Yerevan</div>
+    <h2>The <span class="accent">overland</span> line</h2>
+    <p class="lead">East to the wine valleys, a big push north-west into the high Caucasus, back down through Tbilisi, then south across the border into Armenia. One continuous thread.</p>
+    <div class="mapwrap reveal">
+      <svg viewBox="0 0 1000 560" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="route" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c2731a"/><stop offset="0.5" stop-color="#8c1d31"/><stop offset="1" stop-color="#2a7d72"/></linearGradient>
+          <filter id="ds" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1a1208" flood-opacity="0.3"/></filter>
+        </defs>
+        <rect width="1000" height="560" fill="#e3d3b4"/>
+        <!-- terrain washes -->
+        <path d="M0,120 Q200,60 420,130 T1000,110 L1000,0 L0,0 Z" fill="#cdbf9e" opacity="0.5"/>
+        <path d="M120,240 Q260,180 400,230 T640,210 Q500,300 360,300 T120,280 Z" fill="#9fb0a8" opacity="0.45"/>
+        <path d="M0,560 L0,420 Q260,360 520,430 T1000,400 L1000,560 Z" fill="#2a7d72" opacity="0.13"/>
+        <!-- label countries -->
+        <text x="250" y="100" font-family="Bodoni Moda, serif" font-size="30" fill="#6e1423" opacity="0.32" font-style="italic">Georgia</text>
+        <text x="640" y="500" font-family="Bodoni Moda, serif" font-size="30" fill="#2a7d72" opacity="0.4" font-style="italic">Armenia</text>
+        <!-- the route path -->
+        <path d="M430,250 L620,210 L430,250 L250,150 L430,250 L470,470 L700,440" fill="none" stroke="url(#route)" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 14" opacity="0.9"/>
+        <path d="M430,250 L620,210 M430,250 L250,150 M430,250 L470,470 L700,440" fill="none" stroke="url(#route)" stroke-width="5" stroke-linecap="round" opacity="0.95"/>
+        <!-- pins -->
+        <g font-family="Inter, sans-serif" font-weight="800" filter="url(#ds)">
+          <g><circle cx="430" cy="250" r="13" fill="#8c1d31"/><text x="430" y="255" font-size="13" fill="#fff" text-anchor="middle">1</text><text x="430" y="288" font-size="14" fill="#16100c" text-anchor="middle">Tbilisi</text></g>
+          <g><circle cx="620" cy="210" r="13" fill="#8c1d31"/><text x="620" y="215" font-size="13" fill="#fff" text-anchor="middle">2</text><text x="620" y="196" font-size="13" fill="#16100c" text-anchor="middle">Kakheti</text></g>
+          <g><circle cx="250" cy="150" r="13" fill="#8c1d31"/><text x="250" y="155" font-size="13" fill="#fff" text-anchor="middle">3</text><text x="250" y="136" font-size="13" fill="#16100c" text-anchor="middle">Svaneti / Ushguli</text></g>
+          <g><circle cx="470" cy="470" r="13" fill="#2a7d72"/><text x="470" y="475" font-size="13" fill="#fff" text-anchor="middle">7</text><text x="470" y="505" font-size="13" fill="#16100c" text-anchor="middle">Monasteries</text></g>
+          <g><circle cx="700" cy="440" r="13" fill="#2a7d72"/><text x="700" y="445" font-size="13" fill="#fff" text-anchor="middle">9</text><text x="700" y="473" font-size="14" fill="#16100c" text-anchor="middle">Yerevan</text></g>
+        </g>
+        <!-- compass -->
+        <g transform="translate(920,70)" opacity="0.5"><circle r="26" fill="none" stroke="#6e1423" stroke-width="1.5"/><path d="M0,-22 L6,0 L0,22 L-6,0 Z" fill="#6e1423"/><text x="0" y="-30" font-size="11" fill="#6e1423" text-anchor="middle" font-family="Inter" font-weight="800">N</text></g>
+      </svg>
+    </div>
   </div>
 </section>
 
 <section id="route">
   <div class="wrap">
-    <div class="sec-label">23 July – 3 August · Tbilisi → Yerevan</div>
-    <h2>The <span class="accent">full</span> eleven days</h2>
-    <p class="lead">Two solo days to land and settle, the nine-day WeRoad arc through both countries, then one last morning in Yerevan before home. Tap any day to open it.</p>
+    <div class="sec-label">23 July – 3 August</div>
+    <h2>The <span class="accent">eleven</span> days</h2>
+    <p class="lead">Two solo days to land, the nine-day WeRoad arc through both countries, a bonus Yerevan morning before home. Tap any day to open it.</p>
     <div class="legend">
-      <span><span class="dotk" style="border-color:var(--amber)"></span>Your solo days</span>
+      <span><span class="dotk" style="border-color:var(--amber)"></span>Solo days</span>
       <span><span class="dotk" style="border-color:var(--wine)"></span>Georgia (WeRoad)</span>
       <span><span class="dotk" style="border-color:var(--teal)"></span>Armenia (WeRoad)</span>
     </div>
@@ -293,36 +400,36 @@ footer .geo{font-family:'Noto Serif Georgian',serif;color:var(--teal-glow);font-
   <div class="wrap">
     <div class="sec-label">A clear-eyed audit</div>
     <h2 style="color:var(--cream)">What WeRoad <span style="color:var(--teal-glow);font-style:italic">actually</span> gives you</h2>
-    <p class="lead">€1,249 buys a driven road-trip with a leader, beds, breakfasts and three signature experiences. Here's the honest line between what's covered and what you'll pay for on top.</p>
+    <p class="lead">€1,249 buys a driven road-trip with a leader, beds, breakfasts and three signature experiences. Here's the honest line between covered and extra.</p>
     <div class="cols">
       <div class="panel inc-p reveal">
         <h3>In the €1,249</h3>
-        <div class="ph-sub">No surprises — this is genuinely covered</div>
-        <div class="li"><span class="ck">✓</span><span>8 nights' accommodation — hotels in Tbilisi &amp; Yerevan, family guesthouses in Svaneti (twin/triple, private or group-shared bath)</span></div>
+        <div class="ph-sub">Genuinely covered</div>
+        <div class="li"><span class="ck">✓</span><span>8 nights — hotels in Tbilisi &amp; Yerevan, family guesthouses in Svaneti (twin/triple, private or group-shared bath)</span></div>
         <div class="li"><span class="ck">✓</span><span>All 8 breakfasts</span></div>
-        <div class="li"><span class="ck">✓</span><span><b>Private vehicle + professional driver + fuel</b> throughout — this is a driven trip, not self-drive</span></div>
-        <div class="li"><span class="ck">✓</span><span>Qvevri <b>wine tasting</b> at a Kakheti family cellar</span></div>
-        <div class="li"><span class="ck">✓</span><span>Georgian <b>cooking class</b> (khachapuri / khinkali)</span></div>
-        <div class="li"><span class="ck">✓</span><span>Tbilisi <b>sulfur bath</b> experience</span></div>
-        <div class="li"><span class="ck">✓</span><span>Group Leader (Lauren) for all 9 days + welcome drinks</span></div>
-        <div class="li"><span class="ck">✓</span><span>Medical &amp; baggage insurance (€30,000 worldwide)</span></div>
+        <div class="li"><span class="ck">✓</span><span><b>Private vehicle + driver + fuel</b> throughout — a driven trip, not self-drive</span></div>
+        <div class="li"><span class="ck">✓</span><span>Qvevri <b>wine tasting</b> in Kakheti</span></div>
+        <div class="li"><span class="ck">✓</span><span>Georgian <b>cooking class</b></span></div>
+        <div class="li"><span class="ck">✓</span><span>Tbilisi <b>sulfur bath</b></span></div>
+        <div class="li"><span class="ck">✓</span><span>Group Leader all 9 days + welcome drinks</span></div>
+        <div class="li"><span class="ck">✓</span><span>Medical &amp; baggage insurance (€30,000)</span></div>
       </div>
       <div class="panel exc-p reveal">
         <h3>Budget on top</h3>
-        <div class="ph-sub">The honest gaps — plan for these</div>
-        <div class="li"><span class="ck">+</span><span><b>Flights</b> (~₹65k) — and note it's open-jaw: in to Tbilisi, out of Yerevan</span></div>
-        <div class="li"><span class="ck">+</span><span><b>Lunches &amp; dinners</b> — only breakfast is covered (~₹800–1,500/day; food here is cheap)</span></div>
-        <div class="li"><span class="ck">+</span><span><b>Common fund</b> — shared kitty for fuel extras, entries, group activities (~€80–150, paid on-trip)</span></div>
-        <div class="li"><span class="ck">+</span><span>4WD to Gergeti Trinity Church (~$18–25) — <i>worth it, it's the iconic shot</i></span></div>
-        <div class="li"><span class="ck">+</span><span>Koruldi Lakes jeep (~$18), Ushguli village fee (~$5), cable cars, massage</span></div>
-        <div class="li"><span class="ck">+</span><span><b>Private room upgrade</b> (on request, extra) if you want your own room</span></div>
-        <div class="li"><span class="ck">+</span><span>Tips, city tax, SIM, souvenirs (apricot brandy, wine, khachkar carvings)</span></div>
+        <div class="ph-sub">The honest gaps</div>
+        <div class="li"><span class="ck">+</span><span><b>Flights</b> (~₹65k) — open-jaw: in to Tbilisi, out of Yerevan</span></div>
+        <div class="li"><span class="ck">+</span><span><b>Lunches &amp; dinners</b> — only breakfast covered (~₹800–1,500/day)</span></div>
+        <div class="li"><span class="ck">+</span><span><b>Common fund</b> — shared kitty for fuel extras, entries, activities (~€80–150 on-trip)</span></div>
+        <div class="li"><span class="ck">+</span><span>4WD to Gergeti Trinity Church (~$18–25) — <i>worth it</i></span></div>
+        <div class="li"><span class="ck">+</span><span>Koruldi Lakes jeep (~$18), Ushguli fee (~$5), cable cars, massage</span></div>
+        <div class="li"><span class="ck">+</span><span><b>Private room upgrade</b> (on request)</span></div>
+        <div class="li"><span class="ck">+</span><span>Tips, city tax, SIM, souvenirs</span></div>
       </div>
     </div>
-    <div class="shred-grid" style="margin-top:30px">
-      <div class="scard reveal"><div class="si">🚐</div><h4>Day 3 is the big one</h4><p>Tbilisi → Kazbegi → Mestia crosses the whole Caucasus. Long hours in the van — the trip's most demanding transfer. Worth it for what's on the other side.</p></div>
-      <div class="scard reveal"><div class="si">🏔️</div><h4>Svaneti = guesthouses</h4><p>Days 3–5 are family-run guesthouses, not hotels. Authentic, home-cooked, warm — but manage expectations. Tbilisi &amp; Yerevan nights are proper hotels.</p></div>
-      <div class="scard reveal"><div class="si">🌄</div><h4>Ushguli is weather-dependent</h4><p>The high mountain road can be affected by conditions; the highest bits occasionally flex. WeRoad rates the pace <span class="macro">"Dynamic"</span> — an active road-trip, not a lounge.</p></div>
+    <div class="grid3" style="margin-top:30px">
+      <div class="scard reveal"><div class="si">🚐</div><h4>Day 3 is the big one</h4><p>Tbilisi → Kazbegi → Mestia crosses the whole Caucasus. Long hours in the van — the most demanding transfer. Worth it for what's on the far side.</p></div>
+      <div class="scard reveal"><div class="si">🏔️</div><h4>Svaneti = guesthouses</h4><p>Days 3–5 are family-run guesthouses, not hotels. Authentic, home-cooked, warm — manage expectations. Tbilisi &amp; Yerevan are proper hotels.</p></div>
+      <div class="scard reveal"><div class="si">🌄</div><h4>Ushguli is weather-dependent</h4><p>The high road can be affected; the top bits occasionally flex. WeRoad rates the pace <span class="macro">"Dynamic"</span> — an active road-trip, not a lounge.</p></div>
     </div>
   </div>
 </section>
@@ -331,15 +438,15 @@ footer .geo{font-family:'Noto Serif Georgian',serif;color:var(--teal-glow);font-
   <div class="wrap">
     <div class="sec-label">Mumbai ↔ the Caucasus</div>
     <h2>Getting <span class="accent">there</span> &amp; back</h2>
-    <p class="lead">An open-jaw ticket: fly into Tbilisi, fly home from Yerevan — no backtracking. The outbound is the gift here: IndiGo flies <b>direct</b>.</p>
+    <p class="lead">An open-jaw ticket: fly into Tbilisi, home from Yerevan — no backtracking. The outbound is the gift: IndiGo flies <b>direct</b>.</p>
     <div class="flights">
       <div class="fcard reveal">
         <div class="froute">BOM <span class="arrow">→</span> TBS</div>
         <div class="fdate">Out · ~23 July</div>
         <div class="fline"><span>Best pick</span><b>IndiGo — DIRECT</b></div>
         <div class="fline"><span>Flight time</span><b>~5h 35m nonstop</b></div>
-        <div class="fline"><span>One-way fare</span><b>₹28–40k (peak Jul)</b></div>
-        <div class="fline"><span>Also via Gulf</span><b>Air Arabia, Azerbaijan, Gulf Air</b></div>
+        <div class="fline"><span>One-way</span><b>₹28–40k (peak Jul)</b></div>
+        <div class="fline"><span>Also via Gulf</span><b>Air Arabia, Azerbaijan</b></div>
         <span class="fbadge">No layover · No transit visa</span>
       </div>
       <div class="fcard reveal">
@@ -347,12 +454,12 @@ footer .geo{font-family:'Noto Serif Georgian',serif;color:var(--teal-glow);font-
         <div class="fdate">Back · 2 or 3 Aug</div>
         <div class="fline"><span>Best pick</span><b>flydubai / Air Arabia</b></div>
         <div class="fline"><span>Via</span><b>Dubai / Sharjah (airside)</b></div>
-        <div class="fline"><span>One-way fare</span><b>₹27–35k</b></div>
-        <div class="fline"><span>Flight time</span><b>~9–12h w/ 1 stop</b></div>
+        <div class="fline"><span>One-way</span><b>₹27–35k</b></div>
+        <div class="fline"><span>Flight time</span><b>~9–12h, 1 stop</b></div>
         <span class="fbadge">Gulf hub · No transit visa</span>
       </div>
     </div>
-    <div class="note good reveal"><div class="ni">✈️</div><p><strong>Routing rule:</strong> Stick to Gulf or Istanbul hubs — Dubai, Sharjah, Doha, Abu Dhabi, Baku, Istanbul — all airside, no transit visa for your passport. <strong>Avoid</strong> European hubs (Frankfurt, Zurich) which can trigger a Schengen transit visa. Book as one multi-city ticket, or two one-ways if cheaper (often is). All-in: <strong>~₹55–75k</strong>.</p></div>
+    <div class="note good reveal"><div class="ni">✈️</div><p><strong>Routing rule:</strong> stick to Gulf or Istanbul hubs — Dubai, Sharjah, Doha, Abu Dhabi, Baku, Istanbul — all airside, no transit visa. <strong>Avoid</strong> European hubs (Frankfurt, Zurich) which can trigger a Schengen transit visa. Book as one multi-city ticket, or two one-ways if cheaper. All-in: <strong>~₹55–75k</strong>.</p></div>
   </div>
 </section>
 
@@ -360,34 +467,34 @@ footer .geo{font-family:'Noto Serif Georgian',serif;color:var(--teal-glow);font-
   <div class="wrap">
     <div class="sec-label">Two countries, two e-visas</div>
     <h2>The <span class="accent">easy</span> part</h2>
-    <p class="lead">This is exactly why the Caucasus won: both visas are online, cheap, and fast — none of the Schengen appointment-and-pray gamble that sank Japan-via-Europe. Apply in early July and you're clear.</p>
+    <p class="lead">Both visas are online, cheap, and fast — no embassy queues. Apply in early July and you're clear with margin to spare.</p>
     <div class="vgrid">
       <div class="vcard reveal">
         <h3>🇬🇪 Georgia e-Visa</h3>
         <div class="vmeta">
           <div class="vm"><div class="vv">~₹1,600</div><div class="vl">Fee (~$20)</div></div>
           <div class="vm"><div class="vv">~5 days</div><div class="vl">Processing</div></div>
-          <div class="vm"><div class="vv">evisa.gov.ge</div><div class="vl">Official portal</div></div>
+          <div class="vm"><div class="vv">evisa.gov.ge</div><div class="vl">Official</div></div>
         </div>
-        <div class="vstep"><span class="vn">1</span><span>Apply online at the official portal (avoid copycat sites)</span></div>
-        <div class="vstep"><span class="vn">2</span><span>Upload passport, photo, return/onward flight, Tbilisi hotel booking</span></div>
-        <div class="vstep"><span class="vn">3</span><span>Bank statement + travel insurance proof</span></div>
-        <div class="vstep"><span class="vn">4</span><span>Pay online → e-visa by email → print &amp; carry</span></div>
+        <div class="vstep"><span class="vn">1</span><span>Apply at the official portal (avoid copycats)</span></div>
+        <div class="vstep"><span class="vn">2</span><span>Passport, photo, return flight, Tbilisi hotel</span></div>
+        <div class="vstep"><span class="vn">3</span><span>Bank statement + travel insurance</span></div>
+        <div class="vstep"><span class="vn">4</span><span>Pay → e-visa by email → print &amp; carry</span></div>
       </div>
       <div class="vcard arm reveal">
         <h3>🇦🇲 Armenia e-Visa</h3>
         <div class="vmeta">
-          <div class="vm"><div class="vv">~₹650</div><div class="vl">21-day (AMD 3,000)</div></div>
+          <div class="vm"><div class="vv">~₹650</div><div class="vl">21-day</div></div>
           <div class="vm"><div class="vv">~3 days</div><div class="vl">Processing</div></div>
-          <div class="vm"><div class="vv">evisa.mfa.am</div><div class="vl">Official portal</div></div>
+          <div class="vm"><div class="vv">evisa.mfa.am</div><div class="vl">Official</div></div>
         </div>
-        <div class="vstep"><span class="vn">1</span><span>Apply at evisa.mfa.am — the eligibility checker confirms India</span></div>
-        <div class="vstep"><span class="vn">2</span><span>Passport, digital photo, accommodation + dates</span></div>
-        <div class="vstep"><span class="vn">3</span><span><b>Travel insurance is mandatory</b> for Indian nationals</span></div>
-        <div class="vstep"><span class="vn">4</span><span>Pay → approved by email in ~3 business days → print</span></div>
+        <div class="vstep"><span class="vn">1</span><span>Apply at evisa.mfa.am (India eligible)</span></div>
+        <div class="vstep"><span class="vn">2</span><span>Passport, digital photo, accommodation</span></div>
+        <div class="vstep"><span class="vn">3</span><span><b>Travel insurance mandatory</b> for Indians</span></div>
+        <div class="vstep"><span class="vn">4</span><span>Pay → approved in ~3 business days → print</span></div>
       </div>
     </div>
-    <div class="note warn reveal"><div class="ni">📌</div><p><strong>No visa-on-arrival</strong> for either country on an Indian passport — both must be in hand before you fly. But since both are online and fast, applying in <strong>early July</strong> leaves comfortable margin. Get the Georgia one first (you enter there), Armenia second.</p></div>
+    <div class="note warn reveal"><div class="ni">📌</div><p><strong>No visa-on-arrival</strong> for either on an Indian passport — both in hand before flying. Both online and fast, so apply <strong>early July</strong>: Georgia first (you enter there), Armenia second.</p></div>
   </div>
 </section>
 
@@ -395,14 +502,14 @@ footer .geo{font-family:'Noto Serif Georgian',serif;color:var(--teal-glow);font-
   <div class="wrap">
     <div class="sec-label">Staying on protocol</div>
     <h2 style="color:var(--cream)">The Shred, <span style="color:var(--teal-glow);font-style:italic">on the road</span></h2>
-    <p class="lead">Good news: Georgian and Armenian food is quietly one of the most protein-friendly cuisines for a cut. Grilled meats, fresh cheese, yogurt, beans, walnuts, herbs. Here's how to hold the line without being the difficult one in the group.</p>
-    <div class="shred-grid">
-      <div class="scard reveal"><div class="si">🍢</div><h4>Lean on the grill</h4><p><span class="macro">Mtsvadi</span> (Georgian skewered pork/veal) and Armenian <span class="macro">khorovats</span> are grilled, lean, huge portions. Default to these for dinner — easy 40–50g protein hits.</p></div>
-      <div class="scard reveal"><div class="si">🧀</div><h4>Cheese &amp; yogurt are friends</h4><p><span class="macro">Matsoni</span> (Georgian yogurt) and fresh <span class="macro">sulguni</span> cheese are everywhere for breakfast. High protein, low sugar. Skip the bread basket, keep the cheese.</p></div>
-      <div class="scard reveal"><div class="si">🫘</div><h4>Beans &amp; walnuts</h4><p><span class="macro">Lobio</span> (bean stew) and walnut-heavy dishes (pkhali, satsivi) carry protein + fibre. Useful on the mountain guesthouse nights when grill options thin out.</p></div>
-      <div class="scard reveal"><div class="si">🥾</div><h4>Training stays easy</h4><p>Days 3–5 are active hikes (Ushguli, Koruldi ridge, Chalaadi glacier) — that's your cardio handled. Tbilisi &amp; Yerevan hotels have gyms or there are day-pass options nearby.</p></div>
-      <div class="scard reveal"><div class="si">🍷</div><h4>The wine reality</h4><p>The qvevri tasting and toasting culture is core to the trip — don't skip it entirely, that's the experience. Budget it as your treat days (Day 2, Day 6) and tighten around them.</p></div>
-      <div class="scard reveal"><div class="si">📲</div><h4>Log on Healthify</h4><p>Khachapuri and lavash are the carb traps. Pre-log them so the day's macros stay honest — one cheese-bread can be a 600-cal hit. Enjoy it intentionally, not by accident.</p></div>
+    <p class="lead">Georgian and Armenian food is quietly one of the most protein-friendly cuisines for a cut. Here's how to hold the line without being the difficult one in the group.</p>
+    <div class="grid3">
+      <div class="scard reveal"><div class="si">🍢</div><h4>Lean on the grill</h4><p><span class="macro">Mtsvadi</span> and Armenian <span class="macro">khorovats</span> are grilled, lean, huge. Default to these — easy 40–50g protein hits.</p></div>
+      <div class="scard reveal"><div class="si">🧀</div><h4>Cheese &amp; yogurt</h4><p><span class="macro">Matsoni</span> yogurt and fresh <span class="macro">sulguni</span> at breakfast — high protein, low sugar. Skip the bread, keep the cheese.</p></div>
+      <div class="scard reveal"><div class="si">🫘</div><h4>Beans &amp; walnuts</h4><p><span class="macro">Lobio</span> bean stew and walnut dishes (pkhali) carry protein + fibre — useful on the mountain guesthouse nights.</p></div>
+      <div class="scard reveal"><div class="si">🥾</div><h4>Training stays easy</h4><p>Days 3–5 are active hikes (Ushguli, Koruldi, Chalaadi) — cardio handled. Tbilisi &amp; Yerevan hotels have gyms or day-passes nearby.</p></div>
+      <div class="scard reveal"><div class="si">🍷</div><h4>The wine reality</h4><p>The qvevri tasting is core to the trip — don't skip it. Budget it as treat days (Day 2, Day 6) and tighten around them.</p></div>
+      <div class="scard reveal"><div class="si">📲</div><h4>Log on Healthify</h4><p>Khachapuri and lavash are the carb traps. Pre-log them so macros stay honest — enjoy it intentionally, not by accident.</p></div>
     </div>
   </div>
 </section>
@@ -411,31 +518,31 @@ footer .geo{font-family:'Noto Serif Georgian',serif;color:var(--teal-glow);font-
   <div class="wrap">
     <div class="sec-label">What you'll eat</div>
     <h2>The <span class="accent">table</span></h2>
-    <p class="lead">Two of the great underrated food cultures — and unusually kind to vegetarians (handy for the family back home you're always feeding veg). Here's the shortlist worth seeking out.</p>
+    <p class="lead">Two great underrated food cultures — and unusually kind to vegetarians. The shortlist worth seeking out.</p>
     <div class="food-grid">
-      <div class="fc reveal"><h4>Khachapuri</h4><p>The cheese-bread icon. Adjaruli version is a boat of molten sulguni with an egg cracked on top. A once-a-trip indulgence — share it.</p></div>
-      <div class="fc reveal"><h4>Khinkali</h4><p>Soup dumplings, twisted at the top. Grab the knot, bite, sip the broth. The Day 1 welcome-dinner staple.</p></div>
-      <div class="fc reveal"><h4>Mtsvadi / Khorovats</h4><p>Georgian &amp; Armenian grilled skewers — the protein backbone of your Shred plan. Order with tkemali plum sauce.</p></div>
-      <div class="fc veg reveal"><div class="vt">Vegetarian</div><h4>Pkhali</h4><p>Beetroot, spinach or bean pâtés bound with walnuts &amp; herbs, topped with pomegranate. Beautiful and fully veg.</p></div>
-      <div class="fc veg reveal"><div class="vt">Vegetarian</div><h4>Lobio &amp; Lobiani</h4><p>Spiced bean stew (lobio) or bean-stuffed bread (lobiani). Hearty, protein-rich, vegetarian comfort food.</p></div>
-      <div class="fc veg reveal"><div class="vt">Vegetarian</div><h4>Armenian dolma &amp; lavash</h4><p>Vine leaves stuffed with rice &amp; herbs, fresh-baked lavash (you'll see it made on Day 8). Plenty of meat-free Armenian plates.</p></div>
+      <div class="fc reveal"><h4>Khachapuri</h4><p>The cheese-bread icon. Adjaruli is a boat of molten sulguni with an egg on top. A once-a-trip indulgence — share it.</p></div>
+      <div class="fc reveal"><h4>Khinkali</h4><p>Soup dumplings twisted at the top. Grab the knot, bite, sip the broth. The Day 1 welcome staple.</p></div>
+      <div class="fc reveal"><h4>Mtsvadi / Khorovats</h4><p>Georgian &amp; Armenian grilled skewers — the protein backbone of your Shred plan. Order with tkemali.</p></div>
+      <div class="fc veg reveal"><div class="vt">Vegetarian</div><h4>Pkhali</h4><p>Beet, spinach or bean pâtés bound with walnuts &amp; herbs, topped with pomegranate. Fully veg, beautiful.</p></div>
+      <div class="fc veg reveal"><div class="vt">Vegetarian</div><h4>Lobio &amp; Lobiani</h4><p>Spiced bean stew or bean-stuffed bread. Hearty, protein-rich, vegetarian comfort food.</p></div>
+      <div class="fc veg reveal"><div class="vt">Vegetarian</div><h4>Dolma &amp; Lavash</h4><p>Vine leaves with rice &amp; herbs, fresh-baked lavash (made on Day 8). Plenty of meat-free Armenian plates.</p></div>
     </div>
-    <div class="note reveal"><div class="ni">🍷</div><p><strong>The wine isn't a side note — it's the story.</strong> Georgia is the birthplace of wine, fermented in buried clay qvevri for 8,000 years. The Kakheti tasting (Day 2) is one of the trip's signatures. Amber/orange wines are the local specialty — try them even if you're a red drinker.</p></div>
+    <div class="note reveal"><div class="ni">🍷</div><p><strong>The wine isn't a side note — it's the story.</strong> Georgia is the birthplace of wine, fermented in buried clay qvevri for 8,000 years. The Kakheti tasting (Day 2) is a signature — try the amber/orange wines even if you drink red.</p></div>
   </div>
 </section>
 
 <section id="weather" class="alt">
   <div class="wrap">
     <div class="sec-label">Late July – early August</div>
-    <h2>The <span class="accent">weather</span> advantage</h2>
-    <p class="lead">A dry-hot lowlands plus cool-fresh mountains mix — the best of both, and a world away from Japan's humid rainy-season July. The only real prep is layers for altitude and sun cover for the exposed sites.</p>
+    <h2>The <span class="accent">weather</span></h2>
+    <p class="lead">Dry-hot lowlands plus cool-fresh mountains — the best of both. The only prep is layers for altitude and sun cover for exposed sites.</p>
     <div class="snapshot reveal">
-      <div class="snap"><div class="ic">🏛️</div><div class="v">32–36°C</div><div class="l">Tbilisi &amp; Kakheti · dry heat</div></div>
-      <div class="snap"><div class="ic">🏔️</div><div class="v">15–22°C</div><div class="l">Svaneti days · fresh</div></div>
-      <div class="snap"><div class="ic">🌙</div><div class="v">5–10°C</div><div class="l">Mountain nights · cold</div></div>
-      <div class="snap"><div class="ic">☀️</div><div class="v">33–37°C</div><div class="l">Yerevan · dry, bright</div></div>
+      <div class="snap"><div class="ic">🏛️</div><div class="v">32–36°C</div><div class="l">Tbilisi · dry heat</div></div>
+      <div class="snap"><div class="ic">🏔️</div><div class="v">15–22°C</div><div class="l">Svaneti days</div></div>
+      <div class="snap"><div class="ic">🌙</div><div class="v">5–10°C</div><div class="l">Mountain nights</div></div>
+      <div class="snap"><div class="ic">☀️</div><div class="v">33–37°C</div><div class="l">Yerevan · bright</div></div>
     </div>
-    <div class="note good reveal"><div class="ni">🌄</div><p><strong>Pack for the contrast.</strong> Low humidity everywhere (unlike Mumbai monsoon or Tokyo's sticky 80%), but the Ushguli sunrise at 2,000m+ will be genuinely cold pre-dawn — a warm layer is non-negotiable. Lowland sites (Khor Virap, Garni) are exposed and shadeless: sunscreen, hat, water.</p></div>
+    <div class="note good reveal"><div class="ni">🌄</div><p><strong>Pack for the contrast.</strong> Low humidity throughout, but Ushguli sunrise at 2,000m+ is genuinely cold pre-dawn — a warm layer is non-negotiable. Lowland sites (Khor Virap, Garni) are exposed and shadeless: sunscreen, hat, water.</p></div>
   </div>
 </section>
 
@@ -443,12 +550,12 @@ footer .geo{font-family:'Noto Serif Georgian',serif;color:var(--teal-glow);font-
   <div class="wrap">
     <div class="sec-label">The mandatory backpack</div>
     <h2>What to <span class="accent">carry</span></h2>
-    <p class="lead">WeRoad requires a soft backpack — no hard trolleys (luggage rides in the van across rough mountain roads). Pack for hot cities and cold peaks in the same bag.</p>
+    <p class="lead">WeRoad requires a soft backpack — no hard trolleys (luggage rides the van over rough roads). Pack for hot cities and cold peaks in one bag.</p>
     <div class="pack">
-      <div class="pcol reveal"><h4>🥾 Layers</h4><ul><li>Warm fleece / insulated layer (mountain mornings)</li><li>Light rain shell</li><li>Breathable tees for hot lowlands</li><li>One smart-casual set for Tbilisi/Yerevan nights</li></ul></div>
-      <div class="pcol reveal"><h4>👟 Feet</h4><ul><li>Broken-in walking/hiking shoes (Ushguli, Koruldi)</li><li>Trainers for cities</li><li>Sandals for sulfur baths &amp; guesthouses</li></ul></div>
-      <div class="pcol reveal"><h4>☀️ Sun &amp; site</h4><ul><li>Sunscreen + hat + sunglasses</li><li>Reusable water bottle</li><li>Modest layer for monastery visits (shoulders/knees)</li></ul></div>
-      <div class="pcol reveal"><h4>🔌 Practical</h4><ul><li>Type C/F adapter (220V)</li><li>Power bank for long van days</li><li>Local SIM/eSIM (Magti, Beeline)</li><li>Printed both e-visas + insurance</li></ul></div>
+      <div class="pcol reveal"><h4>🥾 Layers</h4><ul><li>Warm fleece / insulated layer</li><li>Light rain shell</li><li>Breathable tees for lowlands</li><li>One smart-casual set for city nights</li></ul></div>
+      <div class="pcol reveal"><h4>👟 Feet</h4><ul><li>Broken-in hiking shoes (Ushguli, Koruldi)</li><li>Trainers for cities</li><li>Sandals for baths &amp; guesthouses</li></ul></div>
+      <div class="pcol reveal"><h4>☀️ Sun &amp; site</h4><ul><li>Sunscreen + hat + sunglasses</li><li>Reusable water bottle</li><li>Modest layer for monasteries</li></ul></div>
+      <div class="pcol reveal"><h4>🔌 Practical</h4><ul><li>Type C/F adapter (220V)</li><li>Power bank for van days</li><li>Local SIM/eSIM (Magti, Beeline)</li><li>Printed e-visas + insurance</li></ul></div>
     </div>
   </div>
 </section>
@@ -457,18 +564,18 @@ footer .geo{font-family:'Noto Serif Georgian',serif;color:var(--teal-glow);font-
   <div class="wrap">
     <div class="sec-label">The full number</div>
     <h2 style="color:var(--cream)">What it all <span style="color:var(--teal-glow);font-style:italic">costs</span></h2>
-    <p class="lead">Honest, all-in, for the full 11 days including your 2 Tbilisi days and 1 Yerevan day. Strong value for two countries.</p>
+    <p class="lead">Honest, all-in, for the full 11 days including 2 Tbilisi days and 1 Yerevan day.</p>
     <div class="cost reveal">
       <div class="crow"><div><div class="cl">WeRoad tour (land)</div><div class="cs">9 days · €1,249 · driver, beds, breakfasts, 3 experiences, insurance</div></div><div class="cv">₹1,18,000</div></div>
       <div class="crow"><div><div class="cl">Flights (open-jaw)</div><div class="cs">BOM→TBS direct + EVN→BOM via Gulf</div></div><div class="cv">₹65,000</div></div>
       <div class="crow"><div><div class="cl">Two e-visas</div><div class="cs">Georgia ~₹1,600 + Armenia ~₹650</div></div><div class="cv">₹2,250</div></div>
-      <div class="crow"><div><div class="cl">3 extra nights</div><div class="cs">2 Tbilisi (pre) + 1 Yerevan (post), mid-range</div></div><div class="cv">₹12,000</div></div>
-      <div class="crow"><div><div class="cl">Meals (lunch + dinner)</div><div class="cs">11 days · ~₹1,200/day · food is cheap here</div></div><div class="cv">₹13,000</div></div>
-      <div class="crow"><div><div class="cl">Common fund + add-ons</div><div class="cs">4WDs, entries, sulfur extras, jeep</div></div><div class="cv">₹10,000</div></div>
-      <div class="crow"><div><div class="cl">Buffer / souvenirs / SIM</div><div class="cs">apricot brandy, wine, khachkar carvings</div></div><div class="cv">₹8,000</div></div>
+      <div class="crow"><div><div class="cl">3 extra nights</div><div class="cs">2 Tbilisi + 1 Yerevan, mid-range</div></div><div class="cv">₹12,000</div></div>
+      <div class="crow"><div><div class="cl">Meals (lunch + dinner)</div><div class="cs">11 days · ~₹1,200/day</div></div><div class="cv">₹13,000</div></div>
+      <div class="crow"><div><div class="cl">Common fund + add-ons</div><div class="cs">4WDs, entries, sulfur extras</div></div><div class="cv">₹10,000</div></div>
+      <div class="crow"><div><div class="cl">Buffer / souvenirs / SIM</div><div class="cs">brandy, wine, khachkar carvings</div></div><div class="cv">₹8,000</div></div>
       <div class="crow tot"><div class="cl">All-in estimate</div><div class="cv">~₹2,28,000</div></div>
     </div>
-    <div class="note good reveal" style="background:rgba(250,245,234,.06);border-left-color:var(--teal-glow)"><div class="ni">💡</div><p style="color:#c8d3cf"><strong style="color:var(--cream)">Cheaper than the Japan plan</strong> — that was ₹1.55–1.8L land alone before flights. Two countries, 11 days, all-in for ~₹2.3L is genuinely good. Book flights early and on Thu/Fri to shave the biggest variable.</p></div>
+    <div class="note good reveal"><div class="ni">💡</div><p><strong>Strong value</strong> — two countries, 11 days, all-in for ~₹2.3L. Book flights early and on Thu/Fri to shave the biggest variable.</p></div>
   </div>
 </section>
 
@@ -477,15 +584,15 @@ footer .geo{font-family:'Noto Serif Georgian',serif;color:var(--teal-glow);font-
     <div class="cta-box reveal">
       <div class="urgent">🔥 1 spot left on the 25 Jul departure — move quickly</div>
       <h3>Locking it in</h3>
-      <p>The 25 Jul–2 Aug departure is "Almost full — 1 spot left." WeRoad lets you secure with a deposit and gives free changes to 31 days out, so booking now protects the spot without locking everything.</p>
+      <p>The 25 Jul–2 Aug departure shows "Almost full — 1 spot left." WeRoad secures with a deposit and gives free changes to 31 days out, so booking now protects the spot.</p>
       <div class="cta-steps">
-        <div class="cta-step"><div class="csn">01</div><div class="cst">Book the WeRoad spot (€100 deposit, flexible cancellation) — <b>do this first, it's the scarce piece</b></div></div>
-        <div class="cta-step"><div class="csn">02</div><div class="cst">Wait for trip confirmation email, then book the open-jaw flights (BOM→TBS / EVN→BOM)</div></div>
-        <div class="cta-step"><div class="csn">03</div><div class="cst">Apply Georgia e-visa, then Armenia e-visa — early July, with insurance proof ready</div></div>
-        <div class="cta-step"><div class="csn">04</div><div class="cst">Message Group Leader Lauren / "Chat with the group" to meet the crew before you commit fully</div></div>
+        <div class="cta-step"><div class="csn">01</div><div class="cst">Book the WeRoad spot (€100 deposit, flexible) — <b>the scarce piece, do it first</b></div></div>
+        <div class="cta-step"><div class="csn">02</div><div class="cst">After confirmation, book open-jaw flights (BOM→TBS / EVN→BOM)</div></div>
+        <div class="cta-step"><div class="csn">03</div><div class="cst">Apply Georgia e-visa, then Armenia — early July, insurance ready</div></div>
+        <div class="cta-step"><div class="csn">04</div><div class="cst">"Chat with the group" to meet the crew before the balance</div></div>
       </div>
     </div>
-    <div class="note reveal"><div class="ni">💬</div><p><strong>One smart pre-book move:</strong> this is a newer itinerary with few departures, so use WeRoad's "Chat with the group" (the Facebook link on the trip page) to talk to people already booked — you can confirm the vibe and the real ages before paying the balance.</p></div>
+    <div class="note reveal"><div class="ni">💬</div><p><strong>Smart pre-book move:</strong> it's a newer itinerary, so use WeRoad's "Chat with the group" to talk to people already booked — confirm the vibe and real ages before paying the balance.</p></div>
   </div>
 </section>
 
@@ -493,74 +600,57 @@ footer .geo{font-family:'Noto Serif Georgian',serif;color:var(--teal-glow);font-
   <div class="fbig">Echoes of the Caucasus</div>
   <div>Georgia &amp; Armenia · 23 July – 3 August 2026</div>
   <div class="geo">გაუმარჯოს! · Կենաց՛</div>
-  <p class="disc">Prices, dates, fares and visa rules verified June 2026 and subject to change — reconfirm on weroad.com, the airline sites, and evisa.gov.ge / evisa.mfa.am before booking. Fares are peak-summer estimates; the WeRoad departure showed "1 spot left" at time of writing. Built as a personal planning guide, not a booking service.</p>
+  <p class="disc">Prices, dates, fares and visa rules verified June 2026 and subject to change — reconfirm on weroad.com, airline sites, and evisa.gov.ge / evisa.mfa.am before booking. Fares are peak-summer estimates; the WeRoad departure showed "1 spot left" at time of writing. A personal planning guide, not a booking service.</p>
 </footer>
 
 <script>
-// itinerary data
 var days=[
- {k:'solo',date:'Wed 23 Jul',title:'Land in Tbilisi',loc:'Tbilisi · solo',body:'Fly in on the IndiGo direct, check in, and let the city come to you. An easy first evening wandering the Old Town lanes — no agenda, just shake off the flight and find a courtyard wine bar.'},
- {k:'solo',date:'Thu 24 Jul',title:'Tbilisi, your way',loc:'Tbilisi · solo',body:'A full free day before the group forms. Cable car to Narikala Fortress for the panorama, the sulfur-bath district of Abanotubani, the Bridge of Peace, and the leafy streets of Sololaki. Beat the jet lag, scout dinner spots, ease in.'},
- {k:'geo',date:'Fri 25 Jul · Day 1',title:'The crew assembles',loc:'Tbilisi',body:'Group meets at 18:00 — your 12 WeRoaders and Group Leader Lauren. An orientation walk past Metekhi, Narikala and the Bridge of Peace, welcome drinks, and the first dinner together in a courtyard wine bar. First-night buzz.',tags:[['inc','Welcome drinks'],['inc','Hotel night']]},
- {k:'geo',date:'Sat 26 Jul · Day 2',title:'Kakheti wine country',loc:'Sighnaghi · Kakheti',body:'East to Sighnaghi, the cobbled "City of Love" above the Alazani Valley, and serene Bodbe Monastery. The heart of the day: a qvevri wine masterclass at a family cellar — clay-vessel winemaking, amber pours, 8,000 years of tradition. Back to Tbilisi for khinkali, khachapuri and folk music.',tags:[['inc','Wine tasting'],['inc','Breakfast'],['','Treat day']]},
- {k:'geo',date:'Sun 27 Jul · Day 3',title:'Across the Caucasus to Mestia',loc:'Kazbegi → Mestia',body:'The big drive. Trace the Georgian Military Highway, stop at lakeside Ananuri Fortress, climb to Stepantsminda. Optional 4WD up to Gergeti Trinity Church under snow-bright Mt Kazbek — the iconic shot. Then a long, spectacular push west into Svaneti, arriving Mestia at dusk beneath the Svan stone towers.',tags:[['opt','4WD Gergeti ~$20'],['inc','Guesthouse'],['','Long drive']]},
+ {k:'solo',date:'Wed 23 Jul',title:'Land in Tbilisi',loc:'Tbilisi · solo',body:'Fly in on the IndiGo direct, check in, let the city come to you. An easy first evening in the Old Town lanes — no agenda, just shake off the flight and find a courtyard wine bar.'},
+ {k:'solo',date:'Thu 24 Jul',title:'Tbilisi, your way',loc:'Tbilisi · solo',body:'A full free day before the group forms. Cable car to Narikala Fortress, the sulfur-bath district of Abanotubani, the Bridge of Peace, and the leafy streets of Sololaki. Beat the jet lag, scout dinner, ease in.'},
+ {k:'geo',date:'Fri 25 Jul · Day 1',title:'The crew assembles',loc:'Tbilisi',body:'Group meets at 18:00 — your 12 WeRoaders and the Group Leader. Orientation walk past Metekhi, Narikala and the Bridge of Peace, welcome drinks, first dinner in a courtyard wine bar. First-night buzz.',tags:[['inc','Welcome drinks'],['inc','Hotel night']]},
+ {k:'geo',date:'Sat 26 Jul · Day 2',title:'Kakheti wine country',loc:'Sighnaghi · Kakheti',body:'East to Sighnaghi, the cobbled "City of Love" above the Alazani Valley, and serene Bodbe Monastery. The heart of the day: a qvevri wine masterclass at a family cellar — clay-vessel winemaking, amber pours, 8,000 years of tradition. Back to Tbilisi for khinkali and folk music.',tags:[['inc','Wine tasting'],['inc','Breakfast'],['','Treat day']]},
+ {k:'geo',date:'Sun 27 Jul · Day 3',title:'Across the Caucasus to Mestia',loc:'Kazbegi → Mestia',body:'The big drive. Trace the Georgian Military Highway, stop at lakeside Ananuri Fortress, climb to Stepantsminda. Optional 4WD up to Gergeti Trinity Church under snow-bright Mt Kazbek — the iconic shot. Then a long, spectacular push west into Svaneti, arriving Mestia at dusk beneath the Svan towers.',tags:[['opt','4WD Gergeti ~$20'],['inc','Guesthouse'],['','Long drive']]},
  {k:'geo',date:'Mon 28 Jul · Day 4',title:'Ushguli at sunrise',loc:'Ushguli · Svaneti',body:'Pre-dawn drive to Ushguli, one of Europe\'s highest inhabited villages, where Mt Shkhara blushes pink at first light. Wander the medieval tower-hamlets, step into Lamaria Church, walk the valley toward the Shkhara glacier viewpoint. Picnic of mountain cheese and fresh bread.',tags:[['opt','Village fee ~$5'],['inc','Guesthouse'],['','Sunrise hike']]},
- {k:'geo',date:'Tue 29 Jul · Day 5',title:'Svaneti panoramas',loc:'Mestia · Svaneti',body:'Choose your adventure: 4WD up to Koruldi Lakes for a ridge hike to mirror tarns with 360° Caucasus views, or the Chalaadi Glacier trail through a forested gorge to the ice front. Linger in Mestia\'s square afterward; easy dinner to recharge.',tags:[['opt','Koruldi jeep ~$18'],['inc','Guesthouse'],['','Active day']]},
- {k:'geo',date:'Wed 30 Jul · Day 6',title:'Down to the baths',loc:'Mestia → Tbilisi',body:'Wind down from the high country to Tbilisi, breaking for views and snacks. The reward: a private sulfur bath — warm mineral pools, steam, optional massage in a stone-vaulted room. Loosened up and glowing, a relaxed riverside dinner.',tags:[['inc','Sulfur bath'],['inc','Hotel night'],['','Treat day']]},
- {k:'arm',date:'Thu 31 Jul · Day 7',title:'Cross into Armenia',loc:'→ Yerevan',body:'Drive to the Sadakhlo–Bagratashen border, handle formalities, continue through green gorges to the UNESCO monasteries of Haghpat and Sanahin — medieval stonework and quiet cloisters. Reach Yerevan by late afternoon, climb the Cascade Steps for skyline views, finish at Republic Square\'s dancing fountains.',tags:[['inc','Hotel night'],['inc','Breakfast'],['','Border day']]},
+ {k:'geo',date:'Tue 29 Jul · Day 5',title:'Svaneti panoramas',loc:'Mestia · Svaneti',body:'Choose your adventure: 4WD up to Koruldi Lakes for a ridge hike to mirror tarns with 360° Caucasus views, or the Chalaadi Glacier trail through a forested gorge to the ice front. Linger in Mestia\'s square; easy dinner to recharge.',tags:[['opt','Koruldi jeep ~$18'],['inc','Guesthouse'],['','Active day']]},
+ {k:'geo',date:'Wed 30 Jul · Day 6',title:'Down to the baths',loc:'Mestia → Tbilisi',body:'Wind down from the high country to Tbilisi. The reward: a private sulfur bath — warm mineral pools, steam, optional massage in a stone-vaulted room. Loosened up, a relaxed riverside dinner.',tags:[['inc','Sulfur bath'],['inc','Hotel night'],['','Treat day']]},
+ {k:'arm',date:'Thu 31 Jul · Day 7',title:'Cross into Armenia',loc:'→ Yerevan',body:'Drive to the Sadakhlo–Bagratashen border, cross, continue through green gorges to the UNESCO monasteries of Haghpat and Sanahin — medieval stonework, quiet cloisters. Reach Yerevan by late afternoon, climb the Cascade Steps, finish at Republic Square\'s dancing fountains.',tags:[['inc','Hotel night'],['inc','Breakfast'],['','Border day']]},
  {k:'arm',date:'Fri 1 Aug · Day 8',title:'Armenia\'s ancient heart',loc:'Khor Virap · Garni · Geghard',body:'Khor Virap for postcard Mt Ararat behind the monastery, then Garni — the Caucasus\'s lone Greco-Roman temple above a gorge. A lavash baking demo and lunch, then Geghard\'s rock-cut chapels in late light, plus the Symphony of Stones basalt columns. Rooftop farewell dinner.',tags:[['inc','Lavash demo'],['inc','Hotel night'],['','Big sights day']]},
- {k:'arm',date:'Sat 2 Aug · Day 9',title:'Yerevan farewell',loc:'Yerevan',body:'A last coffee and a browse for apricot brandy, lavash boards and hand-carved khachkar miniatures at the market. The group says goodbye — but you stay one more night.',tags:[['inc','Breakfast'],['','Tour ends']]},
- {k:'solo',date:'Sun 3 Aug',title:'Home from Yerevan',loc:'Yerevan · solo → BOM',body:'Your bonus morning — coffee, a final wander, maybe the Cascade galleries you skipped. Then to Zvartnots for the flight home via a Gulf hub, landing in Mumbai rested rather than rushed.'},
+ {k:'arm',date:'Sat 2 Aug · Day 9',title:'Yerevan farewell',loc:'Yerevan',body:'A last coffee and a browse for apricot brandy, lavash boards and hand-carved khachkar miniatures. The group says goodbye — but you stay one more night.',tags:[['inc','Breakfast'],['','Tour ends']]},
+ {k:'solo',date:'Sun 3 Aug',title:'Home from Yerevan',loc:'Yerevan · solo → BOM',body:'Your bonus morning — coffee, a final wander, maybe the Cascade galleries. Then to Zvartnots for the flight home via a Gulf hub, landing in Mumbai rested rather than rushed.'},
 ];
 var tl=document.getElementById('tl');
 days.forEach(function(d){
  var el=document.createElement('div');
  el.className='day '+(d.k==='solo'?'solo':d.k==='arm'?'armenia':'');
- var num=d.date.indexOf('Day')>-1?d.date.split('Day ')[1]:(d.k==='solo'?'★':'');
+ var num=d.date.indexOf('Day')>-1?d.date.split('Day ')[1]:'\u2605';
  var tagsHtml='';
  if(d.tags){d.tags.forEach(function(t){tagsHtml+='<span class="tag '+t[0]+'">'+t[1]+'</span>';});}
  el.innerHTML='<div class="day-dot">'+num+'</div>'+
-  '<div class="day-card">'+
+  '<div class="day-card"><div class="day-banner"></div><div class="day-inner">'+
    '<div class="day-head"><div><div class="day-date">'+d.date+'</div>'+
    '<div class="day-title">'+d.title+'</div></div></div>'+
    '<div class="day-loc">'+d.loc+'</div>'+
    '<div class="day-body"><p>'+d.body+'</p>'+tagsHtml+'</div>'+
-   '<div class="expand-hint">Tap to '+'\u2193'+'</div>'+
-  '</div>';
+   '<div class="expand-hint">Tap to open \u2193</div>'+
+  '</div></div>';
  var card=el.querySelector('.day-card');
  var bodyEl=el.querySelector('.day-body');
  var hint=el.querySelector('.expand-hint');
  card.addEventListener('click',function(){
    var open=bodyEl.classList.toggle('open');
-   hint.textContent=open?'Tap to \u2191':'Tap to \u2193';
+   hint.textContent=open?'Tap to close \u2191':'Tap to open \u2193';
  });
  tl.appendChild(el);
 });
-
-// scroll progress
 var prog=document.getElementById('prog');
-window.addEventListener('scroll',function(){
- var h=document.documentElement;
- var sc=(h.scrollTop)/(h.scrollHeight-h.clientHeight);
- prog.style.width=(sc*100)+'%';
-});
-// nav hide on scroll down
+window.addEventListener('scroll',function(){var h=document.documentElement;prog.style.width=((h.scrollTop)/(h.scrollHeight-h.clientHeight)*100)+'%';});
 var nav=document.getElementById('nav');var lastY=0;
-window.addEventListener('scroll',function(){
- var y=window.scrollY;
- if(y>lastY&&y>300)nav.classList.add('hide');else nav.classList.remove('hide');
- lastY=y;
-});
-// reveal
+window.addEventListener('scroll',function(){var y=window.scrollY;if(y>lastY&&y>320)nav.classList.add('hide');else nav.classList.remove('hide');lastY=y;});
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in');});},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
-// nav active
-var secs=document.querySelectorAll('section[id], header[id]');
+document.querySelectorAll('.reveal,.stagger').forEach(function(el){io.observe(el);});
 var navlinks=document.querySelectorAll('nav a');
-var io2=new IntersectionObserver(function(es){es.forEach(function(e){
- if(e.isIntersecting){var id=e.target.id;navlinks.forEach(function(a){a.classList.toggle('act',a.getAttribute('href')==='#'+id);});}
-});},{threshold:.4});
-secs.forEach(function(s){io2.observe(s);});
+var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var id=e.target.id;navlinks.forEach(function(a){a.classList.toggle('act',a.getAttribute('href')==='#'+id);});}});},{threshold:.4});
+document.querySelectorAll('section[id], header[id]').forEach(function(s){io2.observe(s);});
 </script>
 </body>
 </html>
