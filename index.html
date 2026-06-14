@@ -41,7 +41,7 @@ nav a:hover{color:var(--vermilion)}
 nav a.act{background:var(--ink);color:var(--cream)}
 
 header{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;background:linear-gradient(150deg,#2a3550,#16171d)}
-.hero-photo{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center 35%;background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Kiyomizu-dera%20in%20Kyoto-r.jpg?width=2200');filter:saturate(1.05) contrast(1.02)}
+.hero-photo{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center 35%;background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Kiyomizu-dera%20Panorama.jpg?width=2200');filter:saturate(1.05) contrast(1.02)}
 .hero-veil{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(15,14,20,.32) 0%,rgba(15,14,20,.1) 36%,rgba(12,11,16,.64) 80%,rgba(10,9,14,.88) 100%)}
 .hero-content{position:relative;z-index:5;padding:0 8vw 9vh;max-width:1040px}
 .eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:22px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
@@ -78,8 +78,8 @@ h2 .accent{color:var(--vermilion);font-style:italic;font-weight:500}
 .feature.flip .fimg{order:2}
 @media(max-width:760px){.feature,.feature.flip{grid-template-columns:1fr}.feature.flip .fimg{order:0}}
 .fimg{min-height:340px;background-size:cover;background-position:center;position:relative}
-.fimg.ph-tokyo{background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Shibuya%20Crossing%2C%20Tokyo%2C%20Japan.jpg?width=1600'),linear-gradient(135deg,#1f3a6e,#c8341f)}
-.fimg.ph-fushimi{background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Fushimi%20Inari-taisha%2C%20Kyoto%2C%20Japan.jpg?width=1600'),linear-gradient(135deg,#c8341f,#7a8c3f)}
+.fimg.ph-tokyo{background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Shibuya%20crossing.jpg?width=1600'),linear-gradient(135deg,#1f3a6e,#c8341f)}
+.fimg.ph-fushimi{background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Fushimi%20Inari%20-%20front%20torii.jpg?width=1600'),linear-gradient(135deg,#c8341f,#7a8c3f)}
 .ftext{padding:42px 40px}
 .ftext .fk{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--vermilion);margin-bottom:10px}
 .ftext h3{font-family:'Fraunces',serif;font-size:30px;font-weight:600;color:var(--ink);margin-bottom:12px;line-height:1.05}
@@ -238,6 +238,63 @@ footer .jp{font-family:'Shippori Mincho',serif;color:var(--verm-glow);font-size:
 
 @media(max-width:600px){.day{padding-left:66px}.tl::before{left:21px}.day-dot{left:8px}section{padding:70px 0}.hero-content{padding:0 24px 8vh}.ftext{padding:32px 28px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal,.stagger>*{opacity:1;transform:none}}
+
+/* DETAILED SCHEDULE */
+.sched{margin-top:50px}
+.sday{margin-bottom:40px;border-radius:20px;overflow:hidden;box-shadow:0 12px 40px var(--shadow);background:var(--cream)}
+.sday-head{display:flex;align-items:center;gap:16px;padding:20px 26px;color:#fff;position:relative}
+.sday.solo .sday-head{background:linear-gradient(110deg,var(--indigo),var(--indigo-2))}
+.sday.tokyo .sday-head{background:linear-gradient(110deg,var(--vermilion),var(--vermilion-2))}
+.sday.kyoto .sday-head{background:linear-gradient(110deg,var(--matcha),#5e6e30)}
+.sday.fuji .sday-head{background:linear-gradient(110deg,var(--neon),#a01050)}
+.sday-date{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.85}
+.sday-title{font-family:'Fraunces',serif;font-size:23px;font-weight:600;line-height:1.1}
+.sday-loc{margin-left:auto;font-size:12px;font-weight:600;opacity:.9;text-align:right}
+.sday-body{padding:8px 22px 22px}
+.slot{padding:18px 0 6px;border-bottom:1px solid rgba(20,15,25,.07)}
+.slot:last-child{border-bottom:none}
+.slot-head{display:flex;align-items:baseline;gap:12px;margin-bottom:14px}
+.slot-time{font-family:'Fraunces',serif;font-size:16px;font-weight:700;color:var(--ink);white-space:nowrap}
+.slot-label{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--vermilion)}
+.sday.solo .slot-label{color:var(--indigo)}.sday.kyoto .slot-label{color:var(--matcha)}.sday.fuji .slot-label{color:var(--neon)}
+.opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.opt{display:flex;flex-direction:column;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 16px var(--shadow);transition:transform .3s,box-shadow .3s;border:1px solid rgba(20,15,25,.05)}
+.opt:hover{transform:translateY(-4px);box-shadow:0 12px 28px var(--shadow-deep)}
+.opt-img{height:120px;background-size:cover;background-position:center;position:relative;background-color:var(--paper-2)}
+.opt-img.g0{background-image:linear-gradient(135deg,var(--vermilion),var(--gold-soft))}
+.opt-img.g1{background-image:linear-gradient(135deg,var(--indigo),var(--verm-glow))}
+.opt-img.g2{background-image:linear-gradient(135deg,var(--matcha),var(--gold))}
+.opt-img.g3{background-image:linear-gradient(135deg,var(--neon),var(--indigo))}
+.opt-body{padding:14px 16px;display:flex;flex-direction:column;flex:1}
+.opt-t{font-family:'Fraunces',serif;font-size:16px;font-weight:600;color:var(--ink);line-height:1.15;margin-bottom:6px}
+.opt-d{font-size:12.5px;color:var(--ink-soft);font-weight:300;line-height:1.5;flex:1}
+.opt-link{display:inline-flex;align-items:center;gap:5px;margin-top:12px;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--vermilion-2);align-self:flex-start}
+.opt-link:hover{color:var(--vermilion)}
+.opt-link svg{width:12px;height:12px}
+@media(max-width:600px){.opts{grid-template-columns:1fr 1fr}.opt-img{height:96px}.sday-loc{display:none}}
+@media(max-width:420px){.opts{grid-template-columns:1fr}}
+
+
+/* CHECKLIST */
+.ckl{margin-top:46px;display:grid;gap:14px}
+.ckrow{display:flex;gap:16px;align-items:flex-start;background:var(--cream);border-radius:14px;padding:18px 22px;box-shadow:0 6px 20px var(--shadow);border-left:4px solid var(--matcha);transition:transform .25s,box-shadow .25s;cursor:pointer}
+.ckrow:hover{transform:translateX(4px);box-shadow:0 10px 28px var(--shadow-deep)}
+.ckrow.urgent{border-left-color:var(--neon)}
+.ckrow.soon{border-left-color:var(--vermilion)}
+.ckbox{flex-shrink:0;width:24px;height:24px;border-radius:7px;border:2px solid var(--ink-soft);margin-top:2px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.ckrow.done .ckbox{background:var(--matcha);border-color:var(--matcha)}
+.ckbox svg{width:14px;height:14px;color:#fff;opacity:0;transition:opacity .2s}
+.ckrow.done .ckbox svg{opacity:1}
+.ckmain{flex:1}
+.cktop{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.ckwhen{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#fff;padding:3px 9px;border-radius:20px;background:var(--matcha)}
+.ckrow.urgent .ckwhen{background:var(--neon)}.ckrow.soon .ckwhen{background:var(--vermilion)}
+.ckt{font-family:'Fraunces',serif;font-size:17px;font-weight:600;color:var(--ink)}
+.ckrow.done .ckt{text-decoration:line-through;opacity:.55}
+.ckd{font-size:13px;color:var(--ink-soft);font-weight:300;margin-top:4px}
+.ckd a{font-weight:600;color:var(--vermilion-2)}
+.ck-note{font-size:12px;color:var(--ink-soft);font-weight:300;margin-top:16px;text-align:center;opacity:.8}
+
 </style>
 </head>
 <body>
@@ -245,6 +302,7 @@ footer .jp{font-family:'Shippori Mincho',serif;color:var(--verm-glow);font-size:
 <nav id="nav">
 <a href="#top" class="act">Top</a>
 <a href="#overview">Overview</a>
+<a href="#checklist">Checklist</a>
 <a href="#map">Route</a>
 <a href="#route">Days</a>
 <a href="#festivals">Festivals</a>
@@ -307,6 +365,17 @@ footer .jp{font-family:'Shippori Mincho',serif;color:var(--verm-glow);font-size:
   </div>
 </section>
 
+
+<section id="checklist">
+  <div class="wrap">
+    <div class="sec-label">Lock it in</div>
+    <h2>Pre-trip <span class="accent">checklist</span></h2>
+    <p class="lead">Tour and flights are booked. Here's everything else in priority order — the top two are time-critical and sell out, the rest can follow. Tap a row to check it off.</p>
+    <div class="ckl" id="ckl"></div>
+    <p class="ck-note">Your progress is saved on this device. Items in pink/red are the ones with real deadlines.</p>
+  </div>
+</section>
+
 <section id="map" class="alt">
   <div class="wrap">
     <div class="sec-label">Tokyo → Takayama → Kyoto → Naeba</div>
@@ -342,14 +411,8 @@ footer .jp{font-family:'Shippori Mincho',serif;color:var(--verm-glow);font-size:
   <div class="wrap">
     <div class="sec-label">17 July – 28 July</div>
     <h2>The <span class="accent">twelve</span> days</h2>
-    <p class="lead">The six-day tour, a Gion Matsuri parade, the run north, Fuji Rock, and a Tokyo finale. Each day's free time offers 3–4 options — teamLab, samurai &amp; kendo, temples, nightlife — so you pick by mood. Tap any day.</p>
-    <div class="legend">
-      <span><span class="dotk" style="border-color:var(--indigo)"></span>Solo / transit</span>
-      <span><span class="dotk" style="border-color:var(--vermilion)"></span>Tokyo/Takayama (tour)</span>
-      <span><span class="dotk" style="border-color:var(--matcha)"></span>Kyoto</span>
-      <span><span class="dotk" style="border-color:var(--neon)"></span>Fuji Rock</span>
-    </div>
-    <div class="tl" id="tl"></div>
+    <p class="lead">A full time-slot schedule for all twelve days. Each slot offers 3–4 options — with a photo and a booking/info link on every one — so you build each day by mood.</p>
+    <div class="sched" id="sched"></div>
   </div>
 </section>
 
@@ -577,50 +640,171 @@ footer .jp{font-family:'Shippori Mincho',serif;color:var(--verm-glow);font-size:
 </footer>
 
 <script>
-var days=[
- {k:'solo',date:'Thu 17 Jul',title:'Fly Mumbai \u2192 Tokyo',loc:'In transit \u00b7 solo',body:'Air India nonstop, depart Mumbai 19:30. Overnight flight \u2014 sleep on the plane; you land Narita 08:15 tomorrow, which is tour Day 1.',tags:[['night','Nonstop redeye']]},
- {k:'tokyo',date:'Fri 18 Jul \u00b7 Day 1',title:'Land + the crew assembles',loc:'Tokyo',body:'Land Narita 08:15. Train into the city, head to the G joining hotel, drop bags, and explore \u2014 free until the 6:00pm welcome meeting (bring your passport for train-ticket info). Then your First Night Out: drinks and dancing with your new group.',picks:[['\ud83d\ude86','Arrival: Narita Express (~60m) into town; set up a Suica/IC card at the station'],['\ud83d\uddfc','Shibuya: the Crossing + Shibuya Sky deck to shake off the flight'],['\ud83c\udfa8','teamLab Borderless (Azabudai Hills) \u2014 immersive digital-art labyrinth, if jet lag allows (pre-book)'],['\ud83c\udf76','First Night Out: izakaya-hop in Shibuya/Shinjuku with the group']],tags:[['inc','Welcome + First Night Out'],['night','Hostel'],['night','Nightlife']]},
- {k:'tokyo',date:'Sat 19 Jul \u00b7 Day 2',title:'Tokyo \u2014 your city day',loc:'Tokyo',body:'CEO orientation walk, then a full free day. Flat, train-and-walk \u2014 easy on the knees, endless options. Mix one big experience with street-level wandering.',picks:[['\ud83c\udf0a','teamLab Planets (Toyosu) \u2014 barefoot, wade-through-water digital art; book a morning slot (~2 hrs)'],['\u2694\ufe0f','Samurai &amp; Ninja Museum or a samurai sword/armour experience \u2014 hands-on, fun (~1.5 hrs)'],['\u26e9\ufe0f','Senso-ji + Asakusa old-town lanes, then Akihabara for anime/games/electronics'],['\ud83d\udc1f','Tsukiji Outer Market sushi crawl + Harajuku/Takeshita street fashion']],tags:[['inc','Orientation walk'],['night','Hostel']]},
- {k:'tokyo',date:'Sun 20 Jul \u00b7 Day 3',title:'Bullet train to Takayama',loc:'Tokyo \u2192 Takayama',body:'Shinkansen (~4h) into the Japanese Alps. CEO orientation walk through Edo-era streets, sake breweries, craft shops. Evening: a traditional ryokan with tatami, futons, and an onsen soak \u2014 the trip\u2019s relaxation high point.',picks:[['\ud83c\udf76','Sake Street: tasting-hop the breweries (\u00a5300\u2013400 each) \u2014 Takayama is famous for it'],['\ud83d\udc04','Hida beef \u2014 grilled, or as nigiri sushi on the street (a regional splurge)'],['\u2668\ufe0f','Onsen soak at the ryokan (cover tattoos); or a riverside morning walk'],['\ud83c\udfd8\ufe0f','Hida Folk Village \u2014 open-air Edo-era farmhouses (\u00a5700); or rent a bike to explore']],tags:[['inc','Bullet train + ryokan/onsen'],['inc','Orientation walk']]},
- {k:'kyoto',date:'Mon 21 Jul \u00b7 Day 4',title:'To Kyoto + Big Night Out',loc:'Takayama \u2192 Kyoto',body:'Train to Kyoto (~3.5\u20134h), then explore. Tonight is the Big Night Out \u2014 drinks, then karaoke or an izakaya. And Gion Matsuri\u2019s Ato Yoiyama evenings are on (21\u201323 Jul): downtown closes to traffic, lantern-lit floats, food stalls, yukata crowds.',picks:[['\ud83c\udfee','Gion Matsuri Yoiyama: wander the float displays + food stalls (6\u201311pm)'],['\u26e9\ufe0f','Fushimi Inari\u2019s torii gates \u2014 late afternoon, fewer crowds, magic light'],['\ud83d\udc58','Rent a kimono/yukata for the evening \u2014 perfect for the festival streets'],['\ud83c\udfa4','Big Night Out: karaoke with the group, or a Pontocho-alley izakaya crawl']],tags:[['inc','Bullet train + Big Night Out'],['fest','Gion Yoiyama'],['night','Karaoke']]},
- {k:'kyoto',date:'Tue 22 Jul \u00b7 Day 5',title:'Kyoto \u2014 temples & festival',loc:'Kyoto',body:'Kyoto is yours \u2014 with Gion Matsuri still filling the streets each evening. Pick a couple of experiences and leave time to wander; a calmer cultural day to balance the nights out.',picks:[['\ud83c\udf75','Tea ceremony (matcha + wagashi) \u2014 a serene, classic Kyoto ritual (~1 hr)'],['\ud83e\udd8c','Nara day trip (~45m) \u2014 giant Buddha + bowing deer; flat &amp; gentle'],['\ud83c\udfa8','teamLab Biovortex Kyoto (near Kyoto Station) \u2014 the newest venue, Kyoto-exclusive works'],['\u2728','Kinkaku-ji Golden Pavilion (\u00a5500), or a calligraphy class for a postcard home']],tags:[['fest','Gion Yoiyama'],['night','Hotel']]},
- {k:'kyoto',date:'Wed 23 Jul \u00b7 Day 6',title:'Tour ends \u2192 you stay on',loc:'Kyoto \u00b7 tour ends',body:'Tour departure day \u2014 swap socials with the crew and say \u201cuntil next time.\u201d But you\u2019re staying: move to your own Kyoto base for the night, ready for tomorrow\u2019s big parade. Forward your main bag to Tokyo via takuhaibin so you travel light.',picks:[['\ud83d\udecd\ufe0f','Nishiki Market \u2014 \u201cKyoto\u2019s kitchen,\u201d a food-stall lunch crawl'],['\ud83c\udf8b','Arashiyama bamboo grove + the monkey park or a riverside boat (early, before crowds)'],['\ud83e\udde7','Send your big bag ahead to your Tokyo hotel (takuhaibin)'],['\ud83c\udfaf','Optional: Zen garden at Ryoan-ji, or Nijo Castle (\u00a5600)']],tags:[['night','Your own hotel']]},
- {k:'kyoto',date:'Thu 24 Jul',title:'Gion Matsuri parade \u2192 Tokyo',loc:'Kyoto \u2192 Tokyo',body:'The big one: the Ato Matsuri float parade rolls through downtown Kyoto (~9:30\u201311:50am) \u2014 giant yamaboko floats, the quieter, better-for-photos second procession. Catch it, grab a final Kyoto lunch, then Shinkansen to Tokyo (~2h 15m) for the evening.',picks:[['\ud83c\udfee','Ato Matsuri parade: stand near Karasuma-Oike for the dramatic float turns'],['\ud83c\udf71','Last Kyoto lunch \u2014 kaiseki, or a Nishiki bento for the train'],['\ud83d\ude84','Afternoon Shinkansen Kyoto \u2192 Tokyo; check into your Tokyo hotel'],['\ud83c\udf06','Tokyo evening: a first taste of Shinjuku or a quiet izakaya near your hotel']],tags:[['fest','Gion parade'],['night','Tokyo hotel']]},
- {k:'solo',date:'Fri 25 Jul',title:'Tokyo day \u2192 north to the mountains',loc:'Tokyo \u2192 Echigo-Yuzawa',body:'A free Tokyo morning/afternoon \u2014 fit in anything you missed \u2014 then Jo\u0304etsu Shinkansen north to Echigo-Yuzawa (~90m), your Fuji Rock base. Settle in, grab festival supplies, and rest up.',picks:[['\ud83e\udd3c','Kendo / martial-arts experience, or a sumo-stable morning practice (book ahead) \u2014 a uniquely Tokyo morning'],['\ud83c\udfa8','Whichever teamLab you skipped (Planets or Borderless), or the Ghibli Museum (Mitaka, pre-book hard)'],['\ud83d\uded2','Stock up: poncho, dry bag, sunscreen, cash for the festival'],['\u2668\ufe0f','Echigo-Yuzawa is an onsen town \u2014 an evening soak before the big day']],tags:[['night','Echigo-Yuzawa']]},
- {k:'fuji',date:'Sat 26 Jul',title:'FUJI ROCK',loc:'Naeba \u00b7 festival day',body:'The finale. Shuttle from Echigo-Yuzawa to Naeba (~40m), wristband on, and into Japan\u2019s greatest music festival \u2014 200+ artists across forest stages strung along a mountain river. Pace it, pick your sets, eat well, soak it in. Shuttle back to Yuzawa when you\u2019re done (runs till 2am).',picks:[['\ud83c\udfb8','Plan 3\u20134 must-see sets; leave room to wander &amp; stumble on discoveries'],['\ud83c\udf5b','The food stalls are legendary \u2014 curry, ramen, craft beer by the river'],['\ud83e\ude91','Fold-stool + poncho + dry bag; pace the hilly paths for your knees'],['\ud83d\ude8c','Note the last shuttle/train back before the final act \u2014 plan your exit']],tags:[['fest','Fuji Rock'],['night','Echigo-Yuzawa']]},
- {k:'solo',date:'Sun 27 Jul',title:'Back to Tokyo \u2014 last night',loc:'Echigo-Yuzawa \u2192 Tokyo',body:'Shinkansen back to Tokyo. Reunite with your forwarded luggage, and spend a final, easy evening \u2014 pick how to toast the trip.',picks:[['\ud83c\udf06','Nightlife: Shinjuku Omoide Yokocho or Golden Gai bar alleys; or a Shibuya rooftop bar'],['\ud83d\udecd\ufe0f','Last shopping: Ginza, Don Quijote, or a depachika food hall'],['\ud83c\udf63','A standout farewell sushi or yakitori dinner'],['\u264a\ufe0f','Quiet option: a sento/onsen + a stroll along the Meguro or Sumida river']],tags:[['night','Tokyo hotel']]},
- {k:'solo',date:'Mon 28 Jul',title:'Home from Tokyo',loc:'Tokyo (HND) \u2192 Mumbai',body:'Air India nonstop from Haneda, depart 08:50 \u2192 Mumbai 14:20. Head out early, last konbini breakfast, and home \u2014 tour done, two festivals seen, knees intact.'},
+// ===== DETAILED TIME-SLOT SCHEDULE =====
+// img: Wikimedia Commons filename (verified) or '' for gradient-only
+// link/linkLabel: real booking/info URL
+function wm(name,w){return name?('https://commons.wikimedia.org/wiki/Special:FilePath/'+encodeURIComponent(name)+'?width='+w):'';}
+var L={
+ borderless:'https://www.teamlab.art/e/borderless/',
+ planets:'https://teamlabplanets.dmm.com/en',
+ biovortex:'https://www.teamlab.art/e/biovortex/',
+ kBorderless:'https://www.klook.com/en-US/activity/20707-teamlab-borderless-admission-ticket-tokyo/',
+ kPlanets:'https://www.klook.com/en-US/activity/25300-teamlab-planets-toyosu-tokyo-ticket/',
+ fujiTix:'https://en.fujirockfestival.com/ticket/',
+ fujiAccess:'https://en.fujirockfestival.com/access/',
+ gadv:'https://www.gadventures.com/trips/japan-tokyo-nights-and-kyoto-temples/AJTK/',
+ gion:'https://en.japantravel.com/kyoto/gion-matsuri/32852',
+ klookTokyo:'https://www.klook.com/en-US/city/9-tokyo-things-to-do/',
+ klookKyoto:'https://www.klook.com/en-US/city/24-kyoto-things-to-do/'
+};
+var schedule=[
+ {date:'Thu 17 Jul',k:'solo',title:'Depart Mumbai',loc:'In transit',slots:[
+   {time:'19:30',label:'Evening',opts:[
+     {t:'Air India AI nonstop → Tokyo',d:'Depart Mumbai 19:30, arrive Narita 08:15 (+1). Sleep on the plane — Day 1 starts on landing.',img:'',link:'https://www.airindia.com/',ll:'Air India'}
+   ]}
+ ]},
+ {date:'Fri 18 Jul',k:'tokyo',title:'Arrival + Tour Day 1',loc:'Tokyo',slots:[
+   {time:'08:15–11:00',label:'Arrive & settle',opts:[
+     {t:'Narita → city + IC card',d:'Narita Express (~60m) to central Tokyo. Buy a Suica/Pasmo IC card at the station for tap-and-go trains.',img:'Narita Express E259 series.jpg',link:'https://www.jreast.co.jp/multi/en/nex/',ll:'N\u2019EX info'},
+     {t:'Drop bags at joining hotel',d:'Check the G Adventures app for your exact joining hotel + welcome-meeting time. Drop bags (check-in is afternoon).',img:'',link:L.gadv,ll:'Tour details'}
+   ]},
+   {time:'11:00–17:00',label:'Free afternoon — pick one',opts:[
+     {t:'Shibuya Crossing + Shibuya Sky',d:'The iconic scramble, then up Shibuya Sky for the rooftop view. Easy, energising first hit of Tokyo.',img:'Shibuya crossing.jpg',link:'https://www.shibuya-scramble-square.com/sky/en/',ll:'Shibuya Sky'},
+     {t:'teamLab Borderless (Azabudai)',d:'Immersive digital-art labyrinth. ~2 hrs. Pre-book a slot; jet-lag permitting it\u2019s a stunning start.',img:'',link:L.kBorderless,ll:'Book (Klook)'},
+     {t:'Senso-ji + Asakusa',d:'Tokyo\u2019s oldest temple + old-town lanes of street food and souvenirs. Free, flat, classic.',img:'Senso-ji 2012.JPG',link:L.klookTokyo,ll:'Area tours'}
+   ]},
+   {time:'18:00',label:'Tour starts',opts:[
+     {t:'Welcome Meeting (6pm)',d:'Meet your CEO + group. Bring your passport for train-ticket info. Included.',img:'',link:L.gadv,ll:'Tour'},
+     {t:'First Night Out',d:'Drinks + dancing with the group — izakaya-hop in Shibuya/Shinjuku. Included.',img:'Golden Gai Shinjuku.jpg',link:L.klookTokyo,ll:'Nightlife'}
+   ]}
+ ]},
+ {date:'Sat 19 Jul',k:'tokyo',title:'Tour Day 2 — Tokyo',loc:'Tokyo',slots:[
+   {time:'09:00–10:00',label:'Morning',opts:[
+     {t:'CEO Orientation Walk',d:'Short walk with your CEO — ATMs, stations, the lay of the land. Included.',img:'',link:L.gadv,ll:'Tour'}
+   ]},
+   {time:'10:00–17:00',label:'Free day — pick 1\u20132',opts:[
+     {t:'teamLab Planets (Toyosu)',d:'Barefoot, wade-through-water digital art. ~2 hrs. Book a morning slot.',img:'',link:L.kPlanets,ll:'Book (Klook)'},
+     {t:'Samurai & Ninja Experience',d:'Hands-on sword/armour session or the Samurai Ninja Museum with shows. ~1.5 hrs.',img:'Samurai armor.jpg',link:L.klookTokyo,ll:'Book experiences'},
+     {t:'Meiji Shrine + Harajuku',d:'Forest shrine calm, then Takeshita-dori\u2019s youth-fashion rush. Free + shopping.',img:'Meiji Shrine torii.jpg',link:L.klookTokyo,ll:'Area'},
+     {t:'Akihabara + Tsukiji lunch',d:'Anime/games/electronics, plus a sushi-and-seafood crawl at Tsukiji Outer Market.',img:'Akihabara 2018.jpg',link:L.klookTokyo,ll:'Tours'}
+   ]}
+ ]},
+ {date:'Sun 20 Jul',k:'tokyo',title:'Tour Day 3 — Takayama',loc:'Tokyo \u2192 Takayama',slots:[
+   {time:'Morning',label:'Bullet train (~4h)',opts:[
+     {t:'Shinkansen to Takayama',d:'Into the Japanese Alps. Included. Carry-on luggage only.',img:'Shinkansen N700.jpg',link:L.gadv,ll:'Tour'}
+   ]},
+   {time:'Afternoon',label:'Takayama — pick one',opts:[
+     {t:'Sake Street tasting-hop',d:'Old-town breweries, samples ¥300\u2013400 each. Takayama is famous for sake.',img:'Takayama old town.jpg',link:'https://www.hidatakayama.or.jp/en/',ll:'Takayama guide'},
+     {t:'Hida beef on the street',d:'World-class wagyu — grilled skewers or nigiri sushi. A regional splurge.',img:'Hida beef sushi.jpg',link:'https://www.hidatakayama.or.jp/en/',ll:'Food guide'},
+     {t:'Hida Folk Village',d:'Open-air museum of Edo-era thatched farmhouses (¥700). Or rent a bike.',img:'Hida Folk Village.jpg',link:'https://www.hidanosato-tpo.jp/top.html',ll:'Folk Village'}
+   ]},
+   {time:'Evening',label:'Ryokan night',opts:[
+     {t:'Onsen soak at the ryokan',d:'Tatami, futons, hot-spring bath. The trip\u2019s relaxation peak. Cover tattoos.',img:'Japanese onsen.jpg',link:L.gadv,ll:'Tour'}
+   ]}
+ ]},
+ {date:'Mon 21 Jul',k:'kyoto',title:'Tour Day 4 — Kyoto + Gion',loc:'Takayama \u2192 Kyoto',slots:[
+   {time:'Morning',label:'Bullet train (~3.5\u20134h)',opts:[
+     {t:'Shinkansen to Kyoto',d:'To the imperial capital. Included.',img:'',link:L.gadv,ll:'Tour'}
+   ]},
+   {time:'Afternoon',label:'Kyoto — pick one',opts:[
+     {t:'Fushimi Inari torii',d:'Thousands of vermilion gates up the mountain. Late afternoon = fewer crowds, golden light.',img:'Fushimi Inari - front torii.jpg',link:L.klookKyoto,ll:'Area'},
+     {t:'Kiyomizu-dera + Higashiyama',d:'Hillside temple (¥400) + the old lanes of Sannenzaka below. Iconic Kyoto.',img:'Kiyomizu-dera Panorama.jpg',link:L.klookKyoto,ll:'Area'},
+     {t:'Kimono/yukata rental',d:'Dress up for the festival streets — rental shops near Gion, ~half day.',img:'Kimono rental Kyoto.jpg',link:L.klookKyoto,ll:'Book rental'}
+   ]},
+   {time:'Evening',label:'Two things at once',opts:[
+     {t:'Gion Matsuri Yoiyama',d:'Downtown closes to traffic — lantern-lit floats, food stalls, yukata crowds (6\u201311pm). On now (21\u201323 Jul).',img:'Gion Matsuri yoiyama.jpg',link:L.gion,ll:'Festival guide'},
+     {t:'Big Night Out (karaoke)',d:'Group drinks + karaoke or a Pontocho izakaya crawl. Included.',img:'Pontocho Kyoto.jpg',link:L.gadv,ll:'Tour'}
+   ]}
+ ]},
+ {date:'Tue 22 Jul',k:'kyoto',title:'Tour Day 5 — Kyoto',loc:'Kyoto',slots:[
+   {time:'Full day',label:'Pick 1\u20132 + an evening',opts:[
+     {t:'Tea ceremony',d:'Matcha + wagashi in a machiya. Serene, classic Kyoto. ~1 hr.',img:'Japanese tea ceremony.jpg',link:L.klookKyoto,ll:'Book'},
+     {t:'Nara day trip',d:'~45m by train — giant Buddha + bowing deer. Flat and gentle.',img:'Nara deer Todaiji.jpg',link:L.klookKyoto,ll:'Day trips'},
+     {t:'teamLab Biovortex Kyoto',d:'Newest venue near Kyoto Station — Kyoto-exclusive works. ~1.5\u20132 hrs.',img:'',link:L.biovortex,ll:'Tickets'},
+     {t:'Kinkaku-ji Golden Pavilion',d:'Gold-leaf temple on a reflecting pond (¥500). Or a calligraphy class.',img:'Kinkaku-ji 2019.jpg',link:L.klookKyoto,ll:'Area'}
+   ]},
+   {time:'Evening',label:'Festival again',opts:[
+     {t:'Gion Yoiyama (night 2)',d:'Another evening of floats and stalls — different streets each night.',img:'Gion Matsuri float.jpg',link:L.gion,ll:'Festival'}
+   ]}
+ ]},
+ {date:'Wed 23 Jul',k:'kyoto',title:'Tour Ends \u2192 Solo',loc:'Kyoto',slots:[
+   {time:'Morning',label:'Tour wraps',opts:[
+     {t:'Farewell + forward luggage',d:'Swap socials with the crew. Send your main bag to your Tokyo hotel via takuhaibin so you travel light from here.',img:'',link:'https://www.global-yamato.com/en/ta-q-bin/',ll:'Takuhaibin'}
+   ]},
+   {time:'Afternoon',label:'Solo Kyoto — pick one',opts:[
+     {t:'Nishiki Market crawl',d:'\u201cKyoto\u2019s kitchen\u201d \u2014 a covered street of food stalls. Lunch your way through.',img:'Nishiki Market Kyoto.jpg',link:L.klookKyoto,ll:'Area'},
+     {t:'Arashiyama bamboo + monkeys',d:'The bamboo grove early, plus the monkey park or a riverside boat. Go before crowds.',img:'Arashiyama Bamboo Forest.jpg',link:L.klookKyoto,ll:'Area'},
+     {t:'Ryoan-ji Zen garden',d:'The famous dry rock garden, or Nijo Castle (¥600). Calm and contemplative.',img:'Ryoan-ji rock garden.jpg',link:L.klookKyoto,ll:'Area'}
+   ]}
+ ]},
+ {date:'Thu 24 Jul',k:'kyoto',title:'Gion Parade \u2192 Tokyo',loc:'Kyoto \u2192 Tokyo',slots:[
+   {time:'09:30–11:50',label:'The big parade',opts:[
+     {t:'Ato Matsuri Float Parade',d:'Giant yamaboko floats roll through downtown \u2014 the quieter, photo-friendly second procession. Stand near Karasuma-Oike for the turns.',img:'Gion Matsuri Yamaboko.jpg',link:L.gion,ll:'Parade guide'}
+   ]},
+   {time:'Afternoon',label:'Lunch + train',opts:[
+     {t:'Last Kyoto lunch',d:'Kaiseki, or grab a Nishiki bento for the train.',img:'Kaiseki meal.jpg',link:L.klookKyoto,ll:'Food'},
+     {t:'Shinkansen → Tokyo (~2h15)',d:'Afternoon bullet train; check into your Tokyo hotel for the evening.',img:'',link:'https://www.japan-guide.com/e/e2361.html',ll:'Train info'}
+   ]}
+ ]},
+ {date:'Fri 25 Jul',k:'solo',title:'Tokyo \u2192 the Mountains',loc:'Tokyo \u2192 Echigo-Yuzawa',slots:[
+   {time:'Morning–afternoon',label:'Tokyo time — pick one',opts:[
+     {t:'Kendo / sumo morning',d:'A martial-arts session or a sumo-stable morning practice (book well ahead) \u2014 a uniquely Tokyo experience.',img:'Kendo practice.jpg',link:L.klookTokyo,ll:'Book'},
+     {t:'The teamLab you skipped',d:'Planets or Borderless \u2014 whichever you missed. ~2 hrs.',img:'',link:L.kPlanets,ll:'Book (Klook)'},
+     {t:'Ghibli Museum (Mitaka)',d:'Whimsical Studio Ghibli museum \u2014 must pre-book hard, sells out weeks ahead.',img:'Ghibli Museum.jpg',link:'https://www.ghibli-museum.jp/en/',ll:'Tickets'}
+   ]},
+   {time:'Afternoon–evening',label:'North to Fuji Rock base',opts:[
+     {t:'Shinkansen → Echigo-Yuzawa (~90m)',d:'Jo\u0304etsu line to your festival base (¥6,790). Enter station as \u201cEchigo-Yuzawa.\u201d',img:'Echigo-Yuzawa Station.jpg',link:L.fujiAccess,ll:'Access info'},
+     {t:'Stock up + onsen',d:'Buy poncho, dry bag, sunscreen, cash. Echigo-Yuzawa is an onsen town \u2014 soak before the big day.',img:'Yuzawa onsen.jpg',link:'https://www.e-yuzawa.gr.jp/en/',ll:'Yuzawa guide'}
+   ]}
+ ]},
+ {date:'Sat 26 Jul',k:'fuji',title:'FUJI ROCK',loc:'Naeba',slots:[
+   {time:'Morning',label:'Get to the site',opts:[
+     {t:'Shuttle to Naeba (~40m)',d:'From Echigo-Yuzawa Station (¥500 in, free back). Exchange ticket for a wristband at the gate.',img:'Fuji Rock Festival.jpg',link:L.fujiAccess,ll:'Access'},
+     {t:'Buy your 1-Day Sunday ticket',d:'¥27,500 \u2014 Saturday\u2019s sold out, Sunday still available (as of June). Book NOW via official site.',img:'',link:L.fujiTix,ll:'Buy tickets'}
+   ]},
+   {time:'Day–night',label:'The festival',opts:[
+     {t:'Plan 3\u20134 must-see sets',d:'2026 lineup: The xx, Khruangbin, Fujii Kaze, Basement Jaxx, Mitski, Mogwai & more. Leave room to wander.',img:'',link:'https://en.fujirockfestival.com/artist/',ll:'Lineup'},
+     {t:'The legendary food stalls',d:'Curry, ramen, craft beer along the river \u2014 far above festival junk. Knee-tip: fold-stool + poncho.',img:'',link:L.fujiAccess,ll:'Site info'},
+     {t:'Plan your exit',d:'Last shuttle/train back is before the final act \u2014 check times so you\u2019re not stranded.',img:'',link:L.fujiAccess,ll:'Transport'}
+   ]}
+ ]},
+ {date:'Sun 27 Jul',k:'solo',title:'Back to Tokyo \u2014 Last Night',loc:'Echigo-Yuzawa \u2192 Tokyo',slots:[
+   {time:'Daytime',label:'Return + reunite',opts:[
+     {t:'Shinkansen → Tokyo',d:'Back to the city; reunite with your forwarded luggage at the hotel.',img:'',link:'https://www.japan-guide.com/e/e2018.html',ll:'Train'}
+   ]},
+   {time:'Evening',label:'Farewell Tokyo — pick one',opts:[
+     {t:'Omoide Yokocho / Golden Gai',d:'Shinjuku\u2019s lantern-lit drinking alleys \u2014 yakitori smoke and tiny bars. Quintessential last night.',img:'Omoide Yokocho.jpg',link:L.klookTokyo,ll:'Nightlife'},
+     {t:'Farewell sushi dinner',d:'A standout sushi or yakitori meal to close the trip.',img:'Sushi platter.jpg',link:L.klookTokyo,ll:'Food'},
+     {t:'Ginza + depachika shopping',d:'Last-minute gifts \u2014 Ginza, Don Quijote, or a department-store food hall.',img:'Ginza Tokyo.jpg',link:L.klookTokyo,ll:'Area'}
+   ]}
+ ]},
+ {date:'Mon 28 Jul',k:'solo',title:'Home from Tokyo',loc:'Haneda \u2192 Mumbai',slots:[
+   {time:'08:50',label:'Departure',opts:[
+     {t:'Air India nonstop → Mumbai',d:'Depart Haneda 08:50, arrive Mumbai 14:20. Last konbini breakfast and home.',img:'',link:'https://www.airindia.com/',ll:'Air India'}
+   ]}
+ ]}
 ];
 
-var tl=document.getElementById('tl');
-days.forEach(function(d){
- var el=document.createElement('div');
- el.className='day '+(d.k==='solo'?'solo':d.k==='kyoto'?'kyoto':d.k==='fuji'?'fuji':'tokyo');
- var num=d.date.indexOf('Day')>-1?d.date.split('Day ')[1]:'\u2605';
- var tagsHtml='';
- if(d.tags){d.tags.forEach(function(t){tagsHtml+='<span class="tag '+t[0]+'">'+t[1]+'</span>';});}
- var picksHtml='';
- if(d.picks){
-   picksHtml='<div class="picks"><div class="ph">Picks for you</div>';
-   d.picks.forEach(function(p){picksHtml+='<div class="pick"><span class="pi">'+p[0]+'</span><span>'+p[1]+'</span></div>';});
-   picksHtml+='</div>';
- }
- el.innerHTML='<div class="day-dot">'+num+'</div>'+
-  '<div class="day-card"><div class="day-banner"></div><div class="day-inner">'+
-   '<div class="day-head"><div><div class="day-date">'+d.date+'</div>'+
-   '<div class="day-title">'+d.title+'</div></div></div>'+
-   '<div class="day-loc">'+d.loc+'</div>'+
-   '<div class="day-body"><p>'+d.body+'</p>'+picksHtml+tagsHtml+'</div>'+
-   '<div class="expand-hint">Tap to open \u2193</div>'+
-  '</div></div>';
- var card=el.querySelector('.day-card');
- var bodyEl=el.querySelector('.day-body');
- var hint=el.querySelector('.expand-hint');
- card.addEventListener('click',function(){
-   var open=bodyEl.classList.toggle('open');
-   hint.textContent=open?'Tap to close \u2191':'Tap to open \u2193';
- });
- tl.appendChild(el);
+var schedEl=document.getElementById('sched');
+schedule.forEach(function(day){
+  var d=document.createElement('div');
+  d.className='sday '+day.k;
+  var slotsHtml='';
+  day.slots.forEach(function(slot){
+    var optsHtml='';
+    slot.opts.forEach(function(o,i){
+      var imgUrl=o.img?wm(o.img,600):'';
+      var bg=imgUrl?('style="background-image:url(\''+imgUrl+'\')"'):'';
+      var gcls=imgUrl?'':('g'+(i%4));
+      var linkHtml=o.link?('<a class="opt-link" href="'+o.link+'" target="_blank" rel="noopener">'+o.ll+' <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg></a>'):'';
+      optsHtml+='<div class="opt"><div class="opt-img '+gcls+'" '+bg+'></div>'+
+        '<div class="opt-body"><div class="opt-t">'+o.t+'</div><div class="opt-d">'+o.d+'</div>'+linkHtml+'</div></div>';
+    });
+    slotsHtml+='<div class="slot"><div class="slot-head"><span class="slot-time">'+slot.time+'</span><span class="slot-label">'+slot.label+'</span></div><div class="opts">'+optsHtml+'</div></div>';
+  });
+  d.innerHTML='<div class="sday-head"><div><div class="sday-date">'+day.date+'</div><div class="sday-title">'+day.title+'</div></div><div class="sday-loc">'+day.loc+'</div></div>'+
+    '<div class="sday-body">'+slotsHtml+'</div>';
+  schedEl.appendChild(d);
 });
 var vids=[
  ['67sqD7hCI9A','Tokyo','Neon & the rush'],
@@ -655,6 +839,41 @@ document.querySelectorAll('.vid').forEach(function(v){
     f.setAttribute('allowfullscreen','');f.setAttribute('title','Video');
     v.appendChild(f);
   });
+});
+
+// ===== CHECKLIST =====
+var checklist=[
+ {w:'This week',lvl:'urgent',t:'Buy Fuji Rock 1-Day Sunday ticket',d:'¥27,500. Saturday is sold out — Sunday (26 Jul) still available as of June, but won\'t last. <a href="https://en.fujirockfestival.com/ticket/" target="_blank" rel="noopener">Official tickets →</a>'},
+ {w:'This week',lvl:'urgent',t:'Book Echigo-Yuzawa lodging (25 & 26 Jul)',d:'Naeba/Yuzawa accommodation sells out fast for the festival. Base in Echigo-Yuzawa — on the Shinkansen, shuttle-linked. <a href="https://www.e-yuzawa.gr.jp/en/" target="_blank" rel="noopener">Yuzawa guide →</a>'},
+ {w:'Late June',lvl:'soon',t:'Apply Japan tourist e-visa',d:'Online, ~₹500, ~5–7 days. Have flights, hotels, itinerary & bank proof ready. Apply with margin before mid-July.'},
+ {w:'Late June',lvl:'soon',t:'Buy compulsory travel insurance',d:'Required for the G Adventures tour — min USD 200k medical incl. evacuation. Carry proof; the CEO checks it.'},
+ {w:'Now–early July',lvl:'soon',t:'Book teamLab time-slots',d:'Planets & Borderless (Tokyo) and Biovortex (Kyoto) sell out 2–3 weeks ahead. <a href="https://www.klook.com/en-US/activity/25300-teamlab-planets-toyosu-tokyo-ticket/" target="_blank" rel="noopener">Planets →</a> · <a href="https://www.teamlab.art/e/borderless/" target="_blank" rel="noopener">Borderless →</a>'},
+ {w:'Early July',lvl:'normal',t:'Book post-tour hotels',d:'Kyoto night of 24 Jul (or stay on after tour), Tokyo nights of 24 & 27 Jul. Near a JR station for easy transfers.'},
+ {w:'Early July',lvl:'normal',t:'Pre-book Ghibli Museum (if wanted)',d:'Sells out weeks ahead, date-specific. Only if you want it on 25 Jul. <a href="https://www.ghibli-museum.jp/en/" target="_blank" rel="noopener">Tickets →</a>'},
+ {w:'Mid-July',lvl:'normal',t:'Sort eSIM + IC card',d:'Buy a Japan eSIM (Ubigi/Airalo) and set up a Suica/Pasmo or Mobile Suica for trains.'},
+ {w:'Mid-July',lvl:'normal',t:'Festival kit',d:'Poncho (not umbrella), dry bag, lightweight fold-stool, quick-dry layers, sunscreen — for the hilly, weather-unpredictable Fuji Rock site.'},
+ {w:'Before flying',lvl:'normal',t:'Pack carry-on only + download apps',d:'Shinkansen luggage under 160cm + day pack. Download the G Adventures app (joining hotel + meeting time), plus offline maps. Carry cash.'},
+ {w:'In Japan',lvl:'normal',t:'Forward luggage before Fuji Rock',d:'Use takuhaibin on 23–24 Jul to send your main bag Kyoto → Tokyo hotel, so you do the festival with just a day pack. <a href="https://www.global-yamato.com/en/ta-q-bin/" target="_blank" rel="noopener">Service →</a>'}
+];
+var cklEl=document.getElementById('ckl');
+var CKKEY='japan2026_checklist';
+var ckState={};
+try{ckState=JSON.parse(localStorage.getItem(CKKEY)||'{}');}catch(e){ckState={};}
+var check_svg='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>';
+checklist.forEach(function(item,idx){
+  var row=document.createElement('div');
+  var lvlcls=item.lvl==='urgent'?'urgent':item.lvl==='soon'?'soon':'';
+  var done=ckState[idx]?'done':'';
+  row.className='ckrow '+lvlcls+' '+done;
+  row.innerHTML='<div class="ckbox">'+check_svg+'</div>'+
+    '<div class="ckmain"><div class="cktop"><span class="ckwhen">'+item.w+'</span><span class="ckt">'+item.t+'</span></div><div class="ckd">'+item.d+'</div></div>';
+  row.addEventListener('click',function(e){
+    if(e.target.tagName==='A')return; // let links work
+    var nowDone=row.classList.toggle('done');
+    ckState[idx]=nowDone;
+    try{localStorage.setItem(CKKEY,JSON.stringify(ckState));}catch(e){}
+  });
+  cklEl.appendChild(row);
 });
 </script>
 </body>
