@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neon &amp; Nirvana — Prateek's Japan, 17 Jul–1 Aug 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400;1,9..144,600&family=Outfit:wght@300;400;500;600;700&family=Shippori+Mincho:wght@500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0a0a14;            /* near-black indigo base */
+  --ink-2:#11122100;        
+  --night:#141430;          /* deep indigo panel */
+  --night-2:#1c1c3e;        /* lifted panel */
+  --haze:#2a2a52;           /* borders in dark */
+  --paper:#f4f0e6;          /* warm washi paper */
+  --paper-2:#ece6d6;        
+  --sumi:#1a1820;           /* sumi ink text on paper */
+  --sumi-soft:#54505e;      
+  --vermilion:#e64a2e;      /* torii / temple red */
+  --vermilion-deep:#c23a22; 
+  --magenta:#ff2d95;        /* neon */
+  --cyan:#22e0e0;           /* neon */
+  --gold:#e8b04b;           /* lantern gold */
+  --jade:#3ecf8e;           
+  --line-dark:rgba(255,255,255,.10);
+  --line-paper:rgba(26,24,32,.14);
+  --shadow:0 18px 50px -20px rgba(0,0,0,.6);
+  --mw:1080px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Outfit',system-ui,sans-serif;
+  background:var(--ink);
+  color:#e9e7f2;
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+img{max-width:100%;display:block}
+::selection{background:var(--magenta);color:#fff}
+
+/* ---------- ambient neon backdrop ---------- */
+.glowfield{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.glowfield .orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.40}
+.orb.m{width:46vw;height:46vw;background:var(--magenta);top:-12vw;right:-10vw}
+.orb.c{width:40vw;height:40vw;background:var(--cyan);bottom:-14vw;left:-12vw;opacity:.28}
+.orb.v{width:30vw;height:30vw;background:var(--vermilion);top:42%;left:50%;opacity:.20}
+
+.wrap{position:relative;z-index:2;max-width:var(--mw);margin:0 auto;padding:0 22px}
+
+/* ---------- top bar ---------- */
+.topbar{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);
+  background:rgba(10,10,20,.72);border-bottom:1px solid var(--line-dark)}
+.topbar .inner{max-width:var(--mw);margin:0 auto;padding:11px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.brandmark{font-family:'Shippori Mincho',serif;font-weight:800;letter-spacing:.04em;font-size:15px;white-space:nowrap}
+.brandmark .amp{color:var(--magenta);padding:0 2px}
+.brandmark .jp{color:var(--cyan);font-size:12px;margin-left:7px;opacity:.85}
+.navlinks{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.navlinks a{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:#b9b6d6;
+  padding:6px 9px;border-radius:999px;border:1px solid transparent;transition:.18s;white-space:nowrap}
+.navlinks a:hover{color:#fff;border-color:var(--line-dark);background:rgba(255,45,149,.10)}
+@media(max-width:760px){.navlinks{display:none}}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;z-index:2;padding:64px 0 44px;text-align:center}
+.hero .kanji-back{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-family:'Shippori Mincho',serif;font-weight:800;font-size:38vw;line-height:1;color:#fff;
+  opacity:.035;pointer-events:none;user-select:none;letter-spacing:-.04em}
+.hero .eyebrow{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.42em;
+  text-transform:uppercase;color:var(--cyan);margin-bottom:20px}
+.hero h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(46px,12vw,128px);
+  line-height:.92;letter-spacing:-.02em;color:#fff;position:relative}
+.hero h1 .neon{color:var(--magenta);text-shadow:0 0 26px rgba(255,45,149,.55),0 0 60px rgba(255,45,149,.28)}
+.hero h1 .amp{font-style:italic;font-weight:400;color:var(--gold);padding:0 .12em}
+.hero h1 .nirv{color:#fff;font-style:italic;font-weight:400;
+  background:linear-gradient(180deg,#fff, #cfc6ff);-webkit-background-clip:text;background-clip:text}
+.hero .sub{margin:26px auto 0;max-width:600px;font-size:16.5px;color:#c7c3e2}
+.hero .sub b{color:#fff;font-weight:600}
+.routeline{display:flex;flex-wrap:wrap;gap:8px 6px;justify-content:center;align-items:center;
+  margin:30px auto 0;max-width:720px}
+.routeline .node{font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:.05em;
+  color:#d8d4f0;padding:6px 12px;border:1px solid var(--line-dark);border-radius:999px;
+  background:rgba(255,255,255,.03)}
+.routeline .arr{color:var(--magenta);font-size:13px}
+.metastrip{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:34px auto 0}
+.chip{display:flex;align-items:center;gap:9px;padding:11px 16px;border-radius:14px;
+  background:linear-gradient(160deg,rgba(28,28,62,.9),rgba(20,20,48,.7));
+  border:1px solid var(--line-dark);box-shadow:var(--shadow)}
+.chip .k{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan)}
+.chip .v{font-weight:600;font-size:14px;color:#fff}
+
+/* ---------- section shell ---------- */
+.section{padding:60px 0;position:relative;z-index:2}
+.sec-head{display:flex;align-items:flex-end;gap:18px;margin-bottom:30px;flex-wrap:wrap}
+.sec-head .idx{font-family:'Space Mono',monospace;font-size:12px;color:var(--magenta);
+  letter-spacing:.2em;padding-bottom:6px}
+.sec-head h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(28px,5.4vw,46px);
+  line-height:1.02;letter-spacing:-.01em;color:#fff}
+.sec-head .jp{font-family:'Shippori Mincho',serif;color:var(--cyan);font-size:14px;opacity:.7;margin-left:2px}
+.sec-head p.lede{flex-basis:100%;color:#bcb8da;max-width:680px;font-size:15.5px;margin-top:4px}
+
+/* ---------- flight cards ---------- */
+.flights{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:720px){.flights{grid-template-columns:1fr}}
+.flight{background:linear-gradient(155deg,var(--night-2),var(--night));border:1px solid var(--line-dark);
+  border-radius:20px;padding:22px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.flight::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--magenta),var(--cyan))}
+.flight .tag{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--cyan);margin-bottom:14px}
+.flight .od{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.flight .pt{text-align:center}
+.flight .pt .code{font-family:'Fraunces',serif;font-weight:900;font-size:30px;color:#fff;line-height:1}
+.flight .pt .city{font-size:11px;color:#a9a5cb;margin-top:3px;letter-spacing:.04em}
+.flight .pt .time{font-family:'Space Mono',monospace;font-size:13px;color:var(--gold);margin-top:6px}
+.flight .mid{flex:1;text-align:center;padding:0 4px}
+.flight .mid .dur{font-size:10.5px;color:#9b97bd;font-family:'Space Mono',monospace}
+.flight .mid .ln{height:1px;background:linear-gradient(90deg,transparent,var(--magenta),transparent);margin:7px 0;position:relative}
+.flight .mid .ln::after{content:"✈";position:absolute;left:50%;top:50%;transform:translate(-50%,-58%);font-size:12px;color:var(--cyan)}
+.flight .mid .stop{font-size:10px;color:#8884ab}
+.flight .foot{margin-top:16px;padding-top:14px;border-top:1px dashed var(--haze);
+  display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:#bcb8da}
+.flight .foot .price{font-family:'Fraunces',serif;font-weight:600;color:#fff;font-size:18px}
+
+/* ---------- timeline / day spine (SIGNATURE) ---------- */
+.timeline{position:relative;margin-top:10px}
+.spine{position:absolute;left:26px;top:8px;bottom:8px;width:2px;
+  background:linear-gradient(180deg,var(--magenta),var(--vermilion) 40%,var(--gold) 62%,var(--cyan));
+  opacity:.55}
+@media(max-width:640px){.spine{left:19px}}
+.day{position:relative;padding:0 0 16px 70px;margin-bottom:6px}
+@media(max-width:640px){.day{padding-left:54px}}
+.day .pin{position:absolute;left:14px;top:4px;width:26px;height:26px;border-radius:50%;
+  background:var(--ink);border:2px solid var(--magenta);display:flex;align-items:center;justify-content:center;
+  font-family:'Space Mono',monospace;font-size:10px;font-weight:700;color:#fff;z-index:3;
+  box-shadow:0 0 14px rgba(255,45,149,.4)}
+@media(max-width:640px){.day .pin{left:7px;width:24px;height:24px}}
+.day.t-temple .pin{border-color:var(--vermilion);box-shadow:0 0 14px rgba(230,74,46,.45)}
+.day.t-festival .pin{border-color:var(--gold);box-shadow:0 0 16px rgba(232,176,75,.5)}
+.day.t-mountain .pin{border-color:var(--jade);box-shadow:0 0 14px rgba(62,207,142,.45)}
+.day.t-fly .pin{border-color:var(--cyan);box-shadow:0 0 14px rgba(34,224,224,.45)}
+
+.daycard{background:linear-gradient(158deg,rgba(28,28,62,.86),rgba(17,17,38,.92));
+  border:1px solid var(--line-dark);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);
+  transition:border-color .2s,transform .2s}
+.daycard:hover{border-color:rgba(255,45,149,.32)}
+.dc-head{display:flex;align-items:flex-start;gap:14px;padding:16px 18px;cursor:pointer;
+  user-select:none;position:relative}
+.dc-head .photo{width:78px;height:78px;border-radius:12px;flex-shrink:0;object-fit:cover;
+  background:linear-gradient(135deg,var(--night-2),var(--haze));border:1px solid var(--line-dark)}
+@media(max-width:520px){.dc-head .photo{width:60px;height:60px}}
+.dc-head .meta{flex:1;min-width:0}
+.dc-head .date{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;color:var(--cyan);text-transform:uppercase}
+.dc-head .badge{display:inline-block;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.12em;
+  text-transform:uppercase;padding:2px 7px;border-radius:6px;margin-left:8px;vertical-align:middle}
+.badge.b-legend{background:rgba(255,45,149,.16);color:var(--magenta);border:1px solid rgba(255,45,149,.4)}
+.badge.b-free{background:rgba(34,224,224,.14);color:var(--cyan);border:1px solid rgba(34,224,224,.4)}
+.badge.b-fly{background:rgba(232,176,75,.14);color:var(--gold);border:1px solid rgba(232,176,75,.4)}
+.dc-head h3{font-family:'Fraunces',serif;font-weight:600;font-size:19px;color:#fff;margin:4px 0 5px;line-height:1.15}
+.dc-head .teaser{font-size:13px;color:#b4b0d4;line-height:1.45}
+.dc-head .exp{position:absolute;right:14px;top:14px;color:var(--magenta);font-size:18px;transition:.25s;font-family:'Space Mono',monospace}
+.daycard.open .exp{transform:rotate(45deg)}
+.dc-body{max-height:0;overflow:hidden;transition:max-height .45s ease}
+.daycard.open .dc-body{max-height:3200px}
+.dc-inner{padding:4px 18px 20px;border-top:1px solid var(--line-dark)}
+.dc-inner .blk{margin-top:16px}
+.dc-inner .blk .lab{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.dc-inner .blk .lab::before{content:"";width:14px;height:1px;background:var(--gold);opacity:.6}
+.flowlist{list-style:none;display:flex;flex-direction:column;gap:9px}
+.flowlist li{display:flex;gap:11px;font-size:13.5px;color:#cdc9e6;line-height:1.5}
+.flowlist li .tm{font-family:'Space Mono',monospace;font-size:11px;color:var(--cyan);
+  flex-shrink:0;min-width:64px;padding-top:1px}
+.flowlist li b{color:#fff;font-weight:600}
+.notegrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:560px){.notegrid{grid-template-columns:1fr}}
+.note{background:rgba(10,10,20,.5);border:1px solid var(--line-dark);border-radius:12px;padding:12px 13px}
+.note .nh{font-size:11px;font-weight:700;letter-spacing:.04em;margin-bottom:5px;display:flex;align-items:center;gap:6px}
+.note .nb{font-size:12.5px;color:#b8b4d6;line-height:1.5}
+.note.shred .nh{color:var(--jade)}
+.note.knee .nh{color:var(--gold)}
+.note.heat .nh{color:var(--vermilion)}
+.note.tip .nh{color:var(--cyan)}
+.note.watch .nh{color:var(--magenta)}
+.costbar{margin-top:14px;display:flex;align-items:center;justify-content:space-between;
+  background:linear-gradient(90deg,rgba(255,45,149,.10),rgba(34,224,224,.06));
+  border:1px solid var(--line-dark);border-radius:12px;padding:11px 15px}
+.costbar .cl{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#b4b0d4}
+.costbar .cv{font-family:'Fraunces',serif;font-weight:600;font-size:18px;color:#fff}
+.costbar .cv small{font-size:11px;color:#9b97bd;font-family:'Space Mono',monospace;font-weight:400}
+.incl{display:inline-flex;align-items:center;gap:5px;font-family:'Space Mono',monospace;font-size:9.5px;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--jade);background:rgba(62,207,142,.12);
+  border:1px solid rgba(62,207,142,.3);border-radius:6px;padding:2px 7px;margin-left:6px}
+
+/* pull highlight inside day */
+.pullbox{margin-top:14px;background:linear-gradient(150deg,rgba(230,74,46,.14),rgba(232,176,75,.08));
+  border:1px solid rgba(230,74,46,.3);border-left:3px solid var(--vermilion);border-radius:12px;padding:13px 15px}
+.pullbox.fest{background:linear-gradient(150deg,rgba(232,176,75,.16),rgba(255,45,149,.08));
+  border-color:rgba(232,176,75,.4);border-left-color:var(--gold)}
+.pullbox .ph{font-family:'Shippori Mincho',serif;font-weight:700;font-size:14px;color:#fff;margin-bottom:5px}
+.pullbox .pb{font-size:12.5px;color:#d4d0ea;line-height:1.5}
+
+/* ---------- generic panel ---------- */
+.panel{background:linear-gradient(158deg,var(--night-2),var(--night));border:1px solid var(--line-dark);
+  border-radius:20px;padding:24px;box-shadow:var(--shadow)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}}
+
+/* ---------- budget ---------- */
+.budget-table{width:100%;border-collapse:collapse;font-size:14px}
+.budget-table th{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--cyan);text-align:left;padding:10px 8px;border-bottom:1px solid var(--haze)}
+.budget-table th.r,.budget-table td.r{text-align:right;font-variant-numeric:tabular-nums}
+.budget-table td{padding:11px 8px;border-bottom:1px solid var(--line-dark);color:#cdc9e6}
+.budget-table td .sub{font-size:11px;color:#9b97bd;display:block}
+.budget-table tr.tot td{border-top:2px solid var(--magenta);border-bottom:none;
+  font-family:'Fraunces',serif;font-weight:600;font-size:17px;color:#fff;padding-top:14px}
+.budget-table tr.fixed td:first-child::before{content:"●";color:var(--jade);font-size:8px;margin-right:7px;vertical-align:middle}
+.budget-table tr.choice td:first-child::before{content:"●";color:var(--magenta);font-size:8px;margin-right:7px;vertical-align:middle}
+.budget-table tr.est td:first-child::before{content:"●";color:var(--gold);font-size:8px;margin-right:7px;vertical-align:middle}
+.leg{display:flex;gap:16px;flex-wrap:wrap;margin-top:16px;font-size:11.5px;color:#a9a5cb;font-family:'Space Mono',monospace}
+.leg span{display:flex;align-items:center;gap:6px}
+.leg .d{width:8px;height:8px;border-radius:50%}
+
+/* daily cost strip */
+.dailycost{display:grid;grid-template-columns:repeat(auto-fill,minmax(116px,1fr));gap:8px;margin-top:18px}
+.dcell{background:rgba(10,10,20,.5);border:1px solid var(--line-dark);border-radius:11px;padding:10px 11px}
+.dcell .dd{font-family:'Space Mono',monospace;font-size:10px;color:var(--cyan);letter-spacing:.04em}
+.dcell .dn{font-size:11px;color:#9b97bd;margin:2px 0 5px;height:26px;overflow:hidden;line-height:1.25}
+.dcell .dv{font-family:'Fraunces',serif;font-weight:600;font-size:14px;color:#fff}
+.dcell.hi{border-color:rgba(255,45,149,.4);background:rgba(255,45,149,.07)}
+.dcell.lo{border-color:rgba(62,207,142,.35);background:rgba(62,207,142,.06)}
+
+/* checklist */
+.checklist{list-style:none;display:flex;flex-direction:column;gap:10px}
+.checklist li{display:flex;gap:12px;align-items:flex-start;background:rgba(10,10,20,.45);
+  border:1px solid var(--line-dark);border-radius:12px;padding:13px 15px;cursor:pointer;transition:.18s}
+.checklist li:hover{border-color:rgba(34,224,224,.35)}
+.checklist li .box{width:22px;height:22px;border-radius:7px;border:2px solid var(--cyan);flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--ink);transition:.18s;margin-top:1px}
+.checklist li.done .box{background:var(--cyan);border-color:var(--cyan)}
+.checklist li.done .box::after{content:"✓";font-weight:700}
+.checklist li .ct{font-size:14px;color:#d4d0ea}
+.checklist li.done .ct{text-decoration:line-through;opacity:.5}
+.checklist li .ct b{color:#fff;font-weight:600}
+
+/* practical accordion-ish cards */
+.infocards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:760px){.infocards{grid-template-columns:1fr}}
+.infocard{background:linear-gradient(158deg,var(--night-2),var(--night));border:1px solid var(--line-dark);
+  border-radius:16px;padding:20px;box-shadow:var(--shadow)}
+.infocard h4{font-family:'Fraunces',serif;font-weight:600;font-size:18px;color:#fff;margin-bottom:6px;display:flex;align-items:center;gap:9px}
+.infocard h4 .ic{font-size:18px}
+.infocard p{font-size:13.5px;color:#bcb8da;line-height:1.55}
+.infocard ul{list-style:none;margin-top:8px;display:flex;flex-direction:column;gap:7px}
+.infocard ul li{font-size:13px;color:#bcb8da;padding-left:16px;position:relative;line-height:1.5}
+.infocard ul li::before{content:"—";position:absolute;left:0;color:var(--magenta)}
+.infocard ul li b{color:#fff}
+
+/* tag pills for shred */
+.foodtags{display:flex;flex-wrap:wrap;gap:7px;margin-top:6px}
+.foodtags .ft{font-family:'Space Mono',monospace;font-size:10px;padding:4px 9px;border-radius:7px;
+  border:1px solid var(--line-dark);color:#bcb8da}
+.foodtags .ft.good{color:var(--jade);border-color:rgba(62,207,142,.35);background:rgba(62,207,142,.08)}
+.foodtags .ft.treat{color:var(--gold);border-color:rgba(232,176,75,.35);background:rgba(232,176,75,.08)}
+
+/* footer */
+.footer{position:relative;z-index:2;border-top:1px solid var(--line-dark);margin-top:30px;padding:40px 0 60px;text-align:center}
+.footer .fk{font-family:'Shippori Mincho',serif;font-weight:800;font-size:22px;color:#fff}
+.footer .fk .amp{color:var(--magenta)}
+.footer p{font-size:13px;color:#9b97bd;margin-top:10px;max-width:520px;margin-left:auto;margin-right:auto}
+.footer .disc{margin-top:18px;font-size:11px;color:#6f6c8c;font-family:'Space Mono',monospace;line-height:1.7}
+
+/* misc */
+.divline{height:1px;background:linear-gradient(90deg,transparent,var(--haze),transparent);margin:6px 0 0}
+.legend-key{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px;font-family:'Space Mono',monospace;font-size:11px;color:#a9a5cb}
+.legend-key span{display:flex;align-items:center;gap:7px}
+.legend-key .dot{width:9px;height:9px;border-radius:50%;box-shadow:0 0 8px currentColor}
+.k-city{color:var(--magenta)}.k-temple{color:var(--vermilion)}.k-fest{color:var(--gold)}.k-mtn{color:var(--jade)}.k-fly{color:var(--cyan)}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+
+/* ===== TABBED DAYS ===== */
+.daytabs-wrap{position:sticky;top:51px;z-index:40;margin:0 -22px 26px;padding:12px 22px;
+  background:linear-gradient(180deg,rgba(10,10,20,.94),rgba(10,10,20,.78));
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--line-dark)}
+.daytabs{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x proximity;
+  -webkit-overflow-scrolling:touch;padding-bottom:4px;scrollbar-width:thin;scrollbar-color:var(--haze) transparent}
+.daytabs::-webkit-scrollbar{height:5px}
+.daytabs::-webkit-scrollbar-thumb{background:var(--haze);border-radius:5px}
+.daychip{flex:0 0 auto;scroll-snap-align:start;cursor:pointer;border:1px solid var(--line-dark);
+  background:rgba(255,255,255,.03);border-radius:13px;padding:9px 13px;display:flex;flex-direction:column;
+  align-items:center;gap:2px;min-width:62px;transition:.18s;position:relative}
+.daychip .cd-dow{font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.1em;color:#8d89af}
+.daychip .cd-date{font-family:'Fraunces',serif;font-weight:600;font-size:14px;color:#d8d4f0;white-space:nowrap}
+.daychip .star{position:absolute;top:4px;right:5px;font-size:8px;color:var(--gold)}
+.daychip::after{content:"";position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);
+  width:0;height:2px;border-radius:2px;background:currentColor;transition:width .2s}
+.daychip:hover{border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.06)}
+.daychip.active{border-color:transparent;background:linear-gradient(150deg,rgba(28,28,62,.95),rgba(20,20,48,.8));
+  box-shadow:0 8px 24px -10px rgba(0,0,0,.6)}
+.daychip.active .cd-date{color:#fff}
+.daychip.active::after{width:60%}
+.daychip.k-city.active{color:var(--magenta)}.daychip.k-temple.active{color:var(--vermilion)}
+.daychip.k-festival.active{color:var(--gold)}.daychip.k-mountain.active{color:var(--jade)}
+.daychip.k-fly.active{color:var(--cyan)}
+.daychip.k-city.active .cd-dow{color:var(--magenta)}.daychip.k-temple.active .cd-dow{color:var(--vermilion)}
+.daychip.k-festival.active .cd-dow{color:var(--gold)}.daychip.k-mountain.active .cd-dow{color:var(--jade)}
+.daychip.k-fly.active .cd-dow{color:var(--cyan)}
+
+.daypanel{display:none;animation:fadein .35s ease}
+.daypanel.active{display:block}
+@keyframes fadein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.dp-head{margin-bottom:22px}
+.dp-ey{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--cyan);margin-bottom:9px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.star.inl{color:var(--gold);font-size:10px}
+.dp-title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(26px,5.6vw,40px);line-height:1.04;
+  letter-spacing:-.01em;color:#fff}
+.dp-tag{margin-top:10px;font-size:15.5px;color:#bcb8da;max-width:640px;line-height:1.5}
+
+.dp-acts{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:6px}
+@media(max-width:680px){.dp-acts{grid-template-columns:1fr}}
+.acard{background:linear-gradient(158deg,rgba(28,28,62,.7),rgba(17,17,38,.85));border:1px solid var(--line-dark);
+  border-radius:16px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:.2s}
+.acard:hover{border-color:rgba(255,45,149,.3);transform:translateY(-2px)}
+.ac-media{position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;
+  background:linear-gradient(135deg,var(--night-2),var(--haze))}
+.ac-media img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.acard:hover .ac-media img{transform:scale(1.05)}
+.ac-media.noimg{background:
+   radial-gradient(120% 120% at 20% 10%,rgba(255,45,149,.22),transparent 55%),
+   radial-gradient(120% 120% at 90% 90%,rgba(34,224,224,.20),transparent 55%),
+   linear-gradient(135deg,#181838,#241f44)}
+.fb-label{display:none}
+.ac-media.noimg .fb-label{display:flex;position:absolute;inset:0;align-items:center;justify-content:center;
+  text-align:center;padding:16px;font-family:'Fraunces',serif;font-weight:600;font-size:18px;line-height:1.2;
+  color:rgba(255,255,255,.92);text-shadow:0 2px 12px rgba(0,0,0,.5);z-index:2}
+.ac-media.noimg::after{content:"";position:absolute;left:14px;top:12px;width:22px;height:2px;
+  background:linear-gradient(90deg,var(--magenta),var(--cyan));border-radius:2px;z-index:3}
+.ac-media::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(10,10,20,.55));pointer-events:none}
+.ac-body{padding:14px 15px 15px;flex:1;display:flex;flex-direction:column}
+.ac-top{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.ac-time{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.08em;color:var(--cyan);
+  background:rgba(34,224,224,.1);border:1px solid rgba(34,224,224,.28);border-radius:6px;padding:2px 8px}
+.ac-name{font-family:'Fraunces',serif;font-weight:600;font-size:17px;color:#fff;line-height:1.15;margin-bottom:6px}
+.ac-desc{font-size:13px;color:#bcb8da;line-height:1.5;flex:1}
+.vidlink{display:inline-flex;align-items:center;gap:6px;margin-top:11px;align-self:flex-start;
+  font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  color:#fff;background:rgba(255,45,149,.16);border:1px solid rgba(255,45,149,.4);border-radius:999px;
+  padding:6px 13px;transition:.18s}
+.vidlink:hover{background:var(--magenta);border-color:var(--magenta)}
+.vidlink .vi{font-size:9px;color:var(--cyan)}
+.vidlink:hover .vi{color:#fff}
+.vidlink.onmedia{position:absolute;bottom:12px;left:12px;margin:0;background:rgba(10,10,20,.7);backdrop-filter:blur(4px)}
+.festmedia{aspect-ratio:21/9;border-radius:14px;margin-bottom:4px;border:1px solid var(--line-dark)}
+
+@media(max-width:760px){.daytabs-wrap{top:51px}}
+
+</style>
+</head>
+<body>
+<div class="glowfield" aria-hidden="true">
+  <div class="orb m"></div><div class="orb c"></div><div class="orb v"></div>
+</div>
+
+<!-- TOP BAR -->
+<header class="topbar">
+  <div class="inner">
+    <div class="brandmark">NEON<span class="amp">&amp;</span>NIRVANA<span class="jp">ネオンと涅槃</span></div>
+    <nav class="navlinks" aria-label="Sections">
+      <a href="#flights">Flights</a>
+      <a href="#journey">Journey</a>
+      <a href="#days">Day by Day</a>
+      <a href="#budget">Budget</a>
+      <a href="#shred">Shred</a>
+      <a href="#prep">Prep</a>
+      <a href="#todo">To-Do</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="kanji-back" aria-hidden="true">日本</div>
+  <div class="wrap">
+    <div class="eyebrow">17 JUL — 1 AUG 2026 · 16 DAYS · SOLO</div>
+    <h1><span class="neon">NEON</span><span class="amp">&amp;</span><span class="nirv">Nirvana</span></h1>
+    <p class="sub">Prateek's Japan — from <b>Tokyo's electric nights</b> to the <b>silence of a Koyasan temple</b>, threaded through the <b>Legend of Japan</b> tour, two great summer festivals, and an Osaka send-off.</p>
+    <div class="routeline">
+      <span class="node">TOKYO</span><span class="arr">→</span>
+      <span class="node">KAMAKURA</span><span class="arr">→</span>
+      <span class="node">HAKONE</span><span class="arr">→</span>
+      <span class="node">KYOTO</span><span class="arr">→</span>
+      <span class="node">KOYASAN</span><span class="arr">→</span>
+      <span class="node">HIROSHIMA</span><span class="arr">→</span>
+      <span class="node">MIYAJIMA</span><span class="arr">→</span>
+      <span class="node">OSAKA</span>
+    </div>
+    <div class="metastrip">
+      <div class="chip"><span class="k">Tour</span><span class="v">Legend of Japan · 12d</span></div>
+      <div class="chip"><span class="k">Out</span><span class="v">BOM → HND · Cathay</span></div>
+      <div class="chip"><span class="k">Home</span><span class="v">KIX → BOM · 1 Aug</span></div>
+      <div class="chip"><span class="k">Budget</span><span class="v">~₹3.6–3.8L</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FLIGHTS -->
+<section class="section" id="flights">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="idx">01</span>
+      <h2>The flights <span class="jp">空の便</span></h2>
+      <p class="lede">Both legs confirmed. Out of Mumbai on the 17th, landing Tokyo the 18th; home from Osaka on the 1st — which is why the whole trip points west and ends in Kansai.</p>
+    </div>
+    <div class="flights">
+      <div class="flight">
+        <div class="tag">Outbound · Fri 17 Jul · Cathay Pacific</div>
+        <div class="od">
+          <div class="pt"><div class="code">BOM</div><div class="city">Mumbai</div><div class="time">22:25</div></div>
+          <div class="mid"><div class="dur">12h total</div><div class="ln"></div><div class="stop">1 stop · Hong Kong</div></div>
+          <div class="pt"><div class="code">HND</div><div class="city">Tokyo Haneda</div><div class="time">13:55 +1</div></div>
+        </div>
+        <div class="foot"><span>Lands <b style="color:#fff">18 Jul</b>, mid-afternoon</span><span class="price">part of ₹60,830</span></div>
+      </div>
+      <div class="flight">
+        <div class="tag">Return · Sat 1 Aug · Cathay Pacific</div>
+        <div class="od">
+          <div class="pt"><div class="code">KIX</div><div class="city">Osaka Kansai</div><div class="time">09:05</div></div>
+          <div class="mid"><div class="dur">15h 30m</div><div class="ln"></div><div class="stop">1 stop · Hong Kong</div></div>
+          <div class="pt"><div class="code">BOM</div><div class="city">Mumbai</div><div class="time">21:05</div></div>
+        </div>
+        <div class="foot"><span><b style="color:var(--vermilion)">06:00</b> leave Namba — no AM shopping</span><span class="price">₹60,830/ad</span></div>
+      </div>
+    </div>
+    <div class="panel" style="margin-top:18px;display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap">
+      <div style="flex:1;min-width:240px">
+        <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);margin-bottom:8px">The early-flight rule</div>
+        <p style="font-size:13.5px;color:#cdc9e6;line-height:1.55">The 09:05 KIX departure means you leave central Osaka <b style="color:#fff">~06:00 on 1 Aug</b> — pre-dawn, no time for anything. So <b style="color:var(--vermilion)">all Osaka shopping happens on the 31st</b>, and you sleep near <b style="color:#fff">Namba</b> the last night (it's both the shopping core and the direct Nankai line to KIX, ~40–50 min).</p>
+      </div>
+      <div style="flex:1;min-width:240px">
+        <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Flight numbers</div>
+        <p style="font-size:13.5px;color:#cdc9e6;line-height:1.55">Out: <b style="color:#fff">CX696</b> BOM 22:25→HKG 07:00+1, then <b style="color:#fff">CX548</b> HKG→HND ~13:55. Partially refundable. Register <b style="color:var(--cyan)">Visit Japan Web</b> before flying for the immigration/customs QR codes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY OVERVIEW -->
+<section class="section" id="journey" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="idx">02</span>
+      <h2>Shape of the trip <span class="jp">旅の形</span></h2>
+      <p class="lede">Two days of self-run Tokyo before the tour, the 12-day Legend down the spine of Honshu, then a self-run Osaka finish. The colour of each pin below tells you what kind of day it is.</p>
+    </div>
+    <div class="panel">
+      <div class="grid2" style="gap:24px">
+        <div>
+          <p style="font-size:14px;color:#cdc9e6;line-height:1.6">The arc runs <b style="color:#fff">electric → sacred → electric</b>. You open with Tokyo's neon and a pub crawl, swing out to the coast at Kamakura, then the <b style="color:var(--magenta)">Legend of Japan</b> tour carries you through Hakone's Fuji views, Kyoto's temples, the temple-stay silence of Koyasan, Hiroshima's weight, and finally Osaka's "eat-till-you-drop" energy. Two of Japan's three great summer festivals — <b style="color:var(--gold)">Gion Matsuri</b> and <b style="color:var(--gold)">Tenjin Matsuri</b> — fall right on your Kyoto days.</p>
+          <div class="legend-key">
+            <span><span class="dot k-city" style="background:var(--magenta)"></span>City / neon</span>
+            <span><span class="dot k-temple" style="background:var(--vermilion)"></span>Temple / culture</span>
+            <span><span class="dot k-fest" style="background:var(--gold)"></span>Festival</span>
+            <span><span class="dot k-mtn" style="background:var(--jade)"></span>Mountain / nature</span>
+            <span><span class="dot k-fly" style="background:var(--cyan)"></span>Fly / transit</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:10px">Legend of Japan — what's included</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px;font-size:12.5px;color:#cdc9e6">
+            <div>✦ 11 nights stay</div><div>✦ All inter-city transport</div>
+            <div>✦ Bullet train legs</div><div>✦ 18 guided activities</div>
+            <div>✦ 3 meals (see days)</div><div>✦ Tru Leader throughout</div>
+          </div>
+          <div style="margin-top:14px;padding-top:14px;border-top:1px dashed var(--haze);font-size:12.5px;color:#9b97bd">
+            <b style="color:var(--vermilion)">Not</b> included: flights & airport transfers. Tour starts Tokyo (Day 1, ~5pm welcome dinner — arrive any time), ends Osaka (Day 12, chilled checkout).
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DAY BY DAY (TABBED) -->
+<section class="section" id="days" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="idx">03</span>
+      <h2>Day by day <span class="jp">日程</span></h2>
+      <p class="lede">Tap a date to open that day. Every activity has a photo and a video link. Self-run days (★) are timed precisely; tour-day times are typical flow — your Tru Leader sets the exact clock.</p>
+    </div>
+    <div class="daytabs-wrap">
+      <div class="daytabs" role="tablist" aria-label="Trip days">
+        <button class="daychip k-fly active" data-day="d17" role="tab" aria-selected="true"><span class="cd-dow">THU</span><span class="cd-date">17 Jul</span><span class="star">★</span></button>
+<button class="daychip k-city" data-day="d18" role="tab" aria-selected="false"><span class="cd-dow">FRI</span><span class="cd-date">18 Jul</span><span class="star">★</span></button>
+<button class="daychip k-temple" data-day="d19" role="tab" aria-selected="false"><span class="cd-dow">SAT</span><span class="cd-date">19 Jul</span><span class="star">★</span></button>
+<button class="daychip k-city" data-day="d20" role="tab" aria-selected="false"><span class="cd-dow">SUN</span><span class="cd-date">20 Jul</span></button>
+<button class="daychip k-temple" data-day="d21" role="tab" aria-selected="false"><span class="cd-dow">MON</span><span class="cd-date">21 Jul</span></button>
+<button class="daychip k-city" data-day="d22" role="tab" aria-selected="false"><span class="cd-dow">TUE</span><span class="cd-date">22 Jul</span></button>
+<button class="daychip k-mountain" data-day="d23" role="tab" aria-selected="false"><span class="cd-dow">WED</span><span class="cd-date">23 Jul</span></button>
+<button class="daychip k-festival" data-day="d24" role="tab" aria-selected="false"><span class="cd-dow">THU</span><span class="cd-date">24 Jul</span></button>
+<button class="daychip k-festival" data-day="d25" role="tab" aria-selected="false"><span class="cd-dow">FRI</span><span class="cd-date">25 Jul</span></button>
+<button class="daychip k-temple" data-day="d26" role="tab" aria-selected="false"><span class="cd-dow">SAT</span><span class="cd-date">26 Jul</span></button>
+<button class="daychip k-temple" data-day="d27" role="tab" aria-selected="false"><span class="cd-dow">SUN</span><span class="cd-date">27 Jul</span></button>
+<button class="daychip k-mountain" data-day="d28" role="tab" aria-selected="false"><span class="cd-dow">MON</span><span class="cd-date">28 Jul</span><span class="star">★</span></button>
+<button class="daychip k-city" data-day="d29" role="tab" aria-selected="false"><span class="cd-dow">TUE</span><span class="cd-date">29 Jul</span></button>
+<button class="daychip k-city" data-day="d30" role="tab" aria-selected="false"><span class="cd-dow">WED</span><span class="cd-date">30 Jul</span></button>
+<button class="daychip k-city" data-day="d31" role="tab" aria-selected="false"><span class="cd-dow">THU</span><span class="cd-date">31 Jul</span><span class="star">★</span></button>
+<button class="daychip k-fly" data-day="d01" role="tab" aria-selected="false"><span class="cd-dow">FRI</span><span class="cd-date">1 Aug</span><span class="star">★</span></button>
+      </div>
+    </div>
+    <div class="daypanels">
+      <div class="daypanel active" id="panel-d17" role="tabpanel"><div class="dp-head"><div class="dp-ey">Thu 17 Jul, 2026 <span class="badge b-fly">Travel</span> <span class="star inl">★ self-run</span></div><h3 class="dp-title">Mumbai → the sky</h3><p class="dp-tag">The overnight redeye via Hong Kong. Tonight’s only job is sleep.</p></div><div class="dp-acts"><div class="acard"><div class="ac-media noimg"><span class="fb-label">Reach BOM Terminal 2</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">~19:25</span></div><h4 class="ac-name">Reach BOM Terminal 2</h4><p class="ac-desc">Three hours before an international long-haul — Mumbai evening traffic is unpredictable. Eat a proper high-protein meal here before boarding.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Mumbai%20airport%20terminal%202%20international%20departures" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media noimg"><span class="fb-label">Depart Cathay Pacific (via Hong Kong)</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">22:25</span></div><h4 class="ac-name">Depart Cathay Pacific (via Hong Kong)</h4><p class="ac-desc">Set your watch to JST (+3.5h) and try to sleep on Japan’s clock. Skip the plane alcohol; hydrate hard. Lands Tokyo Haneda 13:55 on the 18th.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Cathay%20Pacific%20economy%20long%20haul%20review" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div></div><div class="notegrid"><div class="note shred"><div class="nh">◆ Shred</div><div class="nb">Anchor your protein at BOM — airline food is carb-heavy. You can pre-order a low-carb/seafood special meal up to 24h ahead.</div></div>
+<div class="note tip"><div class="nh">◆ Have ready</div><div class="nb">Passport, e-visa (phone + printout), all bookings, insurance proof. Register <b>Visit Japan Web</b> before flying for the immigration/customs QR codes.</div></div></div><div class="costbar"><span class="cl">Day spend</span><span class="cv">₹500–1,000 · airport meal</span></div></div>
+<div class="daypanel" id="panel-d18" role="tabpanel"><div class="dp-head"><div class="dp-ey">Fri 18 Jul, 2026  <span class="star inl">★ self-run</span></div><h3 class="dp-title">Land Haneda → Tokyo Drift night</h3><p class="dp-tag">In at 13:55, settle, then ride shotgun in a JDM legend through Tokyo’s expressways and neon — Fast & Furious style.</p></div><div class="dp-acts"><div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Haneda_Airport_T3_Departures.jpg/640px-Haneda_Airport_T3_Departures.jpg" alt="Land Tokyo Haneda" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Land Tokyo Haneda</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">13:55</span></div><h4 class="ac-name">Land Tokyo Haneda</h4><p class="ac-desc">Visit Japan Web QR = faster immigration. Out by ~14:45. Activate your eSIM on landing.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Tokyo%20Haneda%20airport%20arrival%20to%20city%20guide" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Tokyo_Skyline_2018.jpg/640px-Tokyo_Skyline_2018.jpg" alt="Check into the TruTravels hostel" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Check into the TruTravels hostel</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">~16:00</span></div><h4 class="ac-name">Check into the TruTravels hostel</h4><p class="ac-desc">Exact joining location arrives in your welcome email ~1 week prior. Drop bags, breathe, freshen up after the redeye.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Tokyo%20hostel%20tour%20Shibuya%20Shinjuku" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Yakitori_2.jpg/640px-Yakitori_2.jpg" alt="Easy Shred dinner" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Easy Shred dinner</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">~18:30</span></div><h4 class="ac-name">Easy Shred dinner</h4><p class="ac-desc">A protein-forward dinner near the hostel before the night drive — grilled fish or yakitori.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Tokyo%20izakaya%20yakitori%20dinner" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Nissan_Skyline_GT-R_R34_%28Wangan%29.jpg/640px-Nissan_Skyline_GT-R_R34_%28Wangan%29.jpg" alt="Fast & Furious Tokyo Drift III" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Fast & Furious Tokyo Drift III</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">night</span></div><h4 class="ac-name">Fast & Furious Tokyo Drift III</h4><p class="ac-desc">Ride shotgun (no licence needed) in a JDM icon — Skyline, GTR, Silvia — along the Wangan/C1 expressways, tunnels, Rainbow Bridge, past Tokyo Tower & Shibuya, to the Daikoku PA car meet. ~3–4h, hotel drop-off. Book ahead (free cancel 24h).</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Fast%20Furious%20Tokyo%20Drift%20JDM%20experience%20Daikoku%20ride%20along" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div></div><div class="pullbox"><div class="ph">Why this beats a crawl on arrival night</div><div class="pb">A ride-along is low-effort — you’re sitting, being driven, soaking in Tokyo at night — so it works even jet-lagged, no walking or heavy drinking needed. And it’s pure JDM/car-culture, right up your street. Your Osaka pub crawl on the 31st still covers the bar-hopping night.</div></div><div class="notegrid"><div class="note watch"><div class="nh">◆ Saturday catch</div><div class="nb">Daikoku PA can be shut down ~20:00 on Fri/Sat — the 18th is a Saturday, so the car-meet stop <i>might</i> be affected (the operator can’t control it). The expressway drive, tunnels, Rainbow Bridge & Shibuya are the core regardless.</div></div>
+<div class="note tip"><div class="nh">◆ Booking</div><div class="nb">~$146, 4.8★ (4,275 reviews). Reserve-now-pay-later + free cancellation up to 24h. Bring ~¥5,000 cash; activate WhatsApp for their ~1h-before start message.</div></div></div><div class="costbar"><span class="cl">Day spend</span><span class="cv">₹14,000–18,000 · experience + dinner + transfers</span></div></div>
+<div class="daypanel" id="panel-d19" role="tabpanel"><div class="dp-head"><div class="dp-ey">Sat 19 Jul, 2026  <span class="star inl">★ self-run</span></div><h3 class="dp-title">Kamakura & Enoshima — guided</h3><p class="dp-tag">A booked bus day-trip: the Great Buddha, the Enoden coast train, Enoshima island. Zero navigation.</p></div><div class="dp-acts"><div class="acard"><div class="ac-media noimg"><span class="fb-label">Pickup (Tokyo Stn / Shinjuku)</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">~08:00</span></div><h4 class="ac-name">Pickup (Tokyo Stn / Shinjuku)</h4><p class="ac-desc">Whichever meeting point is nearer the hostel. Grab a konbini protein breakfast first. Early start the morning after the crawl — keep last night contained.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Kamakura%20Enoshima%20day%20tour%20from%20Tokyo" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Kamakura_Budda_Daibutsu_front_1885.jpg/640px-Kamakura_Budda_Daibutsu_front_1885.jpg" alt="Great Buddha (Kotoku-in)" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Great Buddha (Kotoku-in)</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">~10:00</span></div><h4 class="ac-name">Great Buddha (Kotoku-in)</h4><p class="ac-desc">A 13.3m bronze Amida Buddha cast in 1252 — the only Buddha statue designated a National Treasure. You can step inside for ¥50.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Kamakura%20Great%20Buddha%20Kotoku-in%20walkthrough" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Enoden_1000_Kamakurakokomae.jpg/640px-Enoden_1000_Kamakurakokomae.jpg" alt="The Enoden coast train" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">The Enoden coast train</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">~10:50</span></div><h4 class="ac-name">The Enoden coast train</h4><p class="ac-desc">A retro line that brushes garden walls then opens onto the sea — Slam Dunk country. The ride itself is a highlight.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Enoden%20train%20Kamakura%20coast%20ride%20Slam%20Dunk" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Enoshima_Sea_Candle_2020.jpg/640px-Enoshima_Sea_Candle_2020.jpg" alt="Enoshima island" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Enoshima island</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">~11:50</span></div><h4 class="ac-name">Enoshima island</h4><p class="ac-desc">Shrine, the Sea Candle lighthouse, coastal views, lunch (~100 min). Mt Fuji on the horizon on a clear day.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Enoshima%20island%20Japan%20walking%20tour" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Tsurugaoka_Hachimangu_2009.jpg/640px-Tsurugaoka_Hachimangu_2009.jpg" alt="Tsurugaoka Hachimangu + Komachi-dori" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Tsurugaoka Hachimangu + Komachi-dori</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">~14:20</span></div><h4 class="ac-name">Tsurugaoka Hachimangu + Komachi-dori</h4><p class="ac-desc">Kamakura’s grand samurai-era shrine, then free time on the lively Komachi shopping street.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Tsurugaoka%20Hachimangu%20shrine%20Komachi%20dori%20Kamakura" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media noimg"><span class="fb-label">Back to Tokyo — rest</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">~18:00</span></div><h4 class="ac-name">Back to Tokyo — rest</h4><p class="ac-desc">Tour starts tomorrow. Keep tonight easy and bank energy.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Tokyo%20evening%20relax%20izakaya" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div></div><div class="notegrid"><div class="note watch"><div class="nh">◆ Honest flag</div><div class="nb">Early ~08:00 start after the crawl. The 19th is a full, early day — not a recovery day. Rest hard tonight.</div></div>
+<div class="note shred"><div class="nh">◆ Shred</div><div class="nb">Local dish: <b>shirasu-don</b> (whitebait rice bowl) — light, high-protein. Komachi-dori snacks are carby treats; graze lightly.</div></div></div><div class="costbar"><span class="cl">Day spend</span><span class="cv">₹6,500–11,500 · tour + meals</span></div></div>
+<div class="daypanel" id="panel-d20" role="tabpanel"><div class="dp-head"><div class="dp-ey">Sun 20 Jul, 2026 <span class="badge b-legend">Legend</span></div><h3 class="dp-title">teamLab → welcome night</h3><p class="dp-tag">Day 1 is empty till evening — so the morning is yours for teamLab. Then meet your group.</p></div><div class="dp-acts"><div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Teamlab_Planets_Tokyo_2018_waterfall.jpg/640px-Teamlab_Planets_Tokyo_2018_waterfall.jpg" alt="teamLab Planets (Toyosu)" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">teamLab Planets (Toyosu)</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">~10:30</span></div><h4 class="ac-name">teamLab Planets (Toyosu)</h4><p class="ac-desc">Book the timed slot online ahead — summer slots sell out. Barefoot, knee-deep water, immersive digital art. ~1.5–2h, no rush once inside.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=teamLab%20Planets%20Tokyo%20Toyosu%20full%20experience" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media noimg"><span class="fb-label">Shred lunch near Toyosu</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">~13:30</span></div><h4 class="ac-name">Shred lunch near Toyosu</h4><p class="ac-desc">Toyosu Market area has great seafood — sashimi/grilled protein, your kind of meal.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Toyosu%20market%20sushi%20seafood%20Tokyo" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media noimg"><span class="fb-label">Legend welcome dinner + first night out</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">~17:00</span></div><h4 class="ac-name">Legend welcome dinner + first night out</h4><p class="ac-desc">Meet your Tru Leader and the group. Back to the hostel ~15:30 to check in fully and freshen up first.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Tokyo%20welcome%20dinner%20izakaya%20group%20night%20out" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div></div><div class="pullbox"><div class="ph">Why Planets, not Borderless</div><div class="pb">Planets is more structured and easy to fit in a morning window before the 5pm dinner; Borderless is a wander-freely maze that wants more time. Wear trousers you can roll to the knee.</div></div><div class="notegrid"><div class="note watch"><div class="nh">◆ Harry Potter</div><div class="nb">The Studio Tour wants 4–5h and doesn’t fit a packed trip — deferred to a future visit. teamLab is the one that fits today.</div></div>
+<div class="note tip"><div class="nh">◆ Booking</div><div class="nb">Pre-book teamLab Planets the moment dates are firm (~¥3,600–4,200). Do NOT rely on same-day entry.</div></div></div><div class="costbar"><span class="cl">Day spend</span><span class="cv">₹4,100–6,300 · teamLab + meals (+ night out)</span></div></div>
+<div class="daypanel" id="panel-d21" role="tabpanel"><div class="dp-head"><div class="dp-ey">Mon 21 Jul, 2026 <span class="badge b-legend">Legend</span></div><h3 class="dp-title">Tokyo — temples & sake</h3><p class="dp-tag">Walking tour, Senso-ji, Akihabara’s electric chaos, a sake tasting, then Shinjuku by night.</p></div><div class="dp-acts"><div class="acard"><div class="ac-media noimg"><span class="fb-label">Group walking tour</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">AM</span></div><h4 class="ac-name">Group walking tour</h4><p class="ac-desc">Your Tru Leader orients the group on the city and transit — practical and social.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Tokyo%20walking%20tour%20first%20day%20orientation" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Kaminarimon_2019.jpg/640px-Kaminarimon_2019.jpg" alt="Senso-ji (Asakusa)" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Senso-ji (Asakusa)</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">midday</span></div><h4 class="ac-name">Senso-ji (Asakusa)</h4><p class="ac-desc">Tokyo’s oldest temple — the Kaminarimon thunder gate, Nakamise-dori stalls, the five-story pagoda.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Senso-ji%20temple%20Asakusa%20Tokyo%20walkthrough" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Akihabara_picture.jpg/640px-Akihabara_picture.jpg" alt="Akihabara — Electric Town" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Akihabara — Electric Town</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">PM</span></div><h4 class="ac-name">Akihabara — Electric Town</h4><p class="ac-desc">Multi-floor electronics, anime/manga, retro gaming, gachapon. Browse what interests you in the free pockets.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Akihabara%20Tokyo%20electric%20town%20walk" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Sake_barrels_at_Meiji_Shrine.jpg/640px-Sake_barrels_at_Meiji_Shrine.jpg" alt="Sake tasting" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Sake tasting</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">PM</span><span class="incl">included</span></div><h4 class="ac-name">Sake tasting</h4><p class="ac-desc">Sample several styles and learn the basics of Japan’s rice wine. One of your 18 included activities.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Japanese%20sake%20tasting%20experience%20Tokyo" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Shinjuku_at_night.jpg/640px-Shinjuku_at_night.jpg" alt="Shinjuku by night" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Shinjuku by night</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">eve</span></div><h4 class="ac-name">Shinjuku by night</h4><p class="ac-desc">Neon, screens, the quintessential Tokyo night. Loosely structured — explore at your pace.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Shinjuku%20Tokyo%20night%20walk%20neon" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div></div><div class="notegrid"><div class="note shred"><div class="nh">◆ Shred</div><div class="nb">Lunch is yours: a grilled-fish teishoku or a yakitori counter (salt/shio skewers, skip sweet tare + rice). Sake = enjoy it, it’s small.</div></div>
+<div class="note watch"><div class="nh">◆ Pace</div><div class="nb">Start of a 12-day run after 3 big pre-tour days. Enjoy Shinjuku but don’t make it the blowout — tomorrow’s a full day + Golden Gai.</div></div></div><div class="costbar"><span class="cl">Day spend</span><span class="cv">₹2,800–5,400 · drinks are the swing</span></div></div>
+<div class="daypanel" id="panel-d22" role="tabpanel"><div class="dp-head"><div class="dp-ey">Tue 22 Jul, 2026 <span class="badge b-legend">Legend</span></div><h3 class="dp-title">Meiji Shrine → Golden Gai</h3><p class="dp-tag">Forest-shrine calm, Harajuku colour, then two of Tokyo’s great nightlife institutions to close the city.</p></div><div class="dp-acts"><div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Meiji_Shrine%2C_Tokyo%2C_Japan.jpg/640px-Meiji_Shrine%2C_Tokyo%2C_Japan.jpg" alt="Meiji Shrine + Yoyogi Park" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Meiji Shrine + Yoyogi Park</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">AM</span></div><h4 class="ac-name">Meiji Shrine + Yoyogi Park</h4><p class="ac-desc">A serene forest of ~100,000 trees in the city’s heart; giant torii gates over gravel paths. Weekend Shinto weddings are a lovely sight.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Meiji%20Shrine%20Tokyo%20walkthrough%20Yoyogi" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Takeshita_Street%2C_Harajuku%2C_Tokyo.jpg/640px-Takeshita_Street%2C_Harajuku%2C_Tokyo.jpg" alt="Harajuku / Takeshita-Dori" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Harajuku / Takeshita-Dori</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">midday</span></div><h4 class="ac-name">Harajuku / Takeshita-Dori</h4><p class="ac-desc">Youth fashion, crêpes, quirky shops, a riot of colour. Self-paced — good free time. Shibuya record shops are one stop away.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Harajuku%20Takeshita%20street%20Tokyo%20walk" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Omoide_Yokocho_2016.jpg/640px-Omoide_Yokocho_2016.jpg" alt="Omoide Yokocho" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Omoide Yokocho</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">eve</span></div><h4 class="ac-name">Omoide Yokocho</h4><p class="ac-desc">A lantern-lit alley of tiny yakitori counters — smoky, cramped, wonderfully old-school. A genuinely good Shred protein night.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Omoide%20Yokocho%20Shinjuku%20yakitori%20alley" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Golden_Gai%2C_Shinjuku%2C_Tokyo.jpg/640px-Golden_Gai%2C_Shinjuku%2C_Tokyo.jpg" alt="Golden Gai (+ karaoke)" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Golden Gai (+ karaoke)</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">eve</span></div><h4 class="ac-name">Golden Gai (+ karaoke)</h4><p class="ac-desc">A warren of six alleys packed with ~200 minuscule themed bars. Intimate, characterful. Carry cash — many are cash-only with small covers.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Golden%20Gai%20Shinjuku%20bars%20night%20Tokyo" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div></div><div class="pullbox"><div class="ph">Lean into tonight</div><div class="pb">Golden Gai is one of Tokyo’s most characterful nights and your last in the city — enjoy it properly. But pack beforehand: tomorrow is a long Hakone travel day, so know your limits.</div></div><div class="notegrid"><div class="note shred"><div class="nh">◆ Shred</div><div class="nb">Omoide Yokocho yakitori = a good protein night. Go easy on rice/beer. Golden Gai drinks add up fast.</div></div>
+<div class="note tip"><div class="nh">◆ Records</div><div class="nb">Harajuku free time → Shibuya one stop (Disk Union, Face Records) to dig vinyl for the DJ kit.</div></div></div><div class="costbar"><span class="cl">Day spend</span><span class="cv">₹4,300–9,400 · Golden Gai drinking = variable</span></div></div>
+<div class="daypanel" id="panel-d23" role="tabpanel"><div class="dp-head"><div class="dp-ey">Wed 23 Jul, 2026 <span class="badge b-legend">Legend</span></div><h3 class="dp-title">Hakone — Fuji & the lake</h3><p class="dp-tag">A long travel day rewarded with a castle, ropeway, a pirate-ship cruise, and maybe Mt Fuji.</p></div><div class="dp-acts"><div class="acard"><div class="ac-media noimg"><span class="fb-label">Travel to Odawara / Hakone</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">AM</span></div><h4 class="ac-name">Travel to Odawara / Hakone</h4><p class="ac-desc">A long transit morning — rest after Golden Gai. The city gives way to mountains.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Tokyo%20to%20Hakone%20train%20journey" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Odawara_Castle_20100White.jpg/640px-Odawara_Castle_20100White.jpg" alt="Odawara Castle" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Odawara Castle</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">PM</span></div><h4 class="ac-name">Odawara Castle</h4><p class="ac-desc">A handsome reconstructed feudal castle and grounds — a good stretch-your-legs stop and photo spot.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Odawara%20Castle%20Japan%20tour" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Hakone_Ropeway_gondola_and_Mt_Fuji.jpg/640px-Hakone_Ropeway_gondola_and_Mt_Fuji.jpg" alt="Hakone Ropeway + Owakudani" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Hakone Ropeway + Owakudani</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">PM</span></div><h4 class="ac-name">Hakone Ropeway + Owakudani</h4><p class="ac-desc">An aerial gondola over the volcanic valley with its steam vents — and, weather permitting, Fuji. Owakudani’s black eggs add 7 years of life, they say.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Hakone%20ropeway%20Owakudani%20Mount%20Fuji" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Lake_Ashi_and_torii_of_Hakone_Shrine.jpg/640px-Lake_Ashi_and_torii_of_Hakone_Shrine.jpg" alt="Lake Ashi pirate-ship cruise" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Lake Ashi pirate-ship cruise</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">PM</span></div><h4 class="ac-name">Lake Ashi pirate-ship cruise</h4><p class="ac-desc">The day’s centrepiece — a cruise past the Hakone Shrine’s red torii standing in the water, Fuji behind on a clear day.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Lake%20Ashi%20Hakone%20pirate%20ship%20cruise%20torii" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media noimg"><span class="fb-label">Onsen town evening</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">eve</span></div><h4 class="ac-name">Onsen town evening</h4><p class="ac-desc">Hakone is famous onsen country — likely a hot-spring soak and accommodation.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Hakone%20onsen%20hot%20spring%20town%20evening" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div></div><div class="notegrid"><div class="note heat"><div class="nh">◆ Fuji reality</div><div class="nb">Summer haze often hides Fuji, and the peak is snowless by late July. A clear view is a bonus, not a guarantee.</div></div>
+<div class="note tip"><div class="nh">◆ Onsen + tattoos</div><div class="nb">Many onsen ban visible tattoos. If relevant, ask the Tru Leader about tattoo-friendly or private (kashikiri) baths ahead of the door.</div></div></div><div class="costbar"><span class="cl">Day spend</span><span class="cv">₹2,300–5,500 · one of your lower days</span></div></div>
+<div class="daypanel" id="panel-d24" role="tabpanel"><div class="dp-head"><div class="dp-ey">Thu 24 Jul, 2026 <span class="badge b-legend">Legend</span></div><h3 class="dp-title">Kyoto — tea & ten-thousand gates</h3><p class="dp-tag">The old capital: a tea ceremony, the Ninenzaka lanes, Fushimi-Inari’s torii — and Gion Matsuri in the air.</p></div><div class="dp-acts"><div class="acard"><div class="ac-media noimg"><span class="fb-label">Travel to Kyoto</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">early</span></div><h4 class="ac-name">Travel to Kyoto</h4><p class="ac-desc">Likely a Shinkansen leg. Rest on the journey.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Shinkansen%20bullet%20train%20Japan%20ride" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Tea_ceremony_in_Kyoto.jpg/640px-Tea_ceremony_in_Kyoto.jpg" alt="Traditional tea ceremony" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Traditional tea ceremony</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">PM</span><span class="incl">included</span></div><h4 class="ac-name">Traditional tea ceremony</h4><p class="ac-desc">The ritual, etiquette and meaning of preparing matcha — calm and immersive. Included.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Japanese%20tea%20ceremony%20Kyoto%20experience" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Ninenzaka_Kyoto.jpg/640px-Ninenzaka_Kyoto.jpg" alt="Ninenzaka old town" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Ninenzaka old town</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">PM</span></div><h4 class="ac-name">Ninenzaka old town</h4><p class="ac-desc">Preserved stone-paved lanes of wooden machiya, teahouses and the Yasaka Pagoda. Photogenic, self-paced.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Ninenzaka%20Sannenzaka%20Kyoto%20walk" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Fushimi_Inari-taisha%2C_Senbon_Torii.jpg/640px-Fushimi_Inari-taisha%2C_Senbon_Torii.jpg" alt="Fushimi-Inari Shrine" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Fushimi-Inari Shrine</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">PM</span></div><h4 class="ac-name">Fushimi-Inari Shrine</h4><p class="ac-desc">Thousands of vermilion torii up the mountainside. The famous dense tunnels are right at the base — stay low (knee-friendly), skip the summit hike.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Fushimi%20Inari%20shrine%20thousand%20torii%20Kyoto" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div></div><div class="pullbox fest"><div class="ph">★ Gion Matsuri overlap</div><div class="pb">The 24th is the <b>Ato Matsuri float parade</b> (~11 towering floats, morning) — Kyoto is in full festival mode. Ask your guide whether there’s a chance to catch floats or the festival streets. A delightful bonus, not a fixed item.</div></div><div class="notegrid"><div class="note knee"><div class="nh">◆ Knee</div><div class="nb">Fushimi-Inari’s summit is 2–3h — skip it. The iconic dense torii are in the first 15–30 min at the base. You lose nothing staying low.</div></div>
+<div class="note heat"><div class="nh">◆ Heat</div><div class="nb">Kyoto sits in a basin — likely your hottest stretch (33–35°C, sticky). Hydrate aggressively, cooling towel, shade breaks.</div></div></div><div class="costbar"><span class="cl">Day spend</span><span class="cv">₹2,800–5,600 · + festival food</span></div></div>
+<div class="daypanel" id="panel-d25" role="tabpanel"><div class="dp-head"><div class="dp-ey">Fri 25 Jul, 2026 <span class="badge b-legend">Legend</span></div><h3 class="dp-title">Kyoto by day → 🎆 Tenjin Matsuri</h3><p class="dp-tag">Bamboo, the Golden Pavilion, a samurai class — then a dash to Osaka for fireworks over the river.</p></div><div class="dp-acts"><div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Arashiyama_Bamboo_Forest_2017.jpg/640px-Arashiyama_Bamboo_Forest_2017.jpg" alt="Arashiyama Bamboo Forest" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Arashiyama Bamboo Forest</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">AM</span></div><h4 class="ac-name">Arashiyama Bamboo Forest</h4><p class="ac-desc">The luminous green tunnel — go early. The broader Arashiyama district (river, Togetsukyo bridge) is lovely too. Knee-friendly.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Arashiyama%20bamboo%20forest%20Kyoto%20walk" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Kinkaku-ji_2019.jpg/640px-Kinkaku-ji_2019.jpg" alt="Kinkaku-ji (Golden Pavilion)" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Kinkaku-ji (Golden Pavilion)</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">midday</span></div><h4 class="ac-name">Kinkaku-ji (Golden Pavilion)</h4><p class="ac-desc">A Zen temple sheathed in gold leaf, mirrored in its pond. Viewed from the garden path — flat, ~45 min.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Kinkaku-ji%20golden%20pavilion%20Kyoto" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Samurai_armor_and_helmet.jpg/640px-Samurai_armor_and_helmet.jpg" alt="Samurai experience" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Samurai experience</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">PM</span><span class="incl">included</span></div><h4 class="ac-name">Samurai experience</h4><p class="ac-desc">Dress in traditional robes and learn the art — a tour favourite. Included. Evening is free for the festival.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=samurai%20experience%20class%20Kyoto%20sword" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div></div><div class="blk"><div class="lab">Festival flow · from Kyoto</div><div class="ac-media festmedia"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Tenjin_Matsuri_Funa-togyo.jpg/640px-Tenjin_Matsuri_Funa-togyo.jpg" alt="Tenjin Matsuri" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><a class="vidlink onmedia" href="https://www.youtube.com/results?search_query=Tenjin%20Matsuri%20Osaka%20boat%20procession%20fireworks" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div><ul class="flowlist" style="margin-top:12px"><li><span class="tm">~16:30</span><span>Keihan Line Kyoto → <b>Temmabashi</b> (right at the river), ~30 min. Shinkansen ~15 min alt.</span></li><li><span class="tm">~18:00</span><span>Riverbank between <b>Temmabashi &amp; Sakuranomiya</b> for the boats; find a spot before fireworks.</span></li><li><span class="tm">~21:30</span><span><b>The exit is the hard part.</b> Linger 30–60 min, then walk to a <b>farther station (Umeda)</b> rather than fight the 1M+ crush at the nearest one.</span></li><li><span class="tm">~22:30</span><span>Back to Kyoto. Bed — early Koyasan start tomorrow.</span></li></ul></div><div class="pullbox fest"><div class="ph">🎆 Tenjin Matsuri — LOCKED for tonight</div><div class="pb">One of Japan’s three greatest festivals, and 2026’s main day is a Saturday (bigger crowds). Land procession 15:30–18:00 · 100+ lantern-lit boats on the Okawa 18:00–21:00 · <b>~5,000 fireworks 19:30–21:00</b>, finishing with the plum-blossom “Kobai” shell.</div></div><div class="notegrid"><div class="note watch"><div class="nh">◆ The trade</div><div class="nb">Back late before an early Koyasan day — accept a tired morning and rest on the journey up. Worth it for a top-3 festival. Float it to groupmates: safer + more fun together.</div></div>
+<div class="note tip"><div class="nh">◆ Kit</div><div class="nb">Buy drinks before the dense area (machines run dry), cash for stalls, charge phone, screenshot Umeda→Kyoto return times, comfy shoes, hand fan.</div></div></div><div class="costbar"><span class="cl">Day spend</span><span class="cv">₹3,600–8,000 · festival night = the variable</span></div></div>
+<div class="daypanel" id="panel-d26" role="tabpanel"><div class="dp-head"><div class="dp-ey">Sat 26 Jul, 2026 <span class="badge b-legend">Legend</span></div><h3 class="dp-title">Koyasan — sacred mountain, temple stay</h3><p class="dp-tag">Up to Japan’s holiest Buddhist mountain: a night in a working temple and a lantern-lit cemetery walk.</p></div><div class="dp-acts"><div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Nankai_Koya_line_cable_car.jpg/640px-Nankai_Koya_line_cable_car.jpg" alt="Travel up to Koyasan" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Travel up to Koyasan</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">AM</span></div><h4 class="ac-name">Travel up to Koyasan</h4><p class="ac-desc">Train + cable car + bus into the forested mountains (~800m, cool air). Rest on the way up after the festival night.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Koyasan%20cable%20car%20train%20journey%20Japan" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Konpon_Daito_Koyasan.jpg/640px-Konpon_Daito_Koyasan.jpg" alt="Free afternoon · Danjo Garan" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Free afternoon · Danjo Garan</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">PM</span></div><h4 class="ac-name">Free afternoon · Danjo Garan</h4><p class="ac-desc">Built-in free time. The sacred temple complex and the vermilion Konpon Daito pagoda in daylight — the founding core of the mountain. Optional: Kongobu-ji’s rock garden.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Koyasan%20Danjo%20Garan%20Konpon%20Daito%20pagoda" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Shojin_ryori_Buddhist_cuisine.jpg/640px-Shojin_ryori_Buddhist_cuisine.jpg" alt="Shojin ryori temple dinner" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Shojin ryori temple dinner</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">eve</span><span class="incl">included</span></div><h4 class="ac-name">Shojin ryori temple dinner</h4><p class="ac-desc">Included monks’ vegetarian cuisine — tofu, koya-dofu, vegetables. Lower protein; carry a backup bar. One of your 3 included meals.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=shojin%20ryori%20Buddhist%20vegetarian%20cuisine%20Koyasan" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Okunoin_Cemetery_Koyasan.jpg/640px-Okunoin_Cemetery_Koyasan.jpg" alt="Okunoin night cemetery walk" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Okunoin night cemetery walk</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">eve</span></div><h4 class="ac-name">Okunoin night cemetery walk</h4><p class="ac-desc">Japan’s largest cemetery — 200,000+ moss-covered tombs under giant cedars, lantern-lit, with a guide. Haunting and beautiful. Knee-friendly path.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Okunoin%20cemetery%20Koyasan%20night%20walk" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Eko-in_Koyasan_temple_lodging.jpg/640px-Eko-in_Koyasan_temple_lodging.jpg" alt="Temple lodging (shukubo)" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Temple lodging (shukubo)</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">night</span></div><h4 class="ac-name">Temple lodging (shukubo)</h4><p class="ac-desc">Sleep in a working temple — tatami, futons, optional dawn prayers. Simple, authentic, a trip highlight.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Koyasan%20temple%20stay%20shukubo%20experience" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div></div><div class="notegrid"><div class="note shred"><div class="nh">◆ Shred</div><div class="nb">All-vegetarian today (and likely tomorrow’s breakfast). Lean on tofu/koya-dofu for protein and carry bars from a city konbini. One day off-target is fine.</div></div>
+<div class="note knee"><div class="nh">◆ Layer up</div><div class="nb">~800m and noticeably cooler, especially at night. Bring a light layer even in July — a welcome change from the heat.</div></div></div><div class="costbar"><span class="cl">Day spend</span><span class="cv">₹1,500–2,600 · 🟢 cheapest day — almost all included</span></div></div>
+<div class="daypanel" id="panel-d27" role="tabpanel"><div class="dp-head"><div class="dp-ey">Sun 27 Jul, 2026 <span class="badge b-legend">Legend</span></div><h3 class="dp-title">Hiroshima — Peace & remembrance</h3><p class="dp-tag">From the sacred mountain to a city defined by 1945: the Peace Museum, the Dome, then okonomiyaki.</p></div><div class="dp-acts"><div class="acard"><div class="ac-media noimg"><span class="fb-label">Travel to Hiroshima</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">AM</span></div><h4 class="ac-name">Travel to Hiroshima</h4><p class="ac-desc">Descend from Koyasan and travel west (likely Shinkansen). Rest on the journey.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Shinkansen%20to%20Hiroshima%20Japan" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Hiroshima_Peace_Memorial_Museum_2019.jpg/640px-Hiroshima_Peace_Memorial_Museum_2019.jpg" alt="Peace Memorial Museum" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Peace Memorial Museum</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">midday</span></div><h4 class="ac-name">Peace Memorial Museum</h4><p class="ac-desc">Documents the atomic bombing through artifacts and testimony. Profoundly moving and emotionally heavy — take it at your own pace. Among the most worthwhile things on the trip.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Hiroshima%20Peace%20Memorial%20Museum%20visit" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Genbaku_Dome_2019.jpg/640px-Genbaku_Dome_2019.jpg" alt="Genbaku Dome + Peace Park" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Genbaku Dome + Peace Park</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">PM</span></div><h4 class="ac-name">Genbaku Dome + Peace Park</h4><p class="ac-desc">The preserved skeletal ruins at ground zero — a UNESCO site and global symbol of peace. The Cenotaph, Children’s Peace Monument, Flame of Peace.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Hiroshima%20atomic%20bomb%20dome%20peace%20park%20walk" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Hiroshima_style_okonomiyaki.jpg/640px-Hiroshima_style_okonomiyaki.jpg" alt="Hiroshima-style okonomiyaki" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Hiroshima-style okonomiyaki</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">eve</span></div><h4 class="ac-name">Hiroshima-style okonomiyaki</h4><p class="ac-desc">The city’s signature — layered with noodles (vs Osaka’s mixed style). A hearty, fun group meal to lift the mood after a sober day. A carb treat.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Hiroshima%20okonomiyaki%20layered%20cooking" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div></div><div class="notegrid"><div class="note shred"><div class="nh">◆ Shred</div><div class="nb">Hiroshima’s specialty is oysters — grilled, raw, great protein. A protein-forward lunch balances the carby okonomiyaki dinner.</div></div>
+<div class="note watch"><div class="nh">◆ Give it space</div><div class="nb">The museum is intense; it’s fine to need a quiet moment. Approach the memorial sites with the gravity they deserve.</div></div></div><div class="costbar"><span class="cl">Day spend</span><span class="cv">₹2,650–4,450</span></div></div>
+<div class="daypanel" id="panel-d28" role="tabpanel"><div class="dp-head"><div class="dp-ey">Mon 28 Jul, 2026 <span class="badge b-free">Free day</span> <span class="star inl">★ self-run</span></div><h3 class="dp-title">Miyajima + Mt Misen summit</h3><p class="dp-tag">Your free day: the floating torii, the sacred deer — then the ropeway and a push to the 535m summit.</p></div><div class="dp-acts"><div class="acard"><div class="ac-media noimg"><span class="fb-label">Set out from Hiroshima (early)</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">~08:00</span></div><h4 class="ac-name">Set out from Hiroshima (early)</h4><p class="ac-desc">Early matters today — for the ropeway queue, the heat, and the closing-time buffer. JR/tram to Miyajimaguchi + ferry, ~1h door-to-door.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Hiroshima%20to%20Miyajima%20ferry%20travel%20guide" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Itsukushima_torii_distance.jpg/640px-Itsukushima_torii_distance.jpg" alt="Itsukushima Shrine + floating torii" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Itsukushima Shrine + floating torii</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">~09:30</span></div><h4 class="ac-name">Itsukushima Shrine + floating torii</h4><p class="ac-desc">Do the iconic shrine + O-torii first while fresh. High tide = it floats; low tide = walk up to it. Check the 28 Jul tide times. Deer greet you at the waterfront.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Itsukushima%20shrine%20floating%20torii%20Miyajima" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Miyajima_Ropeway_Shishiiwa_Station.jpg/640px-Miyajima_Ropeway_Shishiiwa_Station.jpg" alt="Miyajima Ropeway" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Miyajima Ropeway</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">~11:00</span></div><h4 class="ac-name">Miyajima Ropeway</h4><p class="ac-desc">Two stages with a transfer to Shishiiwa Observatory (433m), ~¥2,000 rt. Great aerial views over the canopy. Pause here — honestly assess your knee before the trail.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Miyajima%20ropeway%20Mount%20Misen%20Hiroshima" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Mount_Misen_summit_view_Seto_Inland_Sea.jpg/640px-Mount_Misen_summit_view_Seto_Inland_Sea.jpg" alt="Summit push (~30 min trail)" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Summit push (~30 min trail)</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">~11:30</span></div><h4 class="ac-name">Summit push (~30 min trail)</h4><p class="ac-desc">Down-then-up over uneven rock and tall steps to the 535m summit: 360° Seto Inland Sea views and the 1,200-year eternal flame. Turn back at the observatory if the knee protests.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Mount%20Misen%20summit%20hike%20Miyajima%20views" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media noimg"><span class="fb-label">Ropeway down (with buffer)</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">~13:15</span></div><h4 class="ac-name">Ropeway down (with buffer)</h4><p class="ac-desc">Be back at the upper station well before the ~16:00 close — do NOT get stranded into a forced hike-down. Descent is the knee risk: go slow, poles out.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Miyajima%20ropeway%20descent" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Daisho-in_Temple_Miyajima.jpg/640px-Daisho-in_Temple_Miyajima.jpg" alt="Sea-level recovery + Daisho-in" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Sea-level recovery + Daisho-in</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">~14:00</span></div><h4 class="ac-name">Sea-level recovery + Daisho-in</h4><p class="ac-desc">Rest the knee. Daisho-in is a lovely, gentle temple on the lower slopes. Oysters and anago-meshi on Omotesando. Ferry back ~16:30.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Daisho-in%20temple%20Miyajima%20walk" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div></div><div class="pullbox"><div class="ph">⚠ The no-stranding rule</div><div class="pb">The last ropeway down gets crowded and cut off — reviewers have been forced to hike all 2,000+ steps down. For your knee that’s the disaster to avoid: go up EARLY and ride down with hours of buffer. Bring trekking poles and proper shoes; be willing to turn back at the observatory (its views alone justify the ride).</div></div><div class="notegrid"><div class="note knee"><div class="nh">◆ Knee kit</div><div class="nb">Trekking poles (the single best thing for the down-then-up trail + descent), proper shoes, knee support, your usual anti-inflammatory on hand.</div></div>
+<div class="note shred"><div class="nh">◆ Shred</div><div class="nb">Miyajima oysters + anago-meshi = protein wins. Momiji manju = a treat, have one or two.</div></div></div><div class="costbar"><span class="cl">Day spend</span><span class="cv">₹4,650–8,550 · ropeway + meals + poles</span></div></div>
+<div class="daypanel" id="panel-d29" role="tabpanel"><div class="dp-head"><div class="dp-ey">Tue 29 Jul, 2026 <span class="badge b-legend">Legend</span></div><h3 class="dp-title">Osaka — castle & Dotonbori</h3><p class="dp-tag">A scenic mountain train, the magnificent castle, then your first hit of Dotonbori neon and street food.</p></div><div class="dp-acts"><div class="acard"><div class="ac-media noimg"><span class="fb-label">Included breakfast + scenic Wakayama train</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">AM</span><span class="incl">included</span></div><h4 class="ac-name">Included breakfast + scenic Wakayama train</h4><p class="ac-desc">Included breakfast, then a scenic local-train ride through the Wakayama mountains rather than a plain bullet hop. One of your 3 included meals.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Wakayama%20scenic%20local%20train%20Japan" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Osaka_Castle_02bs3200.jpg/640px-Osaka_Castle_02bs3200.jpg" alt="Osaka Castle" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Osaka Castle</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">PM</span></div><h4 class="ac-name">Osaka Castle</h4><p class="ac-desc">A magnificent five-story keep on massive stone walls, ringed by moats and a large park. The exterior is stunning; flat, knee-friendly grounds (elevator inside).</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Osaka%20Castle%20tour%20Japan" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Dotonbori_at_night_2016.jpg/640px-Dotonbori_at_night_2016.jpg" alt="Dotonbori" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Dotonbori</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">eve</span></div><h4 class="ac-name">Dotonbori</h4><p class="ac-desc">The neon canal — the Glico running man, giant signs, street food everywhere. A great group night out. Easy, flat terrain (good recovery after Mt Misen).</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Dotonbori%20Osaka%20night%20street%20food%20neon" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div></div><div class="notegrid"><div class="note shred"><div class="nh">◆ Shred</div><div class="nb">Dotonbori is fried-food central (takoyaki, kushikatsu). Taste the icons, find some grilled options, don’t make it the whole meal. One indulgent night is fine.</div></div>
+<div class="note tip"><div class="nh">◆ Scout</div><div class="nb">You’re in Osaka through the end now. Note shops/restaurants for your free time — you’ll shop the 31st.</div></div></div><div class="costbar"><span class="cl">Day spend</span><span class="cv">₹3,300–6,750</span></div></div>
+<div class="daypanel" id="panel-d30" role="tabpanel"><div class="dp-head"><div class="dp-ey">Wed 30 Jul, 2026 <span class="badge b-legend">Legend</span></div><h3 class="dp-title">Sushi class → America-mura → farewell</h3><p class="dp-tag">Make your own sushi, dig records in America-mura, a sunset over the city, then the group send-off.</p></div><div class="dp-acts"><div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Sushi_making_class_Japan.jpg/640px-Sushi_making_class_Japan.jpg" alt="Sushi-making class" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Sushi-making class</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">AM</span><span class="incl">included</span></div><h4 class="ac-name">Sushi-making class</h4><p class="ac-desc">A hands-on traditional class — a tour favourite and a skill to take home. Included.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=sushi%20making%20class%20Osaka%20experience" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Nigiri_sushi_assortment.jpg/640px-Nigiri_sushi_assortment.jpg" alt="Included lunch — your own sushi" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Included lunch — your own sushi</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">midday</span><span class="incl">included</span></div><h4 class="ac-name">Included lunch — your own sushi</h4><p class="ac-desc">Eat what you made. A Shred-friendly included meal (fish protein, modest rice) — enjoy guilt-free. Your 3rd included meal.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=fresh%20nigiri%20sushi%20Japan" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Amerikamura_Osaka.jpg/640px-Amerikamura_Osaka.jpg" alt="America-mura (records + streetwear)" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">America-mura (records + streetwear)</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">~14:00</span></div><h4 class="ac-name">America-mura (records + streetwear)</h4><p class="ac-desc">Osaka’s youth-culture hub — vinyl, streetwear, vintage, indie shops. Dig records for the DJ kit and scout tomorrow’s Shinsaibashi shopping as you go.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Amerikamura%20Osaka%20vinyl%20streetwear%20district" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Umeda_Sky_Building_2019.jpg/640px-Umeda_Sky_Building_2019.jpg" alt="Umeda Sky Building at golden hour" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Umeda Sky Building at golden hour</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">~16:30</span></div><h4 class="ac-name">Umeda Sky Building at golden hour</h4><p class="ac-desc">Twin-tower rooftop observatory — 360° over the skyline and river, best at dusk. Glass elevator + transparent escalator up. Knee-friendly, a photo highlight.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Umeda%20Sky%20Building%20floating%20garden%20observatory%20Osaka" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media noimg"><span class="fb-label">Farewell group night out</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">eve</span></div><h4 class="ac-name">Farewell group night out</h4><p class="ac-desc">The send-off — drinks, food, swap contacts. Metro back south to the group (~15 min). Flex the sunset vs dinner timing; Osaka transit is quick.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Osaka%20Namba%20nightlife%20bars" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div></div><div class="notegrid"><div class="note tip"><div class="nh">◆ Geography</div><div class="nb">America-mura (south) and Umeda Sky (north) are ~15 min apart by Midosuji Line. Tie Umeda to dusk and it flows.</div></div>
+<div class="note watch"><div class="nh">◆ Confirm</div><div class="nb">Make sure your final-night Namba hotel (31st) is booked — it’s both the shopping core and the KIX airport line.</div></div></div><div class="costbar"><span class="cl">Day spend</span><span class="cv">₹3,250–6,250 · + any record/clothes shopping</span></div></div>
+<div class="daypanel" id="panel-d31" role="tabpanel"><div class="dp-head"><div class="dp-ey">Thu 31 Jul, 2026 <span class="badge b-legend">Legend</span> <span class="star inl">★ self-run</span></div><h3 class="dp-title">Checkout → shopping → pub crawl</h3><p class="dp-tag">The tour ends. Your one shopping day, more Osaka, then a contained farewell crawl before the dawn flight.</p></div><div class="dp-acts"><div class="acard"><div class="ac-media noimg"><span class="fb-label">Tour checkout + move to Namba hotel</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">AM</span></div><h4 class="ac-name">Tour checkout + move to Namba hotel</h4><p class="ac-desc">Goodbyes, swap contacts. Move bags to your Namba hotel — the shopping core and the direct Nankai line to KIX.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Namba%20Osaka%20hotel%20area%20guide" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Shinsaibashi-suji_Shopping_Street.jpg/640px-Shinsaibashi-suji_Shopping_Street.jpg" alt="Shinsaibashi / Den Den Town / Donki" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Shinsaibashi / Den Den Town / Donki</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">midday</span></div><h4 class="ac-name">Shinsaibashi / Den Den Town / Donki</h4><p class="ac-desc">Your one shopping day. Covered arcade (fashion, cosmetics), Den Den Town (electronics/anime), Don Quijote (souvenirs). Carry your passport for tax-free over ¥5,000.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Shinsaibashi%20Namba%20Osaka%20shopping%20guide" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Kuromon_Ichiba_Market_Osaka.jpg/640px-Kuromon_Ichiba_Market_Osaka.jpg" alt="Kuromon Ichiba Market" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Kuromon Ichiba Market</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">lunch</span></div><h4 class="ac-name">Kuromon Ichiba Market</h4><p class="ac-desc">“Osaka’s Kitchen” — fresh seafood, grilled scallops, wagyu skewers. Shred-friendly grazing lunch, best earlier when freshest.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Kuromon%20market%20Osaka%20street%20food" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Hozenji_Yokocho_Osaka.jpg/640px-Hozenji_Yokocho_Osaka.jpg" alt="Hozen-ji Yokocho (+ optional Shinsekai)" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Hozen-ji Yokocho (+ optional Shinsekai)</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">PM</span></div><h4 class="ac-name">Hozen-ji Yokocho (+ optional Shinsekai)</h4><p class="ac-desc">A moss-covered temple in a tiny lantern-lit stone alley off Dotonbori — a quiet pocket. Optional: retro Shinsekai + Tsutenkaku tower if you want more sightseeing.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Hozenji%20Yokocho%20Osaka%20alley%20temple" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Ura_Namba_Osaka_izakaya_alley.jpg/640px-Ura_Namba_Osaka_izakaya_alley.jpg" alt="Final pub crawl — Namba / Ura-Namba" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Final pub crawl — Namba / Ura-Namba</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">~18:00</span></div><h4 class="ac-name">Final pub crawl — Namba / Ura-Namba</h4><p class="ac-desc">An organised izakaya crawl through Hozenji Yokocho + Ura-Namba’s local bars — ~3h, starts ~18:00, wraps ~21:30–22:00. Sociable last night, meets people.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Osaka%20Namba%20Ura-Namba%20bar%20hopping%20izakaya%20crawl" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div></div><div class="pullbox"><div class="ph">⚠ The flight-protecting rule</div><div class="pb">You leave for KIX at ~06:00 tomorrow. After the organised crawl ends (~22:00), <b>go to bed</b> — don’t full-send into Ura-Namba’s 5am bars. Hard cap: one last Dotonbori neon photo, bed by midnight. And <b>pack tonight, before the crawl</b> — don’t pack hungover at 5:30am.</div></div><div class="notegrid"><div class="note watch"><div class="nh">◆ Only shopping window</div><div class="nb">Early flight = no shopping on the 1st. Make today count: tax-free counters, electronics at Den Den Town, gifts at Donki. Watch the luggage allowance.</div></div>
+<div class="note tip"><div class="nh">◆ KIX route</div><div class="nb">Nankai Line Namba → KIX, ~40–50 min. For the 09:05 flight, leave ~06:00. Check first departures; keep tax-free paperwork accessible for customs.</div></div></div><div class="costbar"><span class="cl">Day spend</span><span class="cv">₹20,300–60,200+ · 🔴 highest day (shopping + crawl + hotel)</span></div></div>
+<div class="daypanel" id="panel-d01" role="tabpanel"><div class="dp-head"><div class="dp-ey">Fri 1 Aug, 2026 <span class="badge b-fly">Travel</span> <span class="star inl">★ self-run</span></div><h3 class="dp-title">Fly home from Osaka</h3><p class="dp-tag">Pre-dawn Namba → KIX, and the long journey back to Mumbai via Hong Kong.</p></div><div class="dp-acts"><div class="acard"><div class="ac-media"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Nankai_Rapit_airport_train.jpg/640px-Nankai_Rapit_airport_train.jpg" alt="Namba → KIX (Nankai)" onerror="this.style.display='none';this.parentNode.classList.add('noimg')"><span class="fb-label">Namba → KIX (Nankai)</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">~06:00</span></div><h4 class="ac-name">Namba → KIX (Nankai)</h4><p class="ac-desc">Leave central Osaka pre-dawn. Nankai Rapi:t / Airport Express to KIX, ~40–50 min. Be at KIX by ~07:00 for the 09:05 flight.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Nankai%20train%20Namba%20to%20Kansai%20airport%20KIX" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div>
+<div class="acard"><div class="ac-media noimg"><span class="fb-label">Depart KIX → Mumbai (via Hong Kong)</span></div><div class="ac-body"><div class="ac-top"><span class="ac-time">09:05</span></div><h4 class="ac-name">Depart KIX → Mumbai (via Hong Kong)</h4><p class="ac-desc">Cathay Pacific, 15h30m total, lands Mumbai 21:05. Sleep on the plane — especially if the crawl ran late.</p><a class="vidlink" href="https://www.youtube.com/results?search_query=Kansai%20airport%20KIX%20departure%20Cathay%20Pacific" target="_blank" rel="noopener"><span class="vi">▶</span> watch</a></div></div></div><div class="notegrid"><div class="note tip"><div class="nh">◆ Airport-ready</div><div class="nb">Passport, boarding pass (check in online if allowed), tax-free purchases accessible (customs may check), yen for the train. Everything packed last night.</div></div>
+<div class="note shred"><div class="nh">◆ Last note</div><div class="nb">Hydrate before the flight. You did it — 16 days, two great festivals, a sacred mountain, and a summit. お疲れ様.</div></div></div><div class="costbar"><span class="cl">Day spend</span><span class="cv">₹1,500–2,000 · airport train + snacks</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BUDGET -->
+<section class="section" id="budget" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="idx">04</span>
+      <h2>The budget <span class="jp">予算</span></h2>
+      <p class="lede">About 60% is already locked (flights + tour). The swing between low and high is almost entirely your choices — shopping, restaurants vs konbini, and drinking.</p>
+    </div>
+    <div class="panel">
+      <table class="budget-table">
+        <thead><tr><th>Category</th><th class="r">Low ₹</th><th class="r">High ₹</th></tr></thead>
+        <tbody>
+          <tr class="fixed"><td>Flights <span class="sub">Cathay BOM↔KIX, via HK</span></td><td class="r">60,830</td><td class="r">60,830</td></tr>
+          <tr class="fixed"><td>Legend of Japan tour <span class="sub">~US$2,062 · 11 nights, transport, 18 activities, 3 meals</span></td><td class="r">1,72,000</td><td class="r">1,72,000</td></tr>
+          <tr class="est"><td>Pre-tour Tokyo nights <span class="sub">if booked outside the tour</span></td><td class="r">included*</td><td class="r">via TruTravels</td></tr>
+          <tr class="est"><td>Final Namba night (31st) <span class="sub">you book</span></td><td class="r">6,000</td><td class="r">12,000</td></tr>
+          <tr class="choice"><td>Activities <span class="sub">Kamakura tour, teamLab, Miyajima ropeway, festival, crawls</span></td><td class="r">14,000</td><td class="r">22,000</td></tr>
+          <tr class="choice"><td>Food &amp; drink <span class="sub">most meals self-bought; drinking is the swing</span></td><td class="r">29,000</td><td class="r">50,000</td></tr>
+          <tr class="est"><td>Local transport <span class="sub">IC card, airport legs</span></td><td class="r">5,800</td><td class="r">9,700</td></tr>
+          <tr class="choice"><td>Shopping &amp; misc <span class="sub">Osaka haul, eSIM, insurance, contingency</span></td><td class="r">18,000</td><td class="r">53,000</td></tr>
+          <tr class="tot"><td>Total</td><td class="r">~₹3,36,000</td><td class="r">~₹4,24,000</td></tr>
+        </tbody>
+      </table>
+      <div class="leg">
+        <span><span class="d" style="background:var(--jade)"></span>Fixed / locked</span>
+        <span><span class="d" style="background:var(--gold)"></span>Estimate</span>
+        <span><span class="d" style="background:var(--magenta)"></span>Your choice</span>
+      </div>
+      <p style="margin-top:16px;font-size:13px;color:#9b97bd;line-height:1.55">*Pre-tour Tokyo nights (18th–19th) are simplest booked through TruTravels at the joining hostel. Realistic comfortable planning number: <b style="color:#fff">~₹3.65–3.80L</b>. The two levers that decide where you land: the <b style="color:var(--magenta)">31 Jul shopping cap</b> and how much you <b style="color:var(--magenta)">drink on group nights</b>. Visa (via Atlys) adds ~₹3–8k, not shown.</p>
+    </div>
+
+    <div style="margin-top:22px">
+      <div style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);margin-bottom:6px">Daily out-of-pocket — at a glance</div>
+      <p style="font-size:13px;color:#9b97bd;max-width:620px;margin-bottom:6px">Excludes the pre-paid flights &amp; tour fee (not "spent" on the day). Two days dominate: the festival night and the shopping day.</p>
+      <div class="dailycost">
+        <div class="dcell"><div class="dd">17 Jul</div><div class="dn">Departure</div><div class="dv">₹0.5–1k</div></div>
+        <div class="dcell hi"><div class="dd">18 Jul</div><div class="dn">Arrive + crawl</div><div class="dv">₹4–8k</div></div>
+        <div class="dcell hi"><div class="dd">19 Jul</div><div class="dn">Kamakura</div><div class="dv">₹6.5–11.5k</div></div>
+        <div class="dcell"><div class="dd">20 Jul</div><div class="dn">teamLab D1</div><div class="dv">₹4–6.3k</div></div>
+        <div class="dcell"><div class="dd">21 Jul</div><div class="dn">Tokyo D2</div><div class="dv">₹2.8–5.4k</div></div>
+        <div class="dcell"><div class="dd">22 Jul</div><div class="dn">Golden Gai</div><div class="dv">₹4.3–9.4k</div></div>
+        <div class="dcell lo"><div class="dd">23 Jul</div><div class="dn">Hakone</div><div class="dv">₹2.3–5.5k</div></div>
+        <div class="dcell"><div class="dd">24 Jul</div><div class="dn">Kyoto · Gion</div><div class="dv">₹2.8–5.6k</div></div>
+        <div class="dcell"><div class="dd">25 Jul</div><div class="dn">Tenjin fire</div><div class="dv">₹3.6–8k</div></div>
+        <div class="dcell lo"><div class="dd">26 Jul</div><div class="dn">Koyasan</div><div class="dv">₹1.5–2.6k</div></div>
+        <div class="dcell"><div class="dd">27 Jul</div><div class="dn">Hiroshima</div><div class="dv">₹2.6–4.5k</div></div>
+        <div class="dcell"><div class="dd">28 Jul</div><div class="dn">Miyajima</div><div class="dv">₹4.6–8.5k</div></div>
+        <div class="dcell"><div class="dd">29 Jul</div><div class="dn">Osaka D10</div><div class="dv">₹3.3–6.7k</div></div>
+        <div class="dcell"><div class="dd">30 Jul</div><div class="dn">Sushi + sky</div><div class="dv">₹3.2–6.2k</div></div>
+        <div class="dcell hi"><div class="dd">31 Jul</div><div class="dn">Shopping</div><div class="dv">₹20–60k</div></div>
+        <div class="dcell"><div class="dd">1 Aug</div><div class="dn">Fly home</div><div class="dv">₹1.5–2k</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHRED -->
+<section class="section" id="shred" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="idx">05</span>
+      <h2>Shred protocol, on the road <span class="jp">食事</span></h2>
+      <p class="lede">Japan is workable for high-protein-but-watch-carbs — it just takes intent. The konbini is your anchor; group meals and festival nights are "enjoy, don't stress."</p>
+    </div>
+    <div class="infocards">
+      <div class="infocard">
+        <h4><span class="ic">🍱</span> The konbini playbook</h4>
+        <p>7-Eleven, Lawson, FamilyMart — genuinely your best ally for both budget and macros.</p>
+        <ul>
+          <li><b>Grab:</b> salad chicken (sasami), boiled eggs, edamame, grilled fish onigiri, Greek-style yogurt</li>
+          <li><b>Use it for:</b> breakfasts, travel-day meals, and topping up protein around indulgent group dinners</li>
+          <li><b>Backup:</b> carry a protein bar or two for Koyasan, where the food is all-vegetarian</li>
+        </ul>
+      </div>
+      <div class="infocard">
+        <h4><span class="ic">✅</span> Order these</h4>
+        <p>Shred-friendly wins that are easy to find everywhere.</p>
+        <div class="foodtags">
+          <span class="ft good">yakitori (shio/salt)</span><span class="ft good">grilled fish teishoku</span>
+          <span class="ft good">sashimi / sushi</span><span class="ft good">shabu-shabu</span>
+          <span class="ft good">oysters (Hiroshima/Miyajima)</span><span class="ft good">shirasu-don</span>
+          <span class="ft good">yudofu (Kyoto)</span><span class="ft good">Kuromon grilled seafood</span>
+        </div>
+      </div>
+      <div class="infocard">
+        <h4><span class="ic">🎏</span> Treat nights (enjoy them)</h4>
+        <p>Built into the trip — don't fight these, just balance around them.</p>
+        <div class="foodtags">
+          <span class="ft treat">Dotonbori takoyaki/kushikatsu</span><span class="ft treat">Hiroshima okonomiyaki</span>
+          <span class="ft treat">sake tasting</span><span class="ft treat">festival street food</span>
+          <span class="ft treat">group nights out</span><span class="ft treat">momiji manju</span>
+        </div>
+      </div>
+      <div class="infocard">
+        <h4><span class="ic">🍵</span> The Koyasan note</h4>
+        <p>Day 26's included dinner (and likely next breakfast) is <b>shojin ryori</b> — beautiful Buddhist vegetarian cuisine, but lower in protein than your usual.</p>
+        <ul>
+          <li>Lean on tofu and <b>koya-dofu</b> for what protein there is</li>
+          <li>Carry backup bars from a city konbini</li>
+          <li>One day off-target won't derail anything — enjoy the cultural experience</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PREP / PRACTICAL -->
+<section class="section" id="prep" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="idx">06</span>
+      <h2>Know before you go <span class="jp">準備</span></h2>
+      <p class="lede">The practical spine — visa, money, knee strategy, heat, and the few things that genuinely matter on the locked itinerary.</p>
+    </div>
+    <div class="infocards">
+      <div class="infocard">
+        <h4><span class="ic">🛂</span> Visa &amp; entry</h4>
+        <p>Indians route via VFS by appointment; you're using Atlys (concierge).</p>
+        <ul>
+          <li>Needs: passport (6mo), <b>45×45mm square photo</b> (not Schengen size), detailed day-by-day itinerary (most scrutinised), flight + hotel bookings, bank statements, ITR, employer leave letter, cover letter</li>
+          <li>Realistic 3–6 weeks end-to-end in summer — <b>apply now</b></li>
+          <li>Register <b>Visit Japan Web</b> before flying for immigration/customs QR codes</li>
+        </ul>
+      </div>
+      <div class="infocard">
+        <h4><span class="ic">💴</span> Money &amp; connectivity</h4>
+        <p>Japan is card-friendly but still part-cash, especially tiny bars and stalls.</p>
+        <ul>
+          <li><b>IC card</b> (Suica/Icoca) — tap for all metro/local trains; load ¥5,000–7,000</li>
+          <li><b>ATMs:</b> 7-Eleven &amp; Japan Post reliably take foreign cards</li>
+          <li><b>Tax-free</b> on purchases over ¥5,000 (passport) — ~10% saving; do it at each store</li>
+          <li><b>eSIM</b> — activate on landing at Haneda</li>
+        </ul>
+      </div>
+      <div class="infocard">
+        <h4><span class="ic">🦵</span> Knee strategy</h4>
+        <p>The itinerary is built knee-aware. Two days need a plan.</p>
+        <ul>
+          <li><b>Fushimi-Inari (24th):</b> stay at the base — the famous dense torii are there; skip the 2–3h summit</li>
+          <li><b>Mt Misen (28th):</b> ropeway up + the rocky ~30-min summit trail. Trekking poles, proper shoes, go up early for a guaranteed ropeway-down buffer, turn back at the observatory if it protests</li>
+          <li>Everything else is flat/gentle by design</li>
+        </ul>
+      </div>
+      <div class="infocard">
+        <h4><span class="ic">🌡️</span> Heat &amp; weather</h4>
+        <p>Late July = hot and humid (28–34°C), tail of the rainy season into peak summer. <b>No snow</b> anywhere you go.</p>
+        <ul>
+          <li>Light breathable clothes, compact umbrella, cooling towel, sun protection, hand fan</li>
+          <li><b>Kyoto</b> (basin) is the sweatiest stretch; <b>Koyasan</b> (~800m) is a cool relief — bring a layer for it</li>
+          <li>Hydrate relentlessly, especially on festival and shrine days</li>
+        </ul>
+      </div>
+      <div class="infocard">
+        <h4><span class="ic">🎆</span> The two festivals</h4>
+        <p>You landed on both by luck — they fall on your Kyoto days.</p>
+        <ul>
+          <li><b>Gion Matsuri (24th):</b> Ato float parade in Kyoto — ask your guide; treat as a bonus</li>
+          <li><b>Tenjin Matsuri (25th):</b> locked — Kyoto→Osaka dash for the boats + 5,000 fireworks. Nail the exit (linger, then walk to Umeda)</li>
+        </ul>
+      </div>
+      <div class="infocard">
+        <h4><span class="ic">🏨</span> Where you sleep</h4>
+        <p>The tour covers 11 nights (20–31). You arrange the bookends.</p>
+        <ul>
+          <li><b>18–19 Jul:</b> Tokyo — simplest via TruTravels at the joining hostel (pre-night: email info@trutravels.com)</li>
+          <li><b>31 Jul:</b> near <b>Namba</b> — shopping core + the direct Nankai line to KIX</li>
+          <li><b>Insurance:</b> compulsory for TruTravels (min US$200k medical/evac) — and needed for the visa</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TO-DO -->
+<section class="section" id="todo" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="idx">07</span>
+      <h2>Booking checklist <span class="jp">予約</span></h2>
+      <p class="lede">Tap to tick off. Saved on this device. The time-sensitive ones are the visa and the pre-tour Tokyo nights.</p>
+    </div>
+    <ul class="checklist" id="checklist">
+      <li data-k="visa"><span class="box"></span><span class="ct"><b>Visa via Atlys</b> — apply now (3–6 weeks in summer); needs the day-by-day itinerary + leave letter</span></li>
+      <li data-k="insurance"><span class="box"></span><span class="ct"><b>Travel insurance</b> — min US$200k medical/evac (compulsory for TruTravels + visa)</span></li>
+      <li data-k="tokyo-hotel"><span class="box"></span><span class="ct"><b>Pre-tour Tokyo nights (18–19 Jul)</b> — email info@trutravels.com or book near the joining hostel</span></li>
+      <li data-k="namba-hotel"><span class="box"></span><span class="ct"><b>Final Namba hotel (31 Jul)</b> — shopping core + KIX airport line</span></li>
+      <li data-k="teamlab"><span class="box"></span><span class="ct"><b>teamLab Planets</b> timed slot (20 Jul) — book ahead, sells out</span></li>
+      <li data-k="kamakura"><span class="box"></span><span class="ct"><b>Kamakura &amp; Enoshima guided tour</b> (19 Jul)</span></li>
+      <li data-k="crawl1"><span class="box"></span><span class="ct"><b>Fast &amp; Furious Tokyo Drift III</b> (18 Jul) — GetYourGuide, reserve-now-pay-later</span></li>
+      <li data-k="crawl2"><span class="box"></span><span class="ct"><b>Osaka Ura-Namba bar crawl</b> (31 Jul) — organised, ~18:00 start</span></li>
+      <li data-k="vjw"><span class="box"></span><span class="ct"><b>Visit Japan Web</b> — register before flying (immigration/customs QR)</span></li>
+      <li data-k="esim"><span class="box"></span><span class="ct"><b>eSIM / pocket WiFi</b> for the trip</span></li>
+      <li data-k="tide"><span class="box"></span><span class="ct"><b>Check Miyajima tide times for 28 Jul</b> — floating vs walk-up torii</span></li>
+      <li data-k="poles"><span class="box"></span><span class="ct"><b>Trekking poles</b> for Mt Misen (knee)</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="fk">NEON<span class="amp">&amp;</span>NIRVANA</div>
+    <p>16 days, two great festivals, a sacred mountain, and a summit. From Tokyo's neon to Koyasan's silence and back to Osaka's glow. お疲れ様 — go well, Prateek.</p>
+    <div class="disc">Tour-day timings are typical flow; your Tru Leader sets the exact clock and adjusts for weather &amp; availability.<br>Photos via Wikimedia Commons — glance at the live site and swap any that don't load. Video links open YouTube searches for current clips.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // ----- day tabs -----
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.daychip'));
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.daypanel'));
+  function show(id){
+    chips.forEach(function(c){
+      var on = c.getAttribute('data-day')===id;
+      c.classList.toggle('active',on);
+      c.setAttribute('aria-selected',on?'true':'false');
+    });
+    panels.forEach(function(p){ p.classList.toggle('active', p.id==='panel-'+id); });
+  }
+  chips.forEach(function(c){
+    c.addEventListener('click',function(){
+      show(c.getAttribute('data-day'));
+      c.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});
+    });
+    c.addEventListener('keydown',function(e){
+      var i = chips.indexOf(c);
+      if(e.key==='ArrowRight'&&i<chips.length-1){e.preventDefault();chips[i+1].focus();chips[i+1].click();}
+      if(e.key==='ArrowLeft'&&i>0){e.preventDefault();chips[i-1].focus();chips[i-1].click();}
+    });
+    c.setAttribute('tabindex','0');
+  });
+
+  // ----- checklist persistence -----
+  var KEY='nn-checklist-v1';
+  var saved={};
+  try{saved=JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){saved={};}
+  var items=document.querySelectorAll('#checklist li');
+  items.forEach(function(li){
+    var k=li.getAttribute('data-k');
+    if(saved[k])li.classList.add('done');
+    li.addEventListener('click',function(){
+      li.classList.toggle('done');
+      saved[k]=li.classList.contains('done');
+      try{localStorage.setItem(KEY,JSON.stringify(saved));}catch(e){}
+    });
+  });
+
+  // ----- smooth nav offset handled by CSS scroll-margin via anchor; nothing else needed -----
+})();
+</script>
+</body>
+</html>
